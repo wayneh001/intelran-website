@@ -6,15 +6,15 @@
 
 <script>
 import View from "@/containers/view";
+import { smartHome } from "@/content/content";
+
 export default {
   name: "smartHome",
-  components: [
-    { View },
-  ],
+  components: [{ View }],
   data() {
     return {
-        content: ""
-    }
+      content: smartHome,
+    };
   },
   methods: {},
 };

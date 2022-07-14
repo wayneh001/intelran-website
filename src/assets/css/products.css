@@ -1,0 +1,190 @@
+.White {
+  background-color: #ffffff;
+}
+
+.Space-Gray {
+  background-image: linear-gradient(
+    -45deg,
+    rgba(59, 59, 59, 1),
+    rgba(40, 40, 40, 1)
+  );
+}
+
+.Ferrari-Red {
+  background-color: #ff3a53;
+}
+
+.Armsterdam-Orange {
+  background-color: #e96838;
+}
+
+.Geneva-Red {
+  background-color: #59505a;
+}
+
+.Scotch-Red {
+  background-color: #ff448b;
+}
+
+.Hawaiian-Blue {
+  background-color: #a2d6d4;
+}
+
+.Ivory {
+  background-color: #f6f6f6;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.75),
+    rgba(238, 238, 238, 0.75)
+  );
+}
+
+.Jade-Black {
+  background-color: #404040;
+  background-image: linear-gradientlinear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(50, 50, 50, 0.1)
+  );
+}
+
+.Mica-Black {
+  background-color: #484848;
+}
+
+.Emerald {
+  background-color: #2b574e;
+}
+
+.Sumatra-Gray {
+  background-color: #78847f;
+}
+
+.Glacial-Silver {
+  background-color: #404040;
+  background-image: conic-gradient(
+    from -45deg,
+    rgba(206, 206, 206, 0.75),
+    rgba(206, 206, 206, 0)
+  );
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.Glacial-Silver {
+  background-color: #404040;
+  background-image: conic-gradient(
+    from -45deg,
+    rgba(206, 206, 206, 0.75),
+    rgba(206, 206, 206, 0)
+  );
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.Sterling-Silver {
+  background-color: #e0e0e0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.75)
+  );
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.Bright-Rose-Gold {
+  background-color: #eacad3;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.Champagne-Gold {
+  background-color: #ebebdc;
+  background-image: conic-gradient(
+    from -45deg,
+    rgba(206, 206, 206, 0.75),
+    rgba(206, 206, 206, 0)
+  );
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.Snowflake-Silver {
+  background-color: #dcdcdc;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.Cloud-Gold {
+  background-color: #f2d493;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.Cloud-Silver {
+  background-color: #c7c7c7;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.Pure-Gold {
+  background-color: #b1a167;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 197, 0.1),
+    rgba(245, 230, 187, 0),
+    rgba(245, 230, 187, 0)
+  );
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.Luxemburg {
+  background-color: #c7a25f;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}

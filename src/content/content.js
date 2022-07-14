@@ -1,4 +1,5 @@
 export const smartHome = {
+  nav: "Smart Home",
   label: "Smart Home",
   icon: "Smart Home",
   title: "Smart Home",
@@ -51,6 +52,7 @@ export const smartHome = {
 };
 
 export const technique = {
+  nav: "Smart Home",
   label: "Technique",
   icon: "Technique",
   title: "Technique",
@@ -102,6 +104,7 @@ export const technique = {
 };
 
 export const hub = {
+  nav: "Solutions",
   label: "Hub",
   icon: "Hub",
   title: "Smart Hub",
@@ -124,6 +127,7 @@ export const hub = {
 };
 
 export const light = {
+  nav: "Solutions",
   label: "Light",
   icon: "Light",
   title: "Smart Switch",
@@ -162,6 +166,7 @@ export const light = {
 };
 
 export const blinds = {
+  nav: "Solutions",
   label: "Blinds",
   icon: "Blinds",
   title: "Smart Blinds",
@@ -185,6 +190,7 @@ export const blinds = {
 };
 
 export const environment = {
+  nav: "Solutions",
   label: "Environment",
   icon: "Temp. & Hum.",
   title: "Smart Environment",
@@ -239,6 +245,7 @@ export const environment = {
 };
 
 export const connection = {
+  nav: "Solutions",
   label: "Connection",
   icon: "Connection",
   title: "Wi-Fi Coverage",
@@ -277,6 +284,7 @@ export const connection = {
 };
 
 export const safety = {
+  nav: "Solutions",
   label: "Safety",
   icon: "Camera",
   title: "Smart Security",
@@ -353,6 +361,7 @@ export const safety = {
 };
 
 export const about = {
+  nav: "About",
   label: "About",
   icon: "Logo",
   title: "IntelRAN",
@@ -415,6 +424,7 @@ export const about = {
 };
 
 export const service = {
+  nav: "About",
   label: "Service",
   icon: "Service",
   title: "Our Service",
@@ -473,6 +483,7 @@ export const service = {
 };
 
 export const cooperation = {
+  nav: "About",
   label: "Cooperation",
   icon: "Business",
   title: "Partnership",
@@ -501,28 +512,19 @@ export const cooperation = {
 };
 
 export const account = {
+  nav: "User",
   label: "Account",
   icon: "User",
-  title: "",
-  subtitle: "",
-  article: [],
-  table: [],
 };
 
 export const cart = {
+  nav: "User",
   label: "Cart",
   icon: "Cart",
-  title: "",
-  subtitle: "",
-  article: [],
-  table: [],
 };
 
 export const order = {
+  nav: "User",
   label: "Order",
   icon: "Order",
-  title: "",
-  subtitle: "",
-  article: [],
-  table: [],
 };

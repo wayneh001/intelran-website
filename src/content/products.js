@@ -1,108 +1,683 @@
 export const products = [
   {
     name: "Smart Hub",
-    textire: "Matte ABS",
-    url: "",
+    texture: "Matte ABS",
+    label: "Hub",
+    seq: 0,
+    repeat: 1,
+    image: [
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Universal Switch",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Light",
+    seq: 0,
+    repeat: 2,
+    image: [
+      {
+        name: "Ferrari-Red",
+        url: "",
+      },
+      {
+        name: "Armsterdam-Orange",
+        url: "",
+      },
+      {
+        name: "Geneva-Red",
+        url: "",
+      },
+      {
+        name: "Scotch-Red",
+        url: "",
+      },
+      {
+        name: "Hawaiian-Blue",
+        url: "",
+      },
+      {
+        name: "Ivory",
+        url: "",
+      },
+      {
+        name: "Jade-Black",
+        url: "",
+      },
+      {
+        name: "Mica-Black",
+        url: "",
+      },
+      {
+        name: "Emerald",
+        url: "",
+      },
+      {
+        name: "Sumatra-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Universal Switch",
-    textire: "Aluminum Alloy",
+    texture: "Aluminum Alloy",
     url: "",
+    label: "Light",
+    seq: 0,
+    repeat: 2,
+    image: [
+      {
+        name: "Glacial-Silver",
+        url: "",
+      },
+      {
+        name: "Sterling-Silver",
+        url: "",
+      },
+      {
+        name: "Bright-Rose-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Silver",
+        url: "",
+      },
+      {
+        name: "Snowflake-Silver",
+        url: "",
+      },
+      {
+        name: "Cloud-Gold",
+        url: "",
+      },
+      {
+        name: "Cloud-Silver",
+        url: "",
+      },
+      {
+        name: "Pure-Gold",
+        url: "",
+      },
+      {
+        name: "Luxemburg",
+        url: "",
+      },
+    ],
   },
   {
     name: "Dimmable Recessed",
-    textire: "Matte ABS",
-    url: "",
+    texture: "Matte ABS",
+    label: "Light",
+    seq: 1,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+    ],
   },
   {
     name: "Blinds Driver",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Light",
+    seq: 0,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "AC Controller",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Environment",
+    seq: 0,
+    repeat: 2,
+    image: [
+      {
+        name: "Ferrari-Red",
+        url: "",
+      },
+      {
+        name: "Armsterdam-Orange",
+        url: "",
+      },
+      {
+        name: "Geneva-Red",
+        url: "",
+      },
+      {
+        name: "Scotch-Red",
+        url: "",
+      },
+      {
+        name: "Hawaiian-Blue",
+        url: "",
+      },
+      {
+        name: "Ivory",
+        url: "",
+      },
+      {
+        name: "Jade-Black",
+        url: "",
+      },
+      {
+        name: "Mica-Black",
+        url: "",
+      },
+      {
+        name: "Emerald",
+        url: "",
+      },
+      {
+        name: "Sumatra-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "AC Controller",
-    textire: "Aluminum Alloy",
+    texture: "Aluminum Alloy",
     url: "",
+    label: "Environment",
+    seq: 0,
+    repeat: 2,
+    image: [
+      {
+        name: "Glacial-Silver",
+        url: "",
+      },
+      {
+        name: "Sterling-Silver",
+        url: "",
+      },
+      {
+        name: "Bright-Rose-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Silver",
+        url: "",
+      },
+      {
+        name: "Snowflake-Silver",
+        url: "",
+      },
+      {
+        name: "Cloud-Gold",
+        url: "",
+      },
+      {
+        name: "Cloud-Silver",
+        url: "",
+      },
+      {
+        name: "Pure-Gold",
+        url: "",
+      },
+      {
+        name: "Luxemburg",
+        url: "",
+      },
+    ],
   },
   {
     name: "Temp. & Humidity Sensor",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Environment",
+    seq: 1,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Smart Outlet",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Environment",
+    seq: 2,
+    repeat: 2,
+    image: [
+      {
+        name: "Ferrari-Red",
+        url: "",
+      },
+      {
+        name: "Armsterdam-Orange",
+        url: "",
+      },
+      {
+        name: "Geneva-Red",
+        url: "",
+      },
+      {
+        name: "Scotch-Red",
+        url: "",
+      },
+      {
+        name: "Hawaiian-Blue",
+        url: "",
+      },
+      {
+        name: "Ivory",
+        url: "",
+      },
+      {
+        name: "Jade-Black",
+        url: "",
+      },
+      {
+        name: "Mica-Black",
+        url: "",
+      },
+      {
+        name: "Emerald",
+        url: "",
+      },
+      {
+        name: "Sumatra-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Smart Outlet",
-    textire: "Aluminum Alloy",
+    texture: "Aluminum Alloy",
     url: "",
+    label: "Environment",
+    seq: 2,
+    repeat: 2,
+    image: [
+      {
+        name: "Glacial-Silver",
+        url: "",
+      },
+      {
+        name: "Sterling-Silver",
+        url: "",
+      },
+      {
+        name: "Bright-Rose-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Silver",
+        url: "",
+      },
+      {
+        name: "Snowflake-Silver",
+        url: "",
+      },
+      {
+        name: "Cloud-Gold",
+        url: "",
+      },
+      {
+        name: "Cloud-Silver",
+        url: "",
+      },
+      {
+        name: "Pure-Gold",
+        url: "",
+      },
+      {
+        name: "Luxemburg",
+        url: "",
+      },
+    ],
   },
   {
     name: "Router",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Connection",
+    seq: 0,
+    repeat: 1,
+    image: [
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Adapter",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Connection",
+    seq: 1,
+    repeat: 2,
+    image: [
+      {
+        name: "Ferrari-Red",
+        url: "",
+      },
+      {
+        name: "Armsterdam-Orange",
+        url: "",
+      },
+      {
+        name: "Geneva-Red",
+        url: "",
+      },
+      {
+        name: "Scotch-Red",
+        url: "",
+      },
+      {
+        name: "Hawaiian-Blue",
+        url: "",
+      },
+      {
+        name: "Ivory",
+        url: "",
+      },
+      {
+        name: "Jade-Black",
+        url: "",
+      },
+      {
+        name: "Mica-Black",
+        url: "",
+      },
+      {
+        name: "Emerald",
+        url: "",
+      },
+      {
+        name: "Sumatra-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Adapter",
-    textire: "Aluminum Alloy",
+    texture: "Aluminum Alloy",
     url: "",
+    label: "Connection",
+    seq: 1,
+    repeat: 2,
+    image: [
+      {
+        name: "Glacial-Silver",
+        url: "",
+      },
+      {
+        name: "Sterling-Silver",
+        url: "",
+      },
+      {
+        name: "Bright-Rose-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Silver",
+        url: "",
+      },
+      {
+        name: "Snowflake-Silver",
+        url: "",
+      },
+      {
+        name: "Cloud-Gold",
+        url: "",
+      },
+      {
+        name: "Cloud-Silver",
+        url: "",
+      },
+      {
+        name: "Pure-Gold",
+        url: "",
+      },
+      {
+        name: "Luxemburg",
+        url: "",
+      },
+    ],
   },
   {
     name: "Wall Mounted Camera",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Safety",
+    seq: 0,
+    repeat: 2,
+    image: [
+      {
+        name: "Ferrari-Red",
+        url: "",
+      },
+      {
+        name: "Armsterdam-Orange",
+        url: "",
+      },
+      {
+        name: "Geneva-Red",
+        url: "",
+      },
+      {
+        name: "Scotch-Red",
+        url: "",
+      },
+      {
+        name: "Hawaiian-Blue",
+        url: "",
+      },
+      {
+        name: "Ivory",
+        url: "",
+      },
+      {
+        name: "Jade-Black",
+        url: "",
+      },
+      {
+        name: "Mica-Black",
+        url: "",
+      },
+      {
+        name: "Emerald",
+        url: "",
+      },
+      {
+        name: "Sumatra-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Wall Mounted Camera",
-    textire: "Aluminum Alloy",
+    texture: "Aluminum Alloy",
     url: "",
+    label: "Safety",
+    seq: 0,
+    repeat: 2,
+    image: [
+      {
+        name: "Glacial-Silver",
+        url: "",
+      },
+      {
+        name: "Sterling-Silver",
+        url: "",
+      },
+      {
+        name: "Bright-Rose-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Gold",
+        url: "",
+      },
+      {
+        name: "Champagne-Silver",
+        url: "",
+      },
+      {
+        name: "Snowflake-Silver",
+        url: "",
+      },
+      {
+        name: "Cloud-Gold",
+        url: "",
+      },
+      {
+        name: "Cloud-Silver",
+        url: "",
+      },
+      {
+        name: "Pure-Gold",
+        url: "",
+      },
+      {
+        name: "Luxemburg",
+        url: "",
+      },
+    ],
   },
   {
     name: "Camera",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Safety",
+    seq: 0,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Gas Leakage Sensor",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Safety",
+    seq: 1,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Water Leakage Sensor",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Safety",
+    seq: 2,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Motion Sensor",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Safety",
+    seq: 2,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Contact Sensor",
-    textire: "Matte ABS",
+    texture: "Matte ABS",
     url: "",
+    label: "Safety",
+    seq: 2,
+    repeat: 1,
+    image: [
+      {
+        name: "White",
+        url: "",
+      },
+      {
+        name: "Space-Gray",
+        url: "",
+      },
+    ],
   },
   {
     name: "Smart Locker",
-    textire: "Glass",
+    texture: "Glass",
     url: "",
+    label: "Safety",
+    seq: 3,
+    repeat: 1,
+    image: [
+      {
+        name: "Glass",
+        url: "",
+      },
+    ],
   },
 ];
 
@@ -110,166 +685,93 @@ export const color = [
   {
     name: "White",
     texture: "Matte ABS",
-    hex: "#FFFFFF",
-    gradient: [],
   },
   {
-    name: "Space Gray",
+    name: "Space-Gray",
     texture: "Matte ABS",
-    hex: "#",
-    gradient: ["linear-gradient(-45deg,rgba(59,59,59,1),rgba(40,40,40,1)"],
   },
   {
     name: "Glass",
     texture: "Glass",
-    hex: "#7E7E7E",
-    gradient: [],
   },
   {
-    name: "Ferrari Red",
+    name: "Ferrari-Red",
     texture: "Matte ABS",
-    hex: "#FF3A53",
-    gradient: [],
   },
   {
-    name: "Armsterdam Orange",
+    name: "Armsterdam-Orange",
     texture: "Matte ABS",
-    hex: "#E96838",
-    gradient: [],
   },
   {
-    name: "Geneva Red",
+    name: "Geneva-Red",
     texture: "Matte ABS",
-    hex: "#59505A",
-    gradient: [],
   },
   {
-    name: "Scotch Red",
+    name: "Scotch-Red",
     texture: "Matte ABS",
-    hex: "#FF448B",
-    gradient: [],
   },
   {
-    name: "Hawaiian Blue",
+    name: "Hawaiian-Blue",
     texture: "Matte ABS",
-    hex: "#A2D6D4",
-    gradient: [],
   },
   {
     name: "Ivory",
     texture: "Matte ABS",
-    hex: "#F6F6F6",
-    gradient: [
-      "linear-gradient(-45deg,rgba(255,255,255,0.75),rgba(255,255,255,0.75),rgba(238,238,238,0.75)",
-    ],
   },
   {
-    name: "Jade Black",
+    name: "Jade-Black",
     texture: "Matte ABS",
-    hex: "#404040",
-    gradient: [
-      "linear-gradient(-45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.1),rgba(50,50,50,0.1)",
-    ],
   },
   {
-    name: "Mica Black",
+    name: "Mica-Black",
     texture: "Matte ABS",
-    hex: "#484848",
-    gradient: [],
   },
   {
     name: "Emerald",
     texture: "Matte ABS",
-    hex: "#2B574E",
-    gradient: [],
   },
   {
-    name: "Sumatra Gray",
+    name: "Sumatra-Gray",
     texture: "Matte ABS",
-    hex: "#78847F",
-    gradient: [],
   },
   {
-    name: "Glacial Silver",
+    name: "Glacial-Silver",
     texture: "Aluminum Alloy",
-    hex: "#E0E0E0",
-    gradient: [
-      "conic-gradient(from -45deg, rgba(206,206,206,0.75), rgba(206,206,206,0))",
-      "linear-gradient(0deg,rgba(0,0,0,0.2),rgba(255,255,255,0),rgba(0,0,0,0.2)",
-    ],
   },
   {
-    name: "Sterling Silver",
+    name: "Sterling-Silver",
     texture: "Aluminum Alloy",
-    hex: "E0E0E0",
-    gradient: [
-      "linear-gradient(-45deg,rgba(255,255,255,0),rgba(255,255,255,0.75),rgba(255,255,255,0.75)",
-      "linear-gradient(-45deg,rgba(0,0,0,0.2),rgba(255,255,255,0.2),rgba(0,0,0,0.2)",
-    ],
   },
   {
-    name: "Bright Rose Gold",
+    name: "Bright-Rose-Gold",
     texture: "Aluminum Alloy",
-    hex: "EACAD3",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.1),rgba(255,255,255,0.1),rgba(0,0,0,0.1)",
-    ],
   },
   {
-    name: "Champagne Gold",
+    name: "Champagne-Gold",
     texture: "Aluminum Alloy",
-    hex: "#EBEBDC",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.1),rgba(255,255,255,0.1),rgba(0,0,0,0.1)",
-    ],
   },
   {
-    name: "Champagne Silver",
+    name: "Champagne-Silver",
     texture: "Aluminum Alloy",
-    hex: "#777777",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.1),rgba(255,255,255,0.1),rgba(0,0,0,0.1)",
-    ],
   },
   {
-    name: "Snowflake Silver",
+    name: "Snowflake-Silver",
     texture: "Aluminum Alloy",
-    hex: "#DCDCDC",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.1),rgba(255,255,255,0.1),rgba(0,0,0,0.1)",
-    ],
   },
   {
-    name: "Cloud Gold",
+    name: "Cloud-Gold",
     texture: "Aluminum Alloy",
-    hex: "#F2D493",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.2),rgba(255,255,255,0.2),rgba(0,0,0,0.2)",
-    ],
   },
   {
-    name: "Cloud Silver",
+    name: "Cloud-Silver",
     texture: "Aluminum Alloy",
-    hex: "#C7C7C7",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.1),rgba(255,255,255,0.1),rgba(0,0,0,0.1)",
-    ],
   },
   {
-    name: "Pure Gold",
+    name: "Pure-Gold",
     texture: "Aluminum Alloy",
-    hex: "#B1A167",
-    gradient: [
-      "linear-gradient(-45deg,rgba(255,255,197,0.1),rgba(245,230,187,0),rgba(245,230,187,0)",
-      "linear-gradient(-45deg,rgba(0,0,0,0.2),rgba(255,255,255,0.2),rgba(0,0,0,0.2)"
-    ],
   },
   {
     name: "Luxemburg",
     texture: "Aluminum Alloy",
-    hex: "#C7A25F",
-    gradient: [
-      "linear-gradient(-45deg,rgba(0,0,0,0.1),rgba(255,255,255,0.1),rgba(0,0,0,0.1)",
-    ],
   },
 ];
