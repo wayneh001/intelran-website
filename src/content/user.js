@@ -14,15 +14,6 @@ export const account = {
     expireDate: "",
     cvc: "",
   },
-  favorite: [
-    {
-      productName: "",
-      texture: "",
-      color: "",
-      quantity: 1,
-      configuration: [],
-    },
-  ],
 };
 
 export const cart = {

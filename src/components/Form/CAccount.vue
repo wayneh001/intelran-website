@@ -95,6 +95,7 @@
           </div>
         </div>
       </div>
+      <button type="button" class="btn btn-primary w-100">Save</button>
     </div>
   </div>
 </template>
@@ -125,7 +126,6 @@ export default {
           expireDate: "",
           cvc: "",
         },
-        favorite: [],
       },
     };
   },

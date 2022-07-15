@@ -62,7 +62,6 @@ import CDisplay from "@/components/CDisplay";
 import CTable from "@/components/CTable";
 import CForm from "@/components/CForm.vue";
 import CFooter from "@/components/CFooter";
-import CModal from "@/components/CModal";
 import CAlert from "@/components/CAlert";
 
 export default {
@@ -74,7 +73,6 @@ export default {
     { CTable },
     { CForm },
     { CFooter },
-    { CModal },
     { CAlert },
   ],
   props: {
