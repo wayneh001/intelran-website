@@ -121,7 +121,7 @@ export const hub = {
     {
       name: "Smart Hub",
       texture: "Matte ABS",
-      color: 1,
+      colorOption: 1,
     },
   ],
 };
@@ -150,17 +150,17 @@ export const light = {
     {
       name: "Universal Switch",
       texture: "Matte ABS",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Universal Switch",
       texture: "Aluminum Alloy",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Dimmable Recessed",
       texture: "Matte ABS",
-      color: 1,
+      colorOption: 1,
     },
   ],
 };
@@ -184,7 +184,7 @@ export const blinds = {
     {
       name: "Blinds Driver",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
   ],
 };
@@ -219,27 +219,27 @@ export const environment = {
     {
       name: "AC Controller",
       texture: "Matte ABS",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "AC Controller",
       texture: "Aluminum Alloy",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Temp. & Humidity Sensor",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
     {
       name: "Smart Outlet",
       texture: "Matte ABS",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Smart Outlet",
       texture: "Aluminum Alloy",
-      color: 10,
+      colorOption: 10,
     },
   ],
 };
@@ -268,17 +268,17 @@ export const connection = {
     {
       name: "Router",
       texture: "Matte ABS",
-      color: 1,
+      colorOption: 1,
     },
     {
       name: "Adapter",
       texture: "Matte ABS",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Adapter",
       texture: "Aluminum Alloy",
-      color: 10,
+      colorOption: 10,
     },
   ],
 };
@@ -320,42 +320,42 @@ export const safety = {
     {
       name: "Wall Mounted Camera",
       texture: "Matte ABS",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Wall Mounted Camera",
       texture: "Aluminum Alloy",
-      color: 10,
+      colorOption: 10,
     },
     {
       name: "Camera",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
     {
       name: "Gas Leakage Sensor",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
     {
       name: "Water Leakage Sensor",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
     {
       name: "Motion Sensor",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
     {
       name: "Contact Sensor",
       texture: "Matte ABS",
-      color: 2,
+      colorOption: 2,
     },
     {
       name: "Smart Locker",
       texture: "Glass",
-      color: 1,
+      colorOption: 1,
     },
   ],
 };

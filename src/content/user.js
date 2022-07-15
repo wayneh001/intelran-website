@@ -19,11 +19,12 @@ export const account = {
 export const cart = {
   products: [
     {
-      productName: "",
+      name: "",
       texture: "",
       color: "",
       quantity: 1,
-      configuration: [],
+      config: [],
+      uid: ""
     },
   ],
   service: {
@@ -43,11 +44,11 @@ export const order = {
   date: "",
   products: [
     {
-      productName: "",
+      name: "",
       texture: "",
       color: "",
       quantity: 1,
-      configuration: [],
+      config: [],
     },
   ],
   service: {
@@ -78,4 +79,5 @@ export const order = {
   total: 0,
   shipping: "",
   status: "",
+  uid: "",
 };

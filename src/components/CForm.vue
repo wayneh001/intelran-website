@@ -8,8 +8,13 @@
       </div>
       <div class="col-12 col-md-6">
         <div v-if="label === 'Cart'">
-          <CCart :data="data" />
-          <CPlaceOrder />
+          <CCart
+            v-if="!orderPlaced"
+            :data="data"
+            @toConfig="toConfig"
+            @toPlaceOrder="toPlaceOrder"
+          />
+          <CPlaceOrder v-if="orderPlaced" />
         </div>
         <div v-if="label === 'Order'">
           <COrder :data="data" />
@@ -36,13 +41,19 @@ export default {
   },
   data() {
     return {
-      data: {},
+      data: [],
       orderPlaced: false,
     };
   },
   methods: {
     fetchData() {
       console.log("fetchData");
+    },
+    toConfig() {
+      this.$emit("toConfig");
+    },
+    toPlaceOrder() {
+      this.orderPlaced = true;
     },
   },
   created() {

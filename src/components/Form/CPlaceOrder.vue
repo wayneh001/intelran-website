@@ -78,7 +78,9 @@
             />
           </div>
         </div>
-        <button type="button" class="btn btn-primary w-100">Save</button>
+        <button type="button" class="btn btn-success w-100">Apple Pay</button>
+        <button type="button" class="btn btn-success w-100">Google Pay</button>
+        <button type="button" class="btn btn-primary w-100">Submit</button>
         <button type="button" class="btn btn-secondary w-100">Cancel</button>
       </div>
     </div>
@@ -107,6 +109,14 @@ export default {
       },
     };
   },
+  methods: {
+    fetchOne() {
+
+    },
+    insertOne() {
+
+    },
+  }
 };
 </script>
 

@@ -6,14 +6,14 @@
 
 <script>
 import View from "@/containers/view";
-import { light } from "@/content/content";
+import { order } from "@/content/content";
 
 export default {
-  name: "light",
+  name: "order",
   components: [{ View }],
   data() {
     return {
-      content: light,
+      content: order,
     };
   },
   methods: {},

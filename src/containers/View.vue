@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <CNav :nav="content.nav" />
-    <CHeader :label="content.label" :icon="content.icon" />
+    <CHeader :label="content.label" :mode="mode" />
     <div id="contentBody">
       <div id="title">
         <h2>{{ content.title }}</h2>
         <h4>{{ content.subtitle }}</h4>
       </div>
-      <div id="form" v-if="content.nav === 'User'">
-        <CForm />
+      <div id="form" v-if="content.nav === 'User' && !inConfig">
+        <CForm @toConfig="toConfig(item)" />
       </div>
-      <div id="article" v-if="content.title === 'IntelRAN'">
+      <div id="article" v-if="content.title === 'IntelRAN' && !inConfig">
         <div v-for="(e, i) in content.article" :key="i" class="row">
           <div class="col-12 col-md-6">
             <h5>{{ e.title }}</h5>
@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-      <div id="article" v-else>
+      <div id="article" v-if="!inConfig">
         <div v-for="(e, i) in content.article" :key="i">
           <div class="mb-3" id="text" v-show="e.type === 'text'">
             <h5>{{ e.title }}</h5>
@@ -44,10 +44,13 @@
         <button
           v-if="content.nav === 'Solutions'"
           class="btn btn-primary w-100"
-          @click.prevent="openModal"
+          @click.prevent="toConfig"
         >
           Buy Now
         </button>
+      </div>
+      <div id="config" v-if="inConfig">
+        <CConfig :label="content.label" />
       </div>
     </div>
     <CFooter />
@@ -60,9 +63,11 @@ import CNav from "@/components/CNav";
 import CHeader from "@/components/CHeader";
 import CDisplay from "@/components/CDisplay";
 import CTable from "@/components/CTable";
-import CForm from "@/components/CForm.vue";
+import CForm from "@/components/CForm";
+import CConfig from "@/components/CConfig";
 import CFooter from "@/components/CFooter";
 import CAlert from "@/components/CAlert";
+import { contentIcons } from "@/content/icons";
 
 export default {
   name: "view",
@@ -72,6 +77,7 @@ export default {
     { CDisplay },
     { CTable },
     { CForm },
+    { CConfig },
     { CFooter },
     { CAlert },
   ],
@@ -84,12 +90,16 @@ export default {
   data() {
     return {
       mode: "Light",
+      inConfig: false,
     };
   },
   methods: {
-    openModal() {
-      console.log("openModal");
+    toConfig() {
+      this.inConfig = true;
     },
+  },
+  getIcon() {
+    console.log(contentIcons);
   },
 };
 </script>
