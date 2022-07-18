@@ -32,7 +32,7 @@ import COrder from "@/components/Form/COrder";
 
 export default {
   name: "CForm",
-  components: [{ CAccount }, { CCart }, { CPlaceOrder }, { COrder }],
+  components: { CAccount, CCart, CPlaceOrder, COrder },
   props: {
     label: {
       type: String,

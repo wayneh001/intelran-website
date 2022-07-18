@@ -9,14 +9,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="custom-table-body">
-          <th v-for="(e, i) in table" :key="i" scope="row">
-            <td>{{ e.name }}</td>
-            <td>{{ e.texture }}</td>
-            <td>
-                <div v-for="n in e.color" :key="n" class="color-block" :class="getColor(e, n)"></div>
-            </td>
-          </th>
+        <tr
+          v-for="(e, i) in table"
+          :key="i"
+          scope="row"
+          class="custom-table-body"
+        >
+          <td>{{ e.name }}</td>
+          <td>{{ e.texture }}</td>
+          <td>
+            <div
+              v-for="n in e.colorOption"
+              :key="n"
+              class="color-block me-2"
+              :class="n"
+            ></div>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -24,8 +32,6 @@
 </template>
 
 <script>
-import { color } from "@/content/products";
-
 export default {
   name: "CTable",
   props: {
@@ -36,65 +42,8 @@ export default {
     mode: {
       type: String,
       require: true,
-    }
-  },
-  data() {
-    return {
-      colorArray: {
-        dual: [],
-        matteABS: [],
-        aluminumAlloy: [],
-      }
-    };
-  },
-  methods: {
-    getColor(e, n) {
-      let colorName = "";
-      switch (e.texture) {
-        case "Matte ABS":
-          switch (e.color) {
-            case 1:
-              if (e.name === "Dimmable Recessed") {
-                colorName = "White"
-              } else {
-                colorName = "Space-Gray"
-              }
-              break;
-            case 2:
-              colorName = this.colorArray.dual[n];
-              break
-            case 10:
-              colorName = this.colorArray.matteABS[n];
-              break
-          }
-          break
-        case "Aluminum Alloy":
-          colorName =  this.colorArray.aluminumAlloy[n];
-          break
-        case "Glass":
-          colorName = "Glass";
-          break
-      }
-      return colorName
     },
-    creatArray() {
-      for (let i = 0; i <= color.length; i++) {
-        switch (i) {
-          case( i <= 1):
-            this.colorArray.dual.push(color[i].name);
-            break
-          case( i > 2 && i <= 12 ):
-            this.colorArray.matteABS.push(color[i].name);
-            break
-          case( i > 12 ):
-            this.colorArray.aluminumAlloy.push(color[i].name);
-        }
-      }
-    }
   },
-  created() {
-    this.creatArray();
-  }
 };
 </script>
 

@@ -2,13 +2,13 @@
   <div>
     <div class="container">
       <div class="d-flex justify-content-center align-items-between">
-        <div v-for="(e, i) in socialApps" :key="i">
+        <!-- <div v-for="(e, i) in socialApps" :key="i">
           <svg viewBox="" width="48" height="48">
             <g :stroke="e.stroke" stroke-width="4" :fill="e.fill">
               <path :d="e.path" />
             </g>
           </svg>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

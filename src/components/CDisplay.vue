@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justified-content-center align-items-between">
     <div class="col-6 col-md-3">
-      <img v-for="(e, i) in products" :key="i" :src="getUrl(e, i)" />
+      <!-- <img v-for="(e, i) in products" :key="i" :src="getUrl(e, i)" /> -->
     </div>
   </div>
 </template>

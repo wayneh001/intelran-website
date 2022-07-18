@@ -1,16 +1,16 @@
 <template>
   <div>
-    <View :content="content" />
+    <pageView :content="content" />
   </div>
 </template>
 
 <script>
-import View from "@/containers/view";
+import pageView from "@/containers/pageView";
 import { hub } from "@/content/content";
 
 export default {
   name: "hub",
-  components: [{ View }],
+  components: { pageView },
   data() {
     return {
       content: hub,

@@ -1,17 +1,18 @@
 <template>
   <div>
-    <div class="d-flex justify-content-center align-items-start">
+    <div class="d-flex justify-content-start align-items-center">
       <div class="align-items-center">
         <router-link
           v-for="(e, i) in icons"
           :key="i"
-          :to="/dashboard/`${e.route}`"
+          :to="/dashboard/ + e.route"
+          class="m-3"
         >
-          <svg viewBox="" width="48" height="48">
+          <!-- <svg viewBox="" width="48" height="48">
             <g :stroke="e.stroke" stroke-width="4" :fill="e.fill">
               <path :d="e.path" />
             </g>
-          </svg>
+          </svg> -->
           <label>{{ e.name }}</label>
         </router-link>
       </div>
@@ -24,7 +25,7 @@ import { navIcons } from "@/content/icons";
 export default {
   name: "CHeader",
   props: {
-    label: {
+    nav: {
       type: String,
       require: true,
     },
@@ -40,8 +41,9 @@ export default {
   },
   methods: {
     filterIcons() {
+
       for (let i in navIcons) {
-        if (navIcons[i].label === this.label) {
+        if (navIcons[i].nav === this.nav) {
           this.icons.push(navIcons[i]);
         }
       }
