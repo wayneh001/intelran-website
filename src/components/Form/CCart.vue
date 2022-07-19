@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div v-for="(e, i) in data" :key="i" class="col-12 col-md-6">
-        <div class="mb-5">
+        <div class="mb-3">
           <img :src="getUrl()" />
           <div class="mb-3 w-100">
             <label class="form-label">Product Name</label>
@@ -19,13 +19,13 @@
           </div>
           <button
             type="button"
-            class="btn btn-primary w-100"
+            class="btn btn-main w-100"
             @click.prevent="$emit('toConfig')"
           >
             Edit Config
           </button>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="col-form-label me-2">Installation</label>
             <div class="form-check">
@@ -79,7 +79,7 @@
             }}</label>
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="d-flex justify-content-center align-items-between w-100">
             <span>Total</span><span>{{ value.total }}</span>
           </div>

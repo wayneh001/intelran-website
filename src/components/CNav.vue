@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light px-5">
       <div class="container-fluid">
-        <label class="navbar-brand">IntelRAN</label>
+        <label class="navbar-brand fw-bolder text-main">IntelRAN</label>
         <button
           class="navbar-toggler"
           type="button"
@@ -18,7 +18,7 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link
-                class="nav-link"
+                class="nav-link text-nav fw-bolder"
                 :class="{ active: navActive === 0 }"
                 to="/dashboard/smartHome"
                 >Smart Home</router-link
@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link"
+                class="nav-link text-nav fw-bolder"
                 :class="{ active: navActive === 1 }"
                 to="/dashboard/hub"
                 >Solutions</router-link
@@ -34,7 +34,7 @@
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link"
+                class="nav-link text-nav fw-bolder"
                 :class="{ active: navActive === 2 }"
                 to="/dashboard/about"
                 >About</router-link
@@ -130,7 +130,14 @@ export default {
       }
     },
   },
+  created() {
+    this.getActive();
+  },
 };
 </script>
 
-<style></style>
+<style>
+.active {
+  color: #1a56a2;
+}
+</style>

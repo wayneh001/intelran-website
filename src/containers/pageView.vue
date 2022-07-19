@@ -1,38 +1,48 @@
 <template>
   <div class="container bg-light">
-    <CNav :nav="content.nav" class="mb-5 px-5" />
-    <CHeader :nav="content.nav" :mode="mode" class="mb-5 px-5" />
-    <div class="mb-5 px-5">
-      <div class="mb-5">
-        <h2>{{ content.title }}</h2>
-        <h4>{{ content.subtitle }}</h4>
+    <CNav :nav="content.nav" class="px-5 pt-3" />
+    <div class="px-5">
+      <div class="px-5">
+        <hr />
       </div>
-      <div v-if="content.nav === 'User' && !inConfig">
+    </div>
+    <CHeader
+      :nav="content.nav"
+      :label="content.label"
+      :mode="mode"
+      class="mb-5 px-5"
+    />
+    <div class="mb-3 px-5">
+      <div class="mb-5 px-5">
+        <h3 class="text-main fw-bolder">{{ content.title }}</h3>
+        <h5>{{ content.subtitle }}</h5>
+      </div>
+      <div v-if="content.nav === 'User' && !inConfig" class="px-5">
         <CForm @toConfig="toConfig(item)" />
       </div>
-      <div v-if="content.title === 'IntelRAN' && !inConfig">
+      <div v-if="content.title === 'IntelRAN' && !inConfig" class="px-5">
         <div class="row">
           <div
             class="col-12 col-md-6 py-3"
             v-for="(e, i) in content.article"
             :key="i"
           >
-            <h5>{{ e.title }}</h5>
+            <h5 class="fw-bold text-main">{{ e.title }}</h5>
             <p>{{ e.article }}</p>
           </div>
         </div>
       </div>
-      <div v-if="content.title !== 'IntelRAN' && !inConfig">
+      <div v-if="content.title !== 'IntelRAN' && !inConfig" class="px-5">
         <div v-for="(e, i) in content.article" :key="i">
           <div class="mb-5" v-show="e.type === 'text'">
-            <h5>{{ e.title }}</h5>
+            <h5 class="fw-bold">{{ e.title }}</h5>
             <p>{{ e.article }}</p>
           </div>
-          <div class="mb-5" v-show="i.type === 'label'">
+          <div class="mb-3" v-show="i.type === 'label'">
             <div class="label-custom col-md-6"><span></span>{{ e.title }}</div>
           </div>
           <CDisplay
-            class="mb-5"
+            class="mb-3"
             v-if="content.nav === 'Solutions'"
             :label="content.label"
             :seq="i"
@@ -46,7 +56,7 @@
         />
         <button
           v-if="content.nav === 'Solutions'"
-          class="btn btn-primary w-100"
+          class="btn btn-main w-100 my-5"
           @click.prevent="toConfig"
         >
           Buy Now

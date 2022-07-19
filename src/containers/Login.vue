@@ -27,7 +27,7 @@
           </div>
 
           <div class="text-end mt-4">
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-main" type="submit">
               登入
             </button>
           </div>

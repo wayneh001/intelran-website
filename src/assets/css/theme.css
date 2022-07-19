@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Ubuntu&display=swap");
+
+body {
+  font-family: "Ubuntu", "Noto Sans TC", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+router-link {
+  cursor: pointer;
+}
+
+.text-main {
+  color: #1a56a2;
+}
+
+.text-nav {
+  color: #aaafbc;
+}
+
+.text-nav:hover {
+  color: #1a56a2;
+}
+
+.text-header {
+  color: #aaafbc;
+  font-size: 0.6rem;
+}
+
+.selected {
+  color: #1a56a2;
+}
+
+.btn-main {
+  background-color: #1a56a2;
+  color: #fff;
+}

@@ -5,10 +5,11 @@ export const products = [
     label: "Hub",
     seq: 0,
     repeat: 1,
+    height: "300px",
     image: [
       {
         name: "Space-Gray",
-        url: "",
+        url: "hub/SmartHub@Space-Gray.png",
       },
     ],
   },
@@ -19,46 +20,47 @@ export const products = [
     label: "Light",
     seq: 0,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Ferrari-Red",
-        url: "",
+        url: "light/UniversalSwitch@Ferrari-Red.png",
       },
       {
         name: "Armsterdam-Orange",
-        url: "",
+        url: "light/UniversalSwitch@Armsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
-        url: "",
+        url: "light/UniversalSwitch@Geneva-Red.png",
       },
       {
         name: "Scotch-Red",
-        url: "",
+        url: "light/UniversalSwitch@Scotch-Red.png",
       },
       {
         name: "Hawaiian-Blue",
-        url: "",
+        url: "light/UniversalSwitch@Hawaiian-Blue.png",
       },
       {
         name: "Ivory",
-        url: "",
+        url: "light/UniversalSwitch@Ivory.png",
       },
       {
         name: "Jade-Black",
-        url: "",
+        url: "light/UniversalSwitch@Jade-Black.png",
       },
       {
         name: "Mica-Black",
-        url: "",
+        url: "light/UniversalSwitch@Mica-Black.png",
       },
       {
         name: "Emerald",
-        url: "",
+        url: "light/UniversalSwitch@Emerald.png",
       },
       {
         name: "Sumatra-Gray",
-        url: "",
+        url: "light/UniversalSwitch@Sumatra-Gray.png",
       },
     ],
   },
@@ -69,46 +71,47 @@ export const products = [
     label: "Light",
     seq: 0,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Glacial-Silver",
-        url: "",
+        url: "light/UniversalSwitch@Glacial-Silver.png",
       },
       {
         name: "Sterling-Silver",
-        url: "",
+        url: "light/UniversalSwitch@Sterling-Silver.png",
       },
       {
         name: "Bright-Rose-Gold",
-        url: "",
+        url: "light/UniversalSwitch@Bright-Rose-Gold.png",
       },
       {
         name: "Champagne-Gold",
-        url: "",
+        url: "light/UniversalSwitch@Champagne-Gold.png",
       },
       {
         name: "Champagne-Silver",
-        url: "",
+        url: "light/UniversalSwitch@Champagne-Silver.png",
       },
       {
         name: "Snowflake-Silver",
-        url: "",
+        url: "light/UniversalSwitch@Snowflake-Silver.png",
       },
       {
         name: "Cloud-Gold",
-        url: "",
+        url: "light/UniversalSwitch@Cloud-Gold.png",
       },
       {
         name: "Cloud-Silver",
-        url: "",
+        url: "light/UniversalSwitch@Cloud-Silver.png",
       },
       {
         name: "Pure-Gold",
-        url: "",
+        url: "light/UniversalSwitch@Pure-Gold.png",
       },
       {
         name: "Luxemburg",
-        url: "",
+        url: "light/UniversalSwitch@Luxemburg.png",
       },
     ],
   },
@@ -118,10 +121,11 @@ export const products = [
     label: "Light",
     seq: 1,
     repeat: 1,
+    height: "200px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "light/DimmableRecessed@Snow-White.png",
       },
     ],
   },
@@ -129,17 +133,18 @@ export const products = [
     name: "Blinds Driver",
     texture: "Matte ABS",
     url: "",
-    label: "Light",
+    label: "Blinds",
     seq: 0,
     repeat: 1,
+    height: "150px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "blinds/BlindsDriver@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "blinds/BlindsDriver@Space-Gray.png",
       },
     ],
   },
@@ -150,46 +155,47 @@ export const products = [
     label: "Environment",
     seq: 0,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Ferrari-Red",
-        url: "",
+        url: "environment/ACController@Ferrari-Red.png",
       },
       {
         name: "Armsterdam-Orange",
-        url: "",
+        url: "environment/ACController@Armsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
-        url: "",
+        url: "environment/ACController@Geneva-Red.png",
       },
       {
         name: "Scotch-Red",
-        url: "",
+        url: "environment/ACController@Scotch-Red.png",
       },
       {
         name: "Hawaiian-Blue",
-        url: "",
+        url: "environment/ACController@Hawaiian-Blue.png",
       },
       {
         name: "Ivory",
-        url: "",
+        url: "environment/ACController@Ivory.png",
       },
       {
         name: "Jade-Black",
-        url: "",
+        url: "environment/ACController@Jade-Black.png",
       },
       {
         name: "Mica-Black",
-        url: "",
+        url: "environment/ACController@Mica-Black.png",
       },
       {
         name: "Emerald",
-        url: "",
+        url: "environment/ACController@Emerald.png",
       },
       {
         name: "Sumatra-Gray",
-        url: "",
+        url: "environment/ACController@Sumatra-Gray.png",
       },
     ],
   },
@@ -200,46 +206,47 @@ export const products = [
     label: "Environment",
     seq: 0,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Glacial-Silver",
-        url: "",
+        url: "environment/ACController@Glacial-Silver.png",
       },
       {
         name: "Sterling-Silver",
-        url: "",
+        url: "environment/ACController@Sterling-Silver.png",
       },
       {
         name: "Bright-Rose-Gold",
-        url: "",
+        url: "environment/ACController@Bright-Rose-Gold.png",
       },
       {
         name: "Champagne-Gold",
-        url: "",
+        url: "environment/ACController@Champagne-Gold.png",
       },
       {
         name: "Champagne-Silver",
-        url: "",
+        url: "environment/ACController@Champagne-Silver.png",
       },
       {
         name: "Snowflake-Silver",
-        url: "",
+        url: "environment/ACController@Snowflake-Silver.png",
       },
       {
         name: "Cloud-Gold",
-        url: "",
+        url: "environment/ACController@Cloud-Gold.png",
       },
       {
         name: "Cloud-Silver",
-        url: "",
+        url: "environment/ACController@Cloud-Silver.png",
       },
       {
         name: "Pure-Gold",
-        url: "",
+        url: "environment/ACController@Pure-Gold.png",
       },
       {
         name: "Luxemburg",
-        url: "",
+        url: "environment/ACController@Luxemburg.png",
       },
     ],
   },
@@ -250,14 +257,15 @@ export const products = [
     label: "Environment",
     seq: 1,
     repeat: 1,
+    height: "150px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "environment/Temp.&HumiditySensor@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "environment/Temp.&HumiditySensor@Space-Gray.png",
       },
     ],
   },
@@ -268,46 +276,47 @@ export const products = [
     label: "Environment",
     seq: 2,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Ferrari-Red",
-        url: "",
+        url: "environment/SmartOutlet@Ferrari-Red.png",
       },
       {
         name: "Armsterdam-Orange",
-        url: "",
+        url: "environment/SmartOutlet@Armsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
-        url: "",
+        url: "environment/SmartOutlet@Geneva-Red.png",
       },
       {
         name: "Scotch-Red",
-        url: "",
+        url: "environment/SmartOutlet@Scotch-Red.png",
       },
       {
         name: "Hawaiian-Blue",
-        url: "",
+        url: "environment/SmartOutlet@Hawaiian-Blue.png",
       },
       {
         name: "Ivory",
-        url: "",
+        url: "environment/SmartOutlet@Ivory.png",
       },
       {
         name: "Jade-Black",
-        url: "",
+        url: "environment/SmartOutlet@Jade-Black.png",
       },
       {
         name: "Mica-Black",
-        url: "",
+        url: "environment/SmartOutlet@Mica-Black.png",
       },
       {
         name: "Emerald",
-        url: "",
+        url: "environment/SmartOutlet@Emerald.png",
       },
       {
         name: "Sumatra-Gray",
-        url: "",
+        url: "environment/SmartOutlet@Sumatra-Gray.png",
       },
     ],
   },
@@ -318,46 +327,47 @@ export const products = [
     label: "Environment",
     seq: 2,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Glacial-Silver",
-        url: "",
+        url: "environment/SmartOutlet@Glacial-Silver.png",
       },
       {
         name: "Sterling-Silver",
-        url: "",
+        url: "environment/SmartOutlet@Sterling-Silver.png",
       },
       {
         name: "Bright-Rose-Gold",
-        url: "",
+        url: "environment/SmartOutlet@Bright-Rose-Gold.png",
       },
       {
         name: "Champagne-Gold",
-        url: "",
+        url: "environment/SmartOutlet@Champagne-Gold.png",
       },
       {
         name: "Champagne-Silver",
-        url: "",
+        url: "environment/SmartOutlet@Champagne-Silver.png",
       },
       {
         name: "Snowflake-Silver",
-        url: "",
+        url: "environment/SmartOutlet@Snowflake-Silver.png",
       },
       {
         name: "Cloud-Gold",
-        url: "",
+        url: "environment/SmartOutlet@Cloud-Gold.png",
       },
       {
         name: "Cloud-Silver",
-        url: "",
+        url: "environment/SmartOutlet@Cloud-Silver.png",
       },
       {
         name: "Pure-Gold",
-        url: "",
+        url: "environment/SmartOutlet@Pure-Gold.png",
       },
       {
         name: "Luxemburg",
-        url: "",
+        url: "environment/SmartOutlet@Luxemburg.png",
       },
     ],
   },
@@ -368,10 +378,11 @@ export const products = [
     label: "Connection",
     seq: 0,
     repeat: 1,
+    height: "300px",
     image: [
       {
         name: "Space-Gray",
-        url: "",
+        url: "connection/Router@Space-Gray.png",
       },
     ],
   },
@@ -382,46 +393,47 @@ export const products = [
     label: "Connection",
     seq: 1,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Ferrari-Red",
-        url: "",
+        url: "connection/Adapter@Ferrari-Red.png",
       },
       {
         name: "Armsterdam-Orange",
-        url: "",
+        url: "connection/Adapter@Armsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
-        url: "",
+        url: "connection/Adapter@Geneva-Red.png",
       },
       {
         name: "Scotch-Red",
-        url: "",
+        url: "connection/Adapter@Scotch-Red.png",
       },
       {
         name: "Hawaiian-Blue",
-        url: "",
+        url: "connection/Adapter@Hawaiian-Blue.png",
       },
       {
         name: "Ivory",
-        url: "",
+        url: "connection/Adapter@Ivory.png",
       },
       {
         name: "Jade-Black",
-        url: "",
+        url: "connection/Adapter@Jade-Black.png",
       },
       {
         name: "Mica-Black",
-        url: "",
+        url: "connection/Adapter@Mica-Black.png",
       },
       {
         name: "Emerald",
-        url: "",
+        url: "connection/Adapter@Emerald.png",
       },
       {
         name: "Sumatra-Gray",
-        url: "",
+        url: "connection/Adapter@Sumatra-Gray.png",
       },
     ],
   },
@@ -432,146 +444,149 @@ export const products = [
     label: "Connection",
     seq: 1,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Glacial-Silver",
-        url: "",
+        url: "connection/Adapter@Glacial-Silver.png",
       },
       {
         name: "Sterling-Silver",
-        url: "",
+        url: "connection/Adapter@Sterling-Silver.png",
       },
       {
         name: "Bright-Rose-Gold",
-        url: "",
+        url: "connection/Adapter@Bright-Rose-Gold.png",
       },
       {
         name: "Champagne-Gold",
-        url: "",
+        url: "connection/Adapter@Champagne-Gold.png",
       },
       {
         name: "Champagne-Silver",
-        url: "",
+        url: "connection/Adapter@Champagne-Silver.png",
       },
       {
         name: "Snowflake-Silver",
-        url: "",
+        url: "connection/Adapter@Snowflake-Silver.png",
       },
       {
         name: "Cloud-Gold",
-        url: "",
+        url: "connection/Adapter@Cloud-Gold.png",
       },
       {
         name: "Cloud-Silver",
-        url: "",
+        url: "connection/Adapter@Cloud-Silver.png",
       },
       {
         name: "Pure-Gold",
-        url: "",
+        url: "connection/Adapter@Pure-Gold.png",
       },
       {
         name: "Luxemburg",
-        url: "",
+        url: "connection/Adapter@Luxemburg.png",
       },
     ],
   },
   {
-    name: "Wall Mounted Camera",
+    name: "Wall-Mounted Camera",
     texture: "Matte ABS",
     url: "",
     label: "Safety",
     seq: 0,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Ferrari-Red",
-        url: "",
+        url: "safety/Wall-MountedCamera@Ferrari-Red.png",
       },
       {
         name: "Armsterdam-Orange",
-        url: "",
+        url: "safety/Wall-MountedCamera@Armsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
-        url: "",
+        url: "safety/Wall-MountedCamera@Geneva-Red.png",
       },
       {
         name: "Scotch-Red",
-        url: "",
+        url: "safety/Wall-MountedCamera@Scotch-Red.png",
       },
       {
         name: "Hawaiian-Blue",
-        url: "",
+        url: "safety/Wall-MountedCamera@Hawaiian-Blue.png",
       },
       {
         name: "Ivory",
-        url: "",
+        url: "safety/Wall-MountedCamera@Ivory.png",
       },
       {
         name: "Jade-Black",
-        url: "",
+        url: "safety/Wall-MountedCamera@Jade-Black.png",
       },
       {
         name: "Mica-Black",
-        url: "",
+        url: "safety/Wall-MountedCamera@Mica-Black.png",
       },
       {
         name: "Emerald",
-        url: "",
+        url: "safety/Wall-MountedCamera@Emerald.png",
       },
       {
         name: "Sumatra-Gray",
-        url: "",
+        url: "safety/Wall-MountedCamera@Sumatra-Gray.png",
       },
     ],
   },
   {
-    name: "Wall Mounted Camera",
+    name: "Wall-Mounted Camera",
     texture: "Aluminum Alloy",
     url: "",
     label: "Safety",
     seq: 0,
     repeat: 2,
+    height: "200px",
     image: [
       {
         name: "Glacial-Silver",
-        url: "",
+        url: "safety/Wall-MountedCamera@Glacial-Silver.png",
       },
       {
         name: "Sterling-Silver",
-        url: "",
+        url: "safety/Wall-MountedCamera@Sterling-Silver.png",
       },
       {
         name: "Bright-Rose-Gold",
-        url: "",
+        url: "safety/Wall-MountedCamera@Bright-Rose-Gold.png",
       },
       {
         name: "Champagne-Gold",
-        url: "",
+        url: "safety/Wall-MountedCamera@Champagne-Gold.png",
       },
       {
         name: "Champagne-Silver",
-        url: "",
+        url: "safety/Wall-MountedCamera@Champagne-Silver.png",
       },
       {
         name: "Snowflake-Silver",
-        url: "",
+        url: "safety/Wall-MountedCamera@Snowflake-Silver.png",
       },
       {
         name: "Cloud-Gold",
-        url: "",
+        url: "safety/Wall-MountedCamera@Cloud-Gold.png",
       },
       {
         name: "Cloud-Silver",
-        url: "",
+        url: "safety/Wall-MountedCamera@Cloud-Silver.png",
       },
       {
         name: "Pure-Gold",
-        url: "",
+        url: "safety/Wall-MountedCamera@Pure-Gold.png",
       },
       {
         name: "Luxemburg",
-        url: "",
+        url: "safety/Wall-MountedCamera@Luxemburg.png",
       },
     ],
   },
@@ -580,16 +595,17 @@ export const products = [
     texture: "Matte ABS",
     url: "",
     label: "Safety",
-    seq: 0,
+    seq: 1,
     repeat: 1,
+    height: "300px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "safety/Camera@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "safety/Camera@Space-Gray.png",
       },
     ],
   },
@@ -598,16 +614,17 @@ export const products = [
     texture: "Matte ABS",
     url: "",
     label: "Safety",
-    seq: 1,
+    seq: 2,
     repeat: 1,
+    height: "200px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "safety/GasLeakageSensor@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "safety/GasLeakageSensor@Space-Gray.png",
       },
     ],
   },
@@ -616,16 +633,17 @@ export const products = [
     texture: "Matte ABS",
     url: "",
     label: "Safety",
-    seq: 2,
+    seq: 3,
     repeat: 1,
+    height: "150px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "safety/WaterLeakageSensor@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "safety/WaterLeakageSensor@Space-Gray.png",
       },
     ],
   },
@@ -634,16 +652,17 @@ export const products = [
     texture: "Matte ABS",
     url: "",
     label: "Safety",
-    seq: 2,
+    seq: 3,
     repeat: 1,
+    height: "150px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "safety/MotionSensor@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "safety/MotionSensor@Space-Gray.png",
       },
     ],
   },
@@ -652,16 +671,17 @@ export const products = [
     texture: "Matte ABS",
     url: "",
     label: "Safety",
-    seq: 2,
+    seq: 3,
     repeat: 1,
+    height: "150px",
     image: [
       {
-        name: "White",
-        url: "",
+        name: "Snow-White",
+        url: "safety/ContactSensor@Snow-White.png",
       },
       {
         name: "Space-Gray",
-        url: "",
+        url: "safety/ContactSensor@Space-Gray.png",
       },
     ],
   },
@@ -670,12 +690,13 @@ export const products = [
     texture: "Glass",
     url: "",
     label: "Safety",
-    seq: 3,
+    seq: 4,
     repeat: 1,
+    height: "500px",
     image: [
       {
         name: "Glass",
-        url: "",
+        url: "safety/SmartLocker@Glass.png",
       },
     ],
   },
@@ -683,7 +704,7 @@ export const products = [
 
 export const color = [
   {
-    name: "White",
+    name: "Snow-White",
     texture: "Matte ABS",
   },
   {

@@ -17,13 +17,15 @@
         >
           <td>{{ e.name }}</td>
           <td>{{ e.texture }}</td>
-          <td>
-            <div
+          <td class="align-middle">
+            <div class="d-flex align-items-center">
+              <div
               v-for="n in e.colorOption"
               :key="n"
               class="color-block me-2"
               :class="n"
             ></div>
+            </div>
           </td>
         </tr>
       </tbody>

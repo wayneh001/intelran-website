@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-12 col-md-6">
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" v-model="inputValue.name" />
@@ -16,7 +16,7 @@
             />
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="form-label">Line1</label>
             <input
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="form-label">card</label>
             <input
@@ -80,7 +80,7 @@
         </div>
         <button type="button" class="btn btn-success w-100">Apple Pay</button>
         <button type="button" class="btn btn-success w-100">Google Pay</button>
-        <button type="button" class="btn btn-primary w-100">Submit</button>
+        <button type="button" class="btn btn-main w-100">Submit</button>
         <button type="button" class="btn btn-secondary w-100">Cancel</button>
       </div>
     </div>

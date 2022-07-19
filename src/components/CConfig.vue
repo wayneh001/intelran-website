@@ -10,7 +10,7 @@
         />
       </div>
       <div class="col-12 col-md-6">
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="form-label">Product</label>
             <input
@@ -62,7 +62,7 @@
         </div>
         <button
           type="button"
-          class="btn btn-primary w-100"
+          class="btn btn-main w-100"
           @click.prevent="addToCart"
         >
           Add to Cart

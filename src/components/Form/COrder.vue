@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div v-for="(e, i) in data" :key="i" class="col-12 col-md-6">
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="form-label">No.</label>
             <input
@@ -22,7 +22,7 @@
             />
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div
             v-for="(e, i) in value.products"
             :key="i"
@@ -32,7 +32,7 @@
             ><span>X {{ e.quantity }}</span>
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="mb-3 w-100">
             <label class="col-form-label me-2">Installation</label>
             <div class="form-check">
@@ -90,17 +90,17 @@
             }}</label>
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="d-flex justify-content-center align-items-between w-100">
             <span>Total</span><span>{{ value.total }}</span>
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-3">
           <div class="d-flex justify-content-center align-items-between w-100">
             <span>Shipping</span><a href="#"><span>{{ value.shipping }}</span></a>
           </div>
         </div>
-        <button type="button" class="btn btn-primary w-100">Return and Refund</button>
+        <button type="button" class="btn btn-main w-100">Return and Refund</button>
         <button v-if="value.status === 'finished'" type="button" class="btn btn-danger w-100">Delete</button>
       </div>
     </div>

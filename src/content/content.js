@@ -206,7 +206,7 @@ export const blinds = {
     {
       name: "Blinds Driver",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
   ],
 };
@@ -273,7 +273,7 @@ export const environment = {
     {
       name: "Temp. & Humidity Sensor",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
     {
       name: "Smart Outlet",
@@ -383,7 +383,12 @@ export const safety = {
       type: "text",
       title: "",
       article:
-        "The connected cameras play not only the guards but as well as the trigger for automation of scenes and accessories. They are smart enough to detect, not detect family members, pets and strangers, even their moves, You are free to choose Wall Mounted Camera or a regular Camera. For wall mounted camera, except for 10 colors’ Matte ABS, 10 aluminum alloy metal styles are optional. Smart Hub is required.",
+        "The connected cameras play not only the guards but as well as the trigger for automation of scenes and accessories. They are smart enough to detect, not detect family members, pets and strangers, even their moves, You are free to choose Wall-Mounted Camera or a regular Camera. For Wall-Mounted camera, except for 10 colors’ Matte ABS, 10 aluminum alloy metal styles are optional. Smart Hub is required.",
+    },
+    {
+      type: "text",
+      title: "",
+      article: "",
     },
     {
       type: "text",
@@ -406,7 +411,7 @@ export const safety = {
   ],
   table: [
     {
-      name: "Wall Mounted Camera",
+      name: "Wall-Mounted Camera",
       texture: "Matte ABS",
       colorOption: [
         "Ferrari-Red",
@@ -422,7 +427,7 @@ export const safety = {
       ],
     },
     {
-      name: "Wall Mounted Camera",
+      name: "Wall-Mounted Camera",
       texture: "Aluminum Alloy",
       colorOption: [
         "Glacial-Silver",
@@ -440,27 +445,27 @@ export const safety = {
     {
       name: "Camera",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
     {
       name: "Gas Leakage Sensor",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
     {
       name: "Water Leakage Sensor",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
     {
       name: "Motion Sensor",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
     {
       name: "Contact Sensor",
       texture: "Matte ABS",
-      colorOption: ["White", "Space-Gray"],
+      colorOption: ["Snow-White", "Space-Gray"],
     },
     {
       name: "Smart Locker",
