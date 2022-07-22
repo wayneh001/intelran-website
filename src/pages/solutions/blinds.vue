@@ -1,6 +1,6 @@
 <template>
   <div>
-    <pageView :content="content" />
+    <pageView :content="content" @updateMode="updateMode" :key="componentKey" />
   </div>
 </template>
 
@@ -11,12 +11,18 @@ import { blinds } from "@/content/content";
 export default {
   name: "blinds",
   components: { pageView },
+  componentKey: 0,
   data() {
     return {
       content: blinds,
+      componentKey: 0,
     };
   },
-  methods: {},
+  methods: {
+    updateMode() {
+      this.componentKey += 1;
+    }
+  },
 };
 </script>
 

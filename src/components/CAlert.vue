@@ -2,7 +2,7 @@
   <div class="modal fade" tabindex="-1" ref="modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content border-0">
-        <div class="modal-header bg-danger text-white">
+        <div class="modal-header bg-danger custom-text-white">
           <h5 class="modal-title">
             <span>Delete {{ item.title }}</span>
           </h5>

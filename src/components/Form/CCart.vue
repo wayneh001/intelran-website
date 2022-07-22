@@ -5,21 +5,22 @@
         <div class="mb-3">
           <img :src="getUrl()" />
           <div class="mb-3 w-100">
-            <label class="form-label">Product Name</label>
-            <input
-              type="text"
-              class="form-control"
-              v-model="value.product.name"
-              disabled
-            />
+            <label id="product" class="form-label-light">
+              <span>{{ e.name }}</span>
+              <span></span>
+            </label>
           </div>
           <div class="mb-3 w-100">
-            <label class="form-label">Quantity</label>
-            <input type="text" class="form-control" v-model="value.quantity" />
+            <label id="quantity" class="form-label-light">
+              <span>Quantity</span>
+              <img :src="minusIconSrc" class="icon-18" @click="minus" />
+              <span>{{ value.quantity }}</span>
+              <img :src="AddsIconSrc" class="icon-18" @click="add" />
+            </label>
           </div>
           <button
             type="button"
-            class="btn btn-main w-100"
+            class="btn btn-white w-100"
             @click.prevent="$emit('toConfig')"
           >
             Edit Config
@@ -27,56 +28,30 @@
         </div>
         <div class="mb-3">
           <div class="mb-3 w-100">
-            <label class="col-form-label me-2">Installation</label>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="true"
-                checked
-                v-model="value.service.installation.enabled"
-              />
-              <label class="form-check-label">Yes</label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="false"
-                checked
-                v-model="value.service.installation.enabled"
-              />
-              <label class="form-check-label">No</label>
-            </div>
-            <label class="col-form-label me-2">{{
-              value.service.installation.fee
-            }}</label>
+            <label id="quantity" class="form-label-light">
+              <span>Installation</span>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  v-model="value.service.installation.enabled"
+                />
+              </div>
+            </label>
           </div>
           <div class="mb-3 w-100">
-            <label class="col-form-label me-2">Extended Warranty</label>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="true"
-                checked
-                v-model="value.service.extendedWarranty.enabled"
-              />
-              <label class="form-check-label">Yes</label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="false"
-                checked
-                v-model="value.service.extendedWarranty.enabled"
-              />
-              <label class="form-check-label">No</label>
-            </div>
-            <label class="col-form-label me-2">{{
-              value.service.extendedWarranty.fee
-            }}</label>
+            <label id="quantity" class="form-label-light">
+              <span>Extended Warranty</span>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  v-model="value.service.extendedWarranty.enabled"
+                />
+              </div>
+            </label>
           </div>
         </div>
         <div class="mb-3">
@@ -93,14 +68,19 @@
         </button>
       </div>
     </div>
+    <CConfig ref="config" :headerLabel="content.headerLabel" />
   </div>
 </template>
 
 <script>
+import CConfig from "@/components/CConfig";
 import { products } from "@/content/products";
 
 export default {
   name: "CCart",
+  components: {
+    CConfig,
+  },
   props: {
     data: {
       type: Array,
@@ -146,9 +126,7 @@ export default {
         }
       }
     },
-    fetchList() {
-
-    },
+    fetchList() {},
     editConfig() {
       console.log("editConfig");
     },

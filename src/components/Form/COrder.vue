@@ -7,7 +7,7 @@
             <label class="form-label">No.</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control shadow"
               v-model="value.no"
               disabled
             />
@@ -16,7 +16,7 @@
             <label class="form-label">Date</label>
             <input
               type="date"
-              class="form-control"
+              class="form-control shadow"
               v-model="value.date"
               disabled
             />
@@ -100,7 +100,7 @@
             <span>Shipping</span><a href="#"><span>{{ value.shipping }}</span></a>
           </div>
         </div>
-        <button type="button" class="btn btn-main w-100">Return and Refund</button>
+        <button type="button" class="btn btn-main-light w-100">Return and Refund</button>
         <button v-if="value.status === 'finished'" type="button" class="btn btn-danger w-100">Delete</button>
       </div>
     </div>

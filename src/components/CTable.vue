@@ -2,10 +2,39 @@
   <div>
     <table class="table">
       <thead>
-        <tr class="custom-table-head">
-          <th scope="col">Name</th>
-          <th scope="col">Texture</th>
-          <th scope="col">Color</th>
+        <tr
+          :class="[
+            { 'table-header-light': this.mode === 'Light' },
+            { 'table-header-dark': this.mode === 'Dark' },
+          ]"
+        >
+          <th
+            scope="col"
+            :class="[
+              { 'custom-text-dark': this.mode === 'Light' },
+              { 'custom-text-white': this.mode === 'Dark' },
+            ]"
+          >
+            Name
+          </th>
+          <th
+            scope="col"
+            :class="[
+              { 'custom-text-dark': this.mode === 'Light' },
+              { 'custom-text-white': this.mode === 'Dark' },
+            ]"
+          >
+            Texture
+          </th>
+          <th
+            scope="col"
+            :class="[
+              { 'custom-text-dark': this.mode === 'Light' },
+              { 'custom-text-white': this.mode === 'Dark' },
+            ]"
+          >
+            Color
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -13,18 +42,35 @@
           v-for="(e, i) in table"
           :key="i"
           scope="row"
-          class="custom-table-body"
+          :class="[
+            { 'table-body-light': this.mode === 'Light' },
+            { 'table-body-dark': this.mode === 'Dark' },
+          ]"
         >
-          <td>{{ e.name }}</td>
-          <td>{{ e.texture }}</td>
+          <td
+            :class="[
+              { 'custom-text-dark': this.mode === 'Light' },
+              { 'custom-text-white': this.mode === 'Dark' },
+            ]"
+          >
+            {{ e.name }}
+          </td>
+          <td
+            :class="[
+              { 'custom-text-dark': this.mode === 'Light' },
+              { 'custom-text-white': this.mode === 'Dark' },
+            ]"
+          >
+            {{ e.texture }}
+          </td>
           <td class="align-middle">
             <div class="d-flex align-items-center">
               <div
-              v-for="n in e.colorOption"
-              :key="n"
-              class="color-block me-2"
-              :class="n"
-            ></div>
+                v-for="n in e.colorOption"
+                :key="n"
+                class="color-block me-2"
+                :class="n"
+              ></div>
             </div>
           </td>
         </tr>
@@ -41,10 +87,14 @@ export default {
       type: Array,
       require: true,
     },
-    mode: {
-      type: String,
-      require: true,
-    },
+  },
+  data() {
+    return {
+      mode: "",
+    };
+  },
+  created() {
+    this.mode = this.$store.state.mode;
   },
 };
 </script>

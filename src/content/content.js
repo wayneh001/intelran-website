@@ -1,7 +1,7 @@
 export const smartHome = {
   nav: "Smart Home",
-  label: "Smart Home",
-  icon: "Smart Home",
+  headerLabel: "Smart Home",
+  headerIcon: "Smart Home",
   title: "Smart Home",
   subtitle: "Integrated the facilities to build an efficient house.",
   article: [
@@ -19,33 +19,15 @@ export const smartHome = {
     },
     {
       type: "label",
-      title: "Planning and solution suggestion",
-      icon: "Plan",
-    },
-    {
-      type: "label",
-      title: "Shipping and installation",
-      icon: "Install",
-    },
-    {
-      type: "label",
-      title: "Configuring and teaching",
-      icon: "Config",
-    },
-    {
-      type: "label",
-      title: "Powerful and stable hardware",
-      icon: "Switch",
-    },
-    {
-      type: "label",
-      title: "Strong and reliable service",
-      icon: "Service",
-    },
-    {
-      type: "label",
-      title: "Easy to use application",
-      icon: "Application",
+      title: "",
+      content: [
+        { title: "Planning and solution suggestion", contentIcon: "Plan" },
+        { title: "Shipping and installation", contentIcon: "Install" },
+        { title: "Configuring and teaching", contentIcon: "Config" },
+        { title: "Powerful and stable hardware", contentIcon: "Hardware" },
+        { title: "Strong and reliable service", contentIcon: "Service" },
+        { title: "Easy to use application", contentIcon: "Software" },
+      ],
     },
   ],
   table: [],
@@ -53,8 +35,8 @@ export const smartHome = {
 
 export const technique = {
   nav: "Smart Home",
-  label: "Technique",
-  icon: "Technique",
+  headerLabel: "Technique",
+  headerIcon: "Technique",
   title: "Technique",
   subtitle: "Perfect communication through high speed and stable connection.",
   article: [
@@ -65,39 +47,16 @@ export const technique = {
         "IntelRAN adopts ZigBee 3.0, with a working frequency of 2.4GHz. Zigbee is based on the IEEE's 802.15.4 personal-area network standard. Zigbee is a specification that's been around for more than a decade, and it's widely considered an alternative to Wi-Fi and Bluetooth for some applications including low-powered devices that don't require a lot of bandwidth.",
     },
     {
-      type: "text",
+      type: "label",
       title: "Advantages of ZigBee",
-      article: "",
-    },
-    {
-      type: "label",
-      title: "Low cost",
-      icon: "Cost",
-    },
-    {
-      type: "label",
-      title: "Low power consumption",
-      icon: "Power Consumption",
-    },
-    {
-      type: "label",
-      title: "Flexible network structure",
-      icon: "Expanable",
-    },
-    {
-      type: "label",
-      title: "Large number of nodes support",
-      icon: "Nodes",
-    },
-    {
-      type: "label",
-      title: "More reliable",
-      icon: "Stable",
-    },
-    {
-      type: "label",
-      title: "Long range connection",
-      icon: "Motion",
+      content: [
+        { title: "Low cost", contentIcon: "Cost" },
+        { title: "Low power consumption", contentIcon: "Consumption" },
+        { title: "Flexible network structure", contentIcon: "Expanable" },
+        { title: "Large number of nodes support", contentIcon: "Nodes" },
+        { title: "More reliable", contentIcon: "Stable" },
+        { title: "Long range connection", contentIcon: "Motion" },
+      ],
     },
   ],
   table: [],
@@ -105,8 +64,8 @@ export const technique = {
 
 export const hub = {
   nav: "Solutions",
-  label: "Hub",
-  icon: "Hub",
+  headerLabel: "Hub",
+  headerIcon: "Hub",
   title: "Smart Hub",
   subtitle: "Where your smart home begin, a truly housekeeper.",
   article: [
@@ -128,8 +87,8 @@ export const hub = {
 
 export const light = {
   nav: "Solutions",
-  label: "Light",
-  icon: "Light",
+  headerLabel: "Light",
+  headerIcon: "Light",
   title: "Smart Switch",
   subtitle: "Every detail of your light is under your control.",
   article: [
@@ -157,7 +116,7 @@ export const light = {
       texture: "Aluminum Alloy",
       colorOption: [
         "Ferrari-Red",
-        "Armsterdam-Orange",
+        "Amsterdam-Orange",
         "Geneva-Red",
         "Scotch-Red",
         "Hawaiian-Blue",
@@ -189,8 +148,8 @@ export const light = {
 
 export const blinds = {
   nav: "Solutions",
-  label: "Blinds",
-  icon: "Blinds",
+  headerLabel: "Blinds",
+  headerIcon: "Blinds",
   title: "Smart Blinds",
   subtitle:
     "Can blinds open in the morning by themselves? Yes, even before you ask.",
@@ -213,8 +172,8 @@ export const blinds = {
 
 export const environment = {
   nav: "Solutions",
-  label: "Environment",
-  icon: "Temp. & Hum.",
+  headerLabel: "Environment",
+  headerIcon: "Environment",
   title: "Smart Environment",
   subtitle: "A comfortable home is ready for you any time.",
   article: [
@@ -243,7 +202,7 @@ export const environment = {
       texture: "Matte ABS",
       colorOption: [
         "Ferrari-Red",
-        "Armsterdam-Orange",
+        "Amsterdam-Orange",
         "Geneva-Red",
         "Scotch-Red",
         "Hawaiian-Blue",
@@ -280,7 +239,7 @@ export const environment = {
       texture: "Matte ABS",
       colorOption: [
         "Ferrari-Red",
-        "Armsterdam-Orange",
+        "Amsterdam-Orange",
         "Geneva-Red",
         "Scotch-Red",
         "Hawaiian-Blue",
@@ -312,8 +271,8 @@ export const environment = {
 
 export const connection = {
   nav: "Solutions",
-  label: "Connection",
-  icon: "Connection",
+  headerLabel: "Connection",
+  headerIcon: "Connection",
   title: "Wi-Fi Coverage",
   subtitle: "Life follows the internet, and we cover all your life.",
   article: [
@@ -341,7 +300,7 @@ export const connection = {
       texture: "Matte ABS",
       colorOption: [
         "Ferrari-Red",
-        "Armsterdam-Orange",
+        "Amsterdam-Orange",
         "Geneva-Red",
         "Scotch-Red",
         "Hawaiian-Blue",
@@ -373,8 +332,8 @@ export const connection = {
 
 export const safety = {
   nav: "Solutions",
-  label: "Safety",
-  icon: "Camera",
+  headerLabel: "Safety",
+  headerIcon: "Safety",
   title: "Smart Security",
   subtitle:
     "They held the accountability of your home security 24-7. Theif, no chance.",
@@ -415,7 +374,7 @@ export const safety = {
       texture: "Matte ABS",
       colorOption: [
         "Ferrari-Red",
-        "Armsterdam-Orange",
+        "Amsterdam-Orange",
         "Geneva-Red",
         "Scotch-Red",
         "Hawaiian-Blue",
@@ -477,8 +436,8 @@ export const safety = {
 
 export const about = {
   nav: "About",
-  label: "About",
-  icon: "Logo",
+  headerLabel: "About",
+  headerIcon: "About",
   title: "IntelRAN",
   subtitle: "“Technology leads life.”",
   article: [
@@ -540,8 +499,8 @@ export const about = {
 
 export const service = {
   nav: "About",
-  label: "Service",
-  icon: "Service",
+  headerLabel: "Service",
+  headerIcon: "Service",
   title: "Our Service",
   subtitle: "We deliver supreme service to every customer.",
   article: [
@@ -551,35 +510,18 @@ export const service = {
       article:
         "We provide on-site measurement, installation, and commissioning services to ensure the completeness, and feasibility of the solution plan, including basic setup and operation training to ensure that customers can fully achieve the expected results. We benchmark industy standard after-sales service:",
     },
+    
     {
       type: "label",
-      title: "Free consulting.",
-      icon: "",
-    },
-    {
-      type: "label",
-      title: "One charge for three time on-site measurement.",
-      icon: "",
-    },
-    {
-      type: "label",
-      title: "Free shipping for no order limit.",
-      icon: "",
-    },
-    {
-      type: "label",
-      title: "One year free non-artificial damage warranty.",
-      icon: "",
-    },
-    {
-      type: "label",
-      title: "Ten years warranty for all accessories.",
-      icon: "",
-    },
-    {
-      type: "label",
-      title: "365 days online service.",
-      icon: "",
+      title: "",
+      content: [
+        { title: "One charge for three time on-site measurement.", contentIcon: "" },
+        { title: "Free consulting", contentIcon: "" },
+        { title: "Free shipping for no order limit.", contentIcon: "" },
+        { title: "One year free non-artificial damage warranty.", contentIcon: "" },
+        { title: "Ten years warranty for all accessories.", contentIcon: "" },
+        { title: "365 days online service.", contentIcon: "" },
+      ],
     },
     {
       type: "text",
@@ -599,8 +541,8 @@ export const service = {
 
 export const cooperation = {
   nav: "About",
-  label: "Cooperation",
-  icon: "Business",
+  headerLabel: "Cooperation",
+  headerIcon: "Cooperation",
   title: "Partnership",
   subtitle: "We are reliable and trustworthy, and seeking win-win cooperation.",
   article: [
@@ -628,18 +570,18 @@ export const cooperation = {
 
 export const account = {
   nav: "User",
-  label: "Account",
-  icon: "User",
+  headerLabel: "Account",
+  headerIcon: "User",
 };
 
 export const cart = {
   nav: "User",
-  label: "Cart",
-  icon: "Cart",
+  headerLabel: "Cart",
+  headerIcon: "Cart",
 };
 
 export const order = {
   nav: "User",
-  label: "Order",
-  icon: "Order",
+  headerLabel: "Order",
+  headerIcon: "Order",
 };

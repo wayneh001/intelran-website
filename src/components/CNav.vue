@@ -1,8 +1,21 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-light px-5">
+    <nav
+      class="navbar navbar-expand-lg px-5"
+      :class="[
+        { 'custom-bg-light': this.mode === 'Light' },
+        { 'custom-bg-black': this.mode === 'Dark' },
+      ]"
+    >
       <div class="container-fluid">
-        <label class="navbar-brand fw-bolder text-main">IntelRAN</label>
+        <label
+          class="navbar-brand fw-bolder"
+          :class="[
+            { 'text-main-light': this.mode === 'Light' },
+            { 'text-main-dark': this.mode === 'Dark' },
+          ]"
+          >IntelRAN</label
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -18,85 +31,111 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link
-                class="nav-link text-nav fw-bolder"
-                :class="{ active: navActive === 0 }"
+                class="nav-link fw-bolder"
+                :class="[
+                  { 'text-nav-light': this.mode === 'Light' },
+                  { 'text-nav-dark': this.mode === 'Dark' },
+                  { 'active-light': this.mode === 'Light' && navActive === 0 },
+                  { 'active-dark': this.mode === 'Dark' && navActive === 0 },
+                ]"
                 to="/dashboard/smartHome"
                 >Smart Home</router-link
               >
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link text-nav fw-bolder"
-                :class="{ active: navActive === 1 }"
+                class="nav-link fw-bolder"
+                :class="[
+                  { 'text-nav-light': this.mode === 'Light' },
+                  { 'text-nav-dark': this.mode === 'Dark' },
+                  { 'active-light': this.mode === 'Light' && navActive === 1 },
+                  { 'active-dark': this.mode === 'Dark' && navActive === 1 },
+                ]"
                 to="/dashboard/hub"
                 >Solutions</router-link
               >
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link text-nav fw-bolder"
-                :class="{ active: navActive === 2 }"
+                class="nav-link fw-bolder"
+                :class="[
+                  { 'text-nav-light': this.mode === 'Light' },
+                  { 'text-nav-dark': this.mode === 'Dark' },
+                  { 'active-light': this.mode === 'Light' && navActive === 2 },
+                  { 'active-dark': this.mode === 'Dark' && navActive === 2 },
+                ]"
                 to="/dashboard/about"
                 >About</router-link
               >
             </li>
           </ul>
         </div>
-        <!-- <div @click.prevent="changeMode">
-          <svg viewBox="" width="22" height="22">
-            <g
-              :stroke="modeIcon.stroke"
-              :stroke-width="modeIcon.strokeWidth"
-              :fill="modeIcon.fill"
-            >
-              <path :d="modeIcon.path" />
-            </g>
-          </svg>
-          <svg viewBox="" width="22" height="22">
-            <g
-              :stroke="userIcon.stroke"
-              :stroke-width="userIcon.strokeWidth"
-              :fill="userIcon.fill"
-            >
-              <path :d="userIcon.path" />
-            </g>
-          </svg>
+        <div class="d-flex jutify-content-center align-items-center">
+          <img
+            :src="modeIconSrc"
+            class="icon-22 mx-2 image-cursor"
+            @click.prevent="changeMode"
+          />
           <div class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
+              id="dropdown-toggle"
+              class="nav-link"
               href="#"
-              id="navbarDropdownMenuLink"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
+              ><img :src="userIconSrc" class="icon-22 mx-2 image-cursor" />
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <div
+              class="dropdown-menu dropdown-menu-left"
+              :class="[
+                { 'custom-bg-light': this.mode === 'Light' },
+                { 'custom-bg-dark': this.mode === 'Dark' },
+              ]"
+            >
               <li>
-                <router-link class="dropdown-item" to="/dashboard/account"
+                <router-link
+                  class="dropdown-item"
+                  :class="[
+                    { 'text-main-light': this.mode === 'Light' },
+                    { 'text-main-dark': this.mode === 'Dark' },
+                  ]"
+                  to="/dashboard/account"
                   >Account</router-link
                 >
               </li>
               <li>
-                <router-link class="dropdown-item" to="/dashboard/cart"
+                <router-link
+                  class="dropdown-item"
+                  :class="[
+                    { 'text-main-light': this.mode === 'Light' },
+                    { 'text-main-dark': this.mode === 'Dark' },
+                  ]"
+                  to="/dashboard/cart"
                   >Cart</router-link
                 >
               </li>
               <li>
-                <router-link class="dropdown-item" to="/dashboard/order"
+                <router-link
+                  class="dropdown-item"
+                  :class="[
+                    { 'text-main-light': this.mode === 'Light' },
+                    { 'text-main-dark': this.mode === 'Dark' },
+                  ]"
+                  to="/dashboard/order"
                   >Order</router-link
                 >
               </li>
-            </ul>
+            </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </nav>
   </div>
 </template>
 
 <script>
-import { navIcons, contentIcons } from "@/content/icons";
+import { headerIcons, funcIcons } from "@/content/icons";
 export default {
   name: "CNav",
   props: {
@@ -107,8 +146,8 @@ export default {
   },
   data() {
     return {
-      modeIcon: contentIcons[4],
-      userIcon: navIcons[11],
+      modeIconSrc: "",
+      userIconSrc: "",
       navActive: 0,
     };
   },
@@ -129,15 +168,39 @@ export default {
           break;
       }
     },
+    getRightIcons() {
+      if (this.mode === "Light") {
+        this.modeIconSrc = require(`@/assets/img/icons/func/${funcIcons[6].url.dark}`);
+        this.userIconSrc = require(`@/assets/img/icons/header/${headerIcons[11].url.activeLight}`);
+      } else {
+        this.modeIconSrc = require(`@/assets/img/icons/func/${funcIcons[6].url.light}`);
+        this.userIconSrc = require(`@/assets/img/icons/header/${headerIcons[11].url.activeDark}`);
+      }
+    },
+    changeMode() {
+      this.mode === "Light" ? (this.mode = "Dark") : (this.mode = "Light");
+      this.$store.commit("changeMode", this.mode);
+      this.$emit("updateMode");
+    },
   },
   created() {
+    this.mode = this.$store.state.mode;
     this.getActive();
+    this.getRightIcons();
   },
 };
 </script>
 
 <style>
-.active {
+.active-light {
   color: #1a56a2;
+}
+
+.active-dark {
+  color: #fff;
+}
+
+.image-cursor {
+  cursor: pointer;
 }
 </style>

@@ -15,16 +15,12 @@ import { products } from "@/content/products";
 export default {
   name: "CDisplay",
   props: {
-    label: {
+    headerLabel: {
       type: String,
       require: true,
     },
     seq: {
       type: Number,
-      require: true,
-    },
-    mode: {
-      type: String,
       require: true,
     },
   },
@@ -60,16 +56,16 @@ export default {
             }
             break;
         }
-        if (products[i].label === this.label && products[i].seq === this.seq) {
+        if (products[i].headerLabel === this.headerLabel && products[i].seq === this.seq) {
           let product1 = {
             name: products[i].name,
-            label: products[i].label,
+            headerLabel: products[i].headerLabel,
             height: products[i].height,
             src: require(`@/assets/img/products/${products[i].image[n].url}`),
           };
           let product2 = {
             name: products[i].name,
-            label: products[i].label,
+            headerLabel: products[i].headerLabel,
             height: products[i].height,
             src: require(`@/assets/img/products/${products[i].image[m].url}`),
           };
@@ -84,6 +80,7 @@ export default {
     },
   },
   created() {
+    this.mode = this.$store.state.mode;
     this.filterProducts();
   },
 };

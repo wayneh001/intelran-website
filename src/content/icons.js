@@ -1,4 +1,4 @@
-export const navIcons = [
+export const headerIcons = [
   {
     nav: "Smart Home",
     name: "Smart Home",
@@ -7,7 +7,7 @@ export const navIcons = [
       activeLight: "SmartHome@Active@Light.svg",
       inactiveLight: "SmartHome@Inactive@Light.svg",
       activeDark: "SmartHome@Active@Dark.svg",
-      inactiveDark: "SmartHome@Inative@Dark.svg",
+      inactiveDark: "SmartHome@Inactive@Dark.svg",
     },
   },
   {
@@ -18,7 +18,7 @@ export const navIcons = [
       activeLight: "Technique@Active@Light.svg",
       inactiveLight: "Technique@Inactive@Light.svg",
       activeDark: "Technique@Active@Dark.svg",
-      inactiveDark: "Technique@Inative@Dark.svg",
+      inactiveDark: "Technique@Inactive@Dark.svg",
     },
   },
   {
@@ -29,7 +29,7 @@ export const navIcons = [
       activeLight: "Hub@Active@Light.svg",
       inactiveLight: "Hub@Inactive@Light.svg",
       activeDark: "Hub@Active@Dark.svg",
-      inactiveDark: "Hub@Inative@Dark.svg",
+      inactiveDark: "Hub@Inactive@Dark.svg",
     },
   },
   {
@@ -40,7 +40,7 @@ export const navIcons = [
       activeLight: "Light@Active@Light.svg",
       inactiveLight: "Light@Inactive@Light.svg",
       activeDark: "Light@Active@Dark.svg",
-      inactiveDark: "Light@Inative@Dark.svg",
+      inactiveDark: "Light@Inactive@Dark.svg",
     },
   },
   {
@@ -51,7 +51,7 @@ export const navIcons = [
       activeLight: "Blinds@Active@Light.svg",
       inactiveLight: "Blinds@Inactive@Light.svg",
       activeDark: "Blinds@Active@Dark.svg",
-      inactiveDark: "Blinds@Inative@Dark.svg",
+      inactiveDark: "Blinds@Inactive@Dark.svg",
     },
   },
   {
@@ -62,7 +62,7 @@ export const navIcons = [
       activeLight: "Environment@Active@Light.svg",
       inactiveLight: "Environment@Inactive@Light.svg",
       activeDark: "Environment@Active@Dark.svg",
-      inactiveDark: "Environment@Inative@Dark.svg",
+      inactiveDark: "Environment@Inactive@Dark.svg",
     },
   },
   {
@@ -73,7 +73,7 @@ export const navIcons = [
       activeLight: "Connection@Active@Light.svg",
       inactiveLight: "Connection@Inactive@Light.svg",
       activeDark: "Connection@Active@Dark.svg",
-      inactiveDark: "Connection@Inative@Dark.svg",
+      inactiveDark: "Connection@Inactive@Dark.svg",
     },
   },
   {
@@ -84,7 +84,7 @@ export const navIcons = [
       activeLight: "Safety@Active@Light.svg",
       inactiveLight: "Safety@Inactive@Light.svg",
       activeDark: "Safety@Active@Dark.svg",
-      inactiveDark: "Safety@Inative@Dark.svg",
+      inactiveDark: "Safety@Inactive@Dark.svg",
     },
   },
   {
@@ -95,7 +95,7 @@ export const navIcons = [
       activeLight: "About@Active@Light.svg",
       inactiveLight: "About@Inactive@Light.svg",
       activeDark: "About@Active@Dark.svg",
-      inactiveDark: "About@Inative@Dark.svg",
+      inactiveDark: "About@Inactive@Dark.svg",
     },
   },
   {
@@ -106,7 +106,7 @@ export const navIcons = [
       activeLight: "Service@Active@Light.svg",
       inactiveLight: "Service@Inactive@Light.svg",
       activeDark: "Service@Active@Dark.svg",
-      inactiveDark: "Service@Inative@Dark.svg",
+      inactiveDark: "Service@Inactive@Dark.svg",
     },
   },
   {
@@ -117,7 +117,7 @@ export const navIcons = [
       activeLight: "Cooperation@Active@Light.svg",
       inactiveLight: "Cooperation@Inactive@Light.svg",
       activeDark: "Cooperation@Active@Dark.svg",
-      inactiveDark: "Cooperation@Inative@Dark.svg",
+      inactiveDark: "Cooperation@Inactive@Dark.svg",
     },
   },
   {
@@ -128,7 +128,7 @@ export const navIcons = [
       activeLight: "Account@Active@Light.svg",
       inactiveLight: "Account@Inactive@Light.svg",
       activeDark: "Account@Active@Dark.svg",
-      inactiveDark: "Account@Inative@Dark.svg",
+      inactiveDark: "Account@Inactive@Dark.svg",
     },
   },
   {
@@ -139,7 +139,7 @@ export const navIcons = [
       activeLight: "Cart@Active@Light.svg",
       inactiveLight: "Cart@Inactive@Light.svg",
       activeDark: "Cart@Active@Dark.svg",
-      inactiveDark: "Cart@Inative@Dark.svg",
+      inactiveDark: "Cart@Inactive@Dark.svg",
     },
   },
   {
@@ -150,202 +150,169 @@ export const navIcons = [
       activeLight: "Order@Active@Light.svg",
       inactiveLight: "Order@Inactive@Light.svg",
       activeDark: "Order@Active@Dark.svg",
-      inactiveDark: "Order@Inative@Dark.svg",
+      inactiveDark: "Order@Inactive@Dark.svg",
     },
   },
 ];
 
-export const contentIcons = [
+export const funcIcons = [
   {
-    name: "Chevron Up",
-    viewbox: "",
-    size: 18,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Chevron@up",
+    url: {
+      light: "Chevron@Up@Light.svg",
+      dark: "Chevron@Up@Dark.svg",
+    },
   },
   {
-    name: "Chevron Down",
-    viewbox: "",
-    size: 18,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Chevron@Down",
+    url: {
+      light: "Chevron@Down@Light.svg",
+      dark: "Chevron@Down@Dark.svg",
+    },
   },
   {
-    name: "Chevron Left",
-    viewbox: "",
-    size: 18,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Chevron@Left",
+    url: {
+      light: "Chevron@Left@Light.svg",
+      dark: "Chevron@Left@Dark.svg",
+    },
   },
   {
-    name: "Chevron Right",
-    viewbox: "",
-    size: 18,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Chevron@Right",
+    url: {
+      light: "Chevron@Right@Light.svg",
+      dark: "Chevron@Right@Dark.svg",
+    },
+  },
+  {
+    name: "Minus",
+    url: {
+      light: "Minus@Light.svg",
+      dark: "Minus@Dark.svg",
+    },
+  },
+  {
+    name: "Add",
+    url: {
+      light: "Add@Light.svg",
+      dark: "Add@Dark.svg",
+    },
   },
   {
     name: "Mode",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Mode@Light.svg",
+      dark: "Mode@Dark.svg",
+    },
   },
+]
+
+export const contentIcons = [
   {
     name: "Plan",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Plan@Light.svg",
+      dark: "Plan@Dark.svg",
+    },
   },
   {
     name: "Install",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Install@Light.svg",
+      dark: "Install@Dark.svg",
+    },
   },
   {
     name: "Config",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Config@Light.svg",
+      dark: "Config@Dark.svg",
+    },
   },
   {
-    name: "Switch",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Hardware",
+    url: {
+      light: "Hardware@Light.svg",
+      dark: "Hardware@Dark.svg",
+    },
   },
   {
-    name: "Application",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Service",
+    url: {
+      light: "Service@Light.svg",
+      dark: "Service@Dark.svg",
+    },
+  },
+  {
+    name: "Software",
+    url: {
+      light: "Software@Light.svg",
+      dark: "Software@Dark.svg",
+    },
   },
   {
     name: "Cost",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Cost@Light.svg",
+      dark: "Cost@Dark.svg",
+    },
   },
   {
-    name: "Power Consumption",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    name: "Consumption",
+    url: {
+      light: "Consumption@Light.svg",
+      dark: "Consumption@Dark.svg",
+    },
   },
   {
     name: "Expanable",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Expanable@Light.svg",
+      dark: "Expanable@Dark.svg",
+    },
   },
   {
     name: "Nodes",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Nodes@Light.svg",
+      dark: "Nodes@Dark.svg",
+    },
   },
   {
     name: "Stable",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Stable@Light.svg",
+      dark: "Stable@Dark.svg",
+    },
   },
   {
     name: "Motion",
-    viewbox: "",
-    size: 22,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: {
+      light: "Motion@Light.svg",
+      dark: "Motion@Dark.svg",
+    },
   },
 ];
 
 export const socialApps = [
   {
     name: "What's App",
-    viewbox: "",
-    size: 48,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: ""
   },
   {
     name: "Twitter",
-    viewbox: "",
-    size: 48,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: ""
   },
   {
     name: "Telegram",
-    viewbox: "",
-    size: 48,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: ""
   },
   {
     name: "Line",
-    viewbox: "",
-    size: 48,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: ""
   },
   {
     name: "Facebook",
-    viewbox: "",
-    size: 48,
-    stroke: "",
-    strokeWidth: 4,
-    fill: "",
-    path: "",
+    url: ""
   },
 ];

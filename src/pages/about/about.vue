@@ -1,6 +1,6 @@
 <template>
   <div>
-    <pageView :content="content" />
+    <pageView :content="content" @updateMode="updateMode" :key="componentKey" />
   </div>
 </template>
 
@@ -14,9 +14,14 @@ export default {
   data() {
     return {
       content: about,
+      componentKey: 0,
     };
   },
-  methods: {},
+  methods: {
+    updateMode() {
+      this.componentKey += 1;
+    }
+  },
 };
 </script>
 

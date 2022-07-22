@@ -8,7 +8,7 @@
             <label class="form-label">Email address</label>
             <input
               type="email"
-              class="form-control"
+              class="form-control shadow"
               placeholder="Email address"
               required
               autofocus
@@ -19,7 +19,7 @@
             <label class="form-label">Password</label>
             <input
               type="password"
-              class="form-control"
+              class="form-control shadow"
               placeholder="Password"
               required
               v-model="user.password"
@@ -27,7 +27,7 @@
           </div>
 
           <div class="text-end mt-4">
-            <button class="btn btn-main" type="submit">
+            <button class="btn btn-main-light" type="submit">
               登入
             </button>
           </div>

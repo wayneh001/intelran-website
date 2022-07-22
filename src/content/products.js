@@ -2,7 +2,8 @@ export const products = [
   {
     name: "Smart Hub",
     texture: "Matte ABS",
-    label: "Hub",
+    headerLabel: "Hub",
+    price: "$89.99",
     seq: 0,
     repeat: 1,
     height: "300px",
@@ -16,8 +17,8 @@ export const products = [
   {
     name: "Universal Switch",
     texture: "Matte ABS",
-    url: "",
-    label: "Light",
+    headerLabel: "Light",
+    price: "$89.99",
     seq: 0,
     repeat: 2,
     height: "200px",
@@ -27,8 +28,8 @@ export const products = [
         url: "light/UniversalSwitch@Ferrari-Red.png",
       },
       {
-        name: "Armsterdam-Orange",
-        url: "light/UniversalSwitch@Armsterdam-Orange.png",
+        name: "Amsterdam-Orange",
+        url: "light/UniversalSwitch@Amsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
@@ -67,8 +68,8 @@ export const products = [
   {
     name: "Universal Switch",
     texture: "Aluminum Alloy",
-    url: "",
-    label: "Light",
+    headerLabel: "Light",
+    price: "$99.99",
     seq: 0,
     repeat: 2,
     height: "200px",
@@ -118,7 +119,8 @@ export const products = [
   {
     name: "Dimmable Recessed",
     texture: "Matte ABS",
-    label: "Light",
+    headerLabel: "Light",
+    price: "$49.99",
     seq: 1,
     repeat: 1,
     height: "200px",
@@ -132,8 +134,8 @@ export const products = [
   {
     name: "Blinds Driver",
     texture: "Matte ABS",
-    url: "",
-    label: "Blinds",
+    headerLabel: "Blinds",
+    price: "$179.99",
     seq: 0,
     repeat: 1,
     height: "150px",
@@ -151,8 +153,8 @@ export const products = [
   {
     name: "AC Controller",
     texture: "Matte ABS",
-    url: "",
-    label: "Environment",
+    headerLabel: "Environment",
+    price: "$109.99",
     seq: 0,
     repeat: 2,
     height: "200px",
@@ -162,8 +164,8 @@ export const products = [
         url: "environment/ACController@Ferrari-Red.png",
       },
       {
-        name: "Armsterdam-Orange",
-        url: "environment/ACController@Armsterdam-Orange.png",
+        name: "Amsterdam-Orange",
+        url: "environment/ACController@Amsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
@@ -202,8 +204,8 @@ export const products = [
   {
     name: "AC Controller",
     texture: "Aluminum Alloy",
-    url: "",
-    label: "Environment",
+    headerLabel: "Environment",
+    price: "$119.99",
     seq: 0,
     repeat: 2,
     height: "200px",
@@ -253,8 +255,8 @@ export const products = [
   {
     name: "Temp. & Humidity Sensor",
     texture: "Matte ABS",
-    url: "",
-    label: "Environment",
+    headerLabel: "Environment",
+    price: "$29.99",
     seq: 1,
     repeat: 1,
     height: "150px",
@@ -272,8 +274,8 @@ export const products = [
   {
     name: "Smart Outlet",
     texture: "Matte ABS",
-    url: "",
-    label: "Environment",
+    headerLabel: "Environment",
+    price: "$59.99",
     seq: 2,
     repeat: 2,
     height: "200px",
@@ -283,8 +285,8 @@ export const products = [
         url: "environment/SmartOutlet@Ferrari-Red.png",
       },
       {
-        name: "Armsterdam-Orange",
-        url: "environment/SmartOutlet@Armsterdam-Orange.png",
+        name: "Amsterdam-Orange",
+        url: "environment/SmartOutlet@Amsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
@@ -323,8 +325,8 @@ export const products = [
   {
     name: "Smart Outlet",
     texture: "Aluminum Alloy",
-    url: "",
-    label: "Environment",
+    headerLabel: "Environment",
+    price: "$69.99",
     seq: 2,
     repeat: 2,
     height: "200px",
@@ -374,8 +376,8 @@ export const products = [
   {
     name: "Router",
     texture: "Matte ABS",
-    url: "",
-    label: "Connection",
+    headerLabel: "Connection",
+    price: "$109.99",
     seq: 0,
     repeat: 1,
     height: "300px",
@@ -389,8 +391,8 @@ export const products = [
   {
     name: "Adapter",
     texture: "Matte ABS",
-    url: "",
-    label: "Connection",
+    headerLabel: "Connection",
+    price: "$69.99",
     seq: 1,
     repeat: 2,
     height: "200px",
@@ -400,8 +402,8 @@ export const products = [
         url: "connection/Adapter@Ferrari-Red.png",
       },
       {
-        name: "Armsterdam-Orange",
-        url: "connection/Adapter@Armsterdam-Orange.png",
+        name: "Amsterdam-Orange",
+        url: "connection/Adapter@Amsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
@@ -440,8 +442,8 @@ export const products = [
   {
     name: "Adapter",
     texture: "Aluminum Alloy",
-    url: "",
-    label: "Connection",
+    headerLabel: "Connection",
+    price: "$79.99",
     seq: 1,
     repeat: 2,
     height: "200px",
@@ -491,8 +493,8 @@ export const products = [
   {
     name: "Wall-Mounted Camera",
     texture: "Matte ABS",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$199.99",
     seq: 0,
     repeat: 2,
     height: "200px",
@@ -502,8 +504,8 @@ export const products = [
         url: "safety/Wall-MountedCamera@Ferrari-Red.png",
       },
       {
-        name: "Armsterdam-Orange",
-        url: "safety/Wall-MountedCamera@Armsterdam-Orange.png",
+        name: "Amsterdam-Orange",
+        url: "safety/Wall-MountedCamera@Amsterdam-Orange.png",
       },
       {
         name: "Geneva-Red",
@@ -542,8 +544,8 @@ export const products = [
   {
     name: "Wall-Mounted Camera",
     texture: "Aluminum Alloy",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$209.99",
     seq: 0,
     repeat: 2,
     height: "200px",
@@ -593,8 +595,8 @@ export const products = [
   {
     name: "Camera",
     texture: "Matte ABS",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$129.99",
     seq: 1,
     repeat: 1,
     height: "300px",
@@ -612,8 +614,8 @@ export const products = [
   {
     name: "Gas Leakage Sensor",
     texture: "Matte ABS",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$29.99",
     seq: 2,
     repeat: 1,
     height: "200px",
@@ -631,8 +633,8 @@ export const products = [
   {
     name: "Water Leakage Sensor",
     texture: "Matte ABS",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$29.99",
     seq: 3,
     repeat: 1,
     height: "150px",
@@ -650,8 +652,8 @@ export const products = [
   {
     name: "Motion Sensor",
     texture: "Matte ABS",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$29.99",
     seq: 3,
     repeat: 1,
     height: "150px",
@@ -669,8 +671,8 @@ export const products = [
   {
     name: "Contact Sensor",
     texture: "Matte ABS",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$29.99",
     seq: 3,
     repeat: 1,
     height: "150px",
@@ -688,8 +690,8 @@ export const products = [
   {
     name: "Smart Locker",
     texture: "Glass",
-    url: "",
-    label: "Safety",
+    headerLabel: "Safety",
+    price: "$399.99",
     seq: 4,
     repeat: 1,
     height: "500px",
@@ -720,7 +722,7 @@ export const color = [
     texture: "Matte ABS",
   },
   {
-    name: "Armsterdam-Orange",
+    name: "Amsterdam-Orange",
     texture: "Matte ABS",
   },
   {

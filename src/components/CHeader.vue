@@ -6,13 +6,24 @@
         :key="i"
         :to="/dashboard/ + e.route"
         class="m-2"
-        style="width: 5rem;"
+        style="width: 5rem"
       >
         <div class="justify-content-center">
           <div class="text-center mb-2">
-            <img :src="e.src" class="mx-auto" style="width: 22px" />
+            <img :src="e.src" class="icon-22 mx-auto" />
           </div>
-          <div class="text-header text-center" :class="{ selected: e.name === label }">
+          <div
+            class="text-header text-center"
+            :class="[
+              {
+                'selected-light':
+                  this.mode === 'Light' && e.name === headerIcon,
+              },
+              {
+                'selected-dark': this.mode === 'Dark' && e.name === headerIcon,
+              },
+            ]"
+          >
             {{ e.name }}
           </div>
         </div>
@@ -22,7 +33,7 @@
 </template>
 
 <script>
-import { navIcons } from "@/content/icons";
+import { headerIcons } from "@/content/icons";
 export default {
   name: "CHeader",
   props: {
@@ -30,42 +41,39 @@ export default {
       type: String,
       require: true,
     },
-    label: {
-      type: String,
-      require: true,
-    },
-    mode: {
+    headerIcon: {
       type: String,
       require: true,
     },
   },
   data() {
     return {
+      mode: "",
       icons: [],
     };
   },
   methods: {
     filterIcons() {
-      for (let i in navIcons) {
-        if (navIcons[i].nav === this.nav) {
+      for (let i in headerIcons) {
+        if (headerIcons[i].nav === this.nav) {
           let icon = {
-            nav: navIcons[i].nav,
-            name: navIcons[i].name,
-            route: navIcons[i].route,
+            nav: headerIcons[i].nav,
+            name: headerIcons[i].name,
+            route: headerIcons[i].route,
           };
           let status = "";
-          navIcons[i].name === this.label
+          headerIcons[i].name === this.headerIcon
             ? (status = "active")
             : (status = "inactive");
           let str = `${status}${this.mode}`;
-          console.log(str, navIcons[i]);
-          icon.src = require(`@/assets/img/icons/header/${navIcons[i].url[str]}`);
+          icon.src = require(`@/assets/img/icons/header/${headerIcons[i].url[str]}`);
           this.icons.push(icon);
         }
       }
     },
   },
   created() {
+    this.mode = this.$store.state.mode;
     this.filterIcons();
   },
 };
