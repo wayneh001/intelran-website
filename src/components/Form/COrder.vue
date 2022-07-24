@@ -1,107 +1,178 @@
 <template>
   <div>
     <div class="row">
-      <div v-for="(e, i) in data" :key="i" class="col-12 col-md-6">
+      <div v-for="(e, i) in order" :key="i" class="col-12 col-md-6">
         <div class="mb-3">
-          <div class="mb-3 w-100">
-            <label class="form-label">No.</label>
-            <input
-              type="text"
-              class="form-control shadow"
-              v-model="value.no"
-              disabled
-            />
+          <div class="w-100 mb-3">
+            <label
+              id="no"
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>No</span>
+              <span
+                :class="[
+                  { 'custom-text-main': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >{{ e.no }}</span
+              >
+            </label>
           </div>
-          <div class="mb-3 w-100">
-            <label class="form-label">Date</label>
-            <input
-              type="date"
-              class="form-control shadow"
-              v-model="value.date"
-              disabled
-            />
+          <div class="w-100 mb-3">
+            <label
+              id="date"
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>Date</span>
+              <span
+                :class="[
+                  { 'custom-text-main': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >{{ e.date }}</span
+              >
+            </label>
           </div>
-        </div>
-        <div class="mb-3">
+          <div class="mb-3">
+            <label
+              id="switchConfig"
+              :class="[
+                { 'config-setter-header-light': this.mode === 'Light' },
+                { 'config-setter-header-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>Products</span>
+              <span></span>
+            </label>
+            <div class="d-flex flex-wrap">
+              <label
+                v-for="(c, j) in e.cart.selectedProducts"
+                :key="j"
+                :class="[
+                  { 'config-setter-body-light': this.mode === 'Light' },
+                  { 'config-setter-body-dark': this.mode === 'Dark' },
+                ]"
+                ><span
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >{{ c.name }}</span
+                ><span
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >X{{ c.quantity }}</span
+                ></label
+              >
+            </div>
+          </div>
           <div
-            v-for="(e, i) in value.products"
-            :key="i"
-            class="d-flex justify-content-center align-items-between w-100"
+            v-if="e.cart.service.installation.enabled === true"
+            class="w-100 mb-3"
           >
-            <span>{{ e.name }}</span
-            ><span>X {{ e.quantity }}</span>
+            <label
+              id="installation"
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>Installation</span>
+              <span
+                :class="[
+                  { 'custom-text-dark': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >${{ e.cart.service.installation.fee }}</span
+              >
+            </label>
           </div>
+          <div
+            v-if="e.cart.service.extendedWarranty.enabled === true"
+            class="w-100 mb-3"
+          >
+            <label
+              id="extendedWarranty"
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>Extended Warranty</span>
+              <span
+                :class="[
+                  { 'custom-text-dark': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >${{ e.cart.service.extendedWarranty.fee }}</span
+              >
+            </label>
+          </div>
+          <div class="w-100 mb-3">
+            <label
+              id="total"
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>Overall Total</span>
+              <span
+                :class="[
+                  { 'custom-text-dark': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >${{ e.cart.total }}</span
+              >
+            </label>
+          </div>
+          <div class="w-100 mb-3">
+            <label
+              id="shippment"
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <span>Shippment</span>
+              <span
+                :class="[
+                  { 'custom-text-main': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >{{ e.shipping.status }}</span
+              >
+            </label>
+          </div>
+          <button
+            type="button"
+            class="btn w-100 mb-3"
+            :class="[
+              { 'btn-main-light': this.mode === 'Light' },
+              { 'btn-main-dark': this.mode === 'Dark' },
+            ]"
+            :disabled="e.shipping.status === 'Return'"
+            @click.prevent="refund(i)"
+          >
+            Return and Refund
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger w-100 mb-3"
+            :disabled="e.shipping.status !== 'Shipped'"
+            @click.prevent="deleteOrder(i)"
+          >
+            Delete
+          </button>
         </div>
-        <div class="mb-3">
-          <div class="mb-3 w-100">
-            <label class="col-form-label me-2">Installation</label>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="true"
-                checked
-                v-model="value.service.installation.enabled"
-                disabled
-              />
-              <label class="form-check-label">Yes</label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="false"
-                checked
-                v-model="value.service.installation.enabled"
-                disabled
-              />
-              <label class="form-check-label">No</label>
-            </div>
-            <label class="col-form-label me-2">{{
-              value.service.installation.fee
-            }}</label>
-          </div>
-          <div class="mb-3 w-100">
-            <label class="col-form-label me-2">Extended Warranty</label>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="true"
-                checked
-                v-model="value.service.extendedWarranty.enabled"
-                disabled
-              />
-              <label class="form-check-label">Yes</label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                value="false"
-                checked
-                v-model="value.service.extendedWarranty.enabled"
-                disabled
-              />
-              <label class="form-check-label">No</label>
-            </div>
-            <label class="col-form-label me-2">{{
-              value.service.extendedWarranty.fee
-            }}</label>
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="d-flex justify-content-center align-items-between w-100">
-            <span>Total</span><span>{{ value.total }}</span>
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="d-flex justify-content-center align-items-between w-100">
-            <span>Shipping</span><a href="#"><span>{{ value.shipping }}</span></a>
-          </div>
-        </div>
-        <button type="button" class="btn btn-main-light w-100">Return and Refund</button>
-        <button v-if="value.status === 'finished'" type="button" class="btn btn-danger w-100">Delete</button>
       </div>
     </div>
   </div>
@@ -111,66 +182,34 @@
 export default {
   name: "CPlaceOrder",
   props: {
-    data: {
-      type: Array,
-    }
+    mode: {
+      type: String,
+    },
   },
   data() {
     return {
-      value: {
-        no: "",
-        date: "",
-        products: [
-          {
-            name: "",
-            texture: "",
-            color: "",
-            quantity: 1,
-            Config: [],
-          },
-        ],
-        service: {
-          installation: {
-            enabled: true,
-            fee: 0,
-          },
-          extendedWarranty: {
-            enabled: true,
-            fee: 0,
-          },
-        },
-        payment: {
-          card: "",
-          expireDate: "",
-          cvc: "",
-        },
-        receiver: {
-          name: "",
-          contact: "",
-          address: {
-            line1: "",
-            line2: "",
-            zipCode: "",
-            state: "",
-          },
-        },
-        total: 0,
-        shipping: "",
-        status: "",
-      },
+      auth: this.$store.state.auth,
+      order: this.$store.state.order,
     };
   },
   methods: {
-    fetchList() {
-
+    checkAuth() {
+      if (this.auth === false) {
+        this.$router.push("/dashboard/smartHome");
+      }
     },
-    updateOne() {
-
+    refund(i) {
+      this.order[i].shipping.status = "Return";
+      this.$store.commit("editOrder", this.order);
     },
-    deleteOne() {
-      
-    }
-  }
+    deleteOrder(i) {
+      this.order.splice(i, 1);
+      this.$store.commit("editOrder", this.order);
+    },
+  },
+  crated() {
+    this.checkAuth();
+  },
 };
 </script>
 

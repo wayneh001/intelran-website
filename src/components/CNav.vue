@@ -11,8 +11,8 @@
         <label
           class="navbar-brand fw-bolder"
           :class="[
-            { 'text-main-light': this.mode === 'Light' },
-            { 'text-main-dark': this.mode === 'Dark' },
+            { 'custom-text-dark': this.mode === 'Light' },
+            { 'custom-text-white': this.mode === 'Dark' },
           ]"
           >IntelRAN</label
         >
@@ -97,8 +97,8 @@
                 <router-link
                   class="dropdown-item"
                   :class="[
-                    { 'text-main-light': this.mode === 'Light' },
-                    { 'text-main-dark': this.mode === 'Dark' },
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
                   ]"
                   to="/dashboard/account"
                   >Account</router-link
@@ -108,8 +108,8 @@
                 <router-link
                   class="dropdown-item"
                   :class="[
-                    { 'text-main-light': this.mode === 'Light' },
-                    { 'text-main-dark': this.mode === 'Dark' },
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
                   ]"
                   to="/dashboard/cart"
                   >Cart</router-link
@@ -119,11 +119,34 @@
                 <router-link
                   class="dropdown-item"
                   :class="[
-                    { 'text-main-light': this.mode === 'Light' },
-                    { 'text-main-dark': this.mode === 'Dark' },
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
                   ]"
                   to="/dashboard/order"
                   >Order</router-link
+                >
+              </li>
+              <li>
+                <div
+                  class="px-2"
+                  :class="[
+                    { 'hr-light': this.mode === 'Light' },
+                    { 'hr-dark': this.mode === 'Dark' },
+                  ]"
+                >
+                  <hr class="dropdown-divider" />
+                </div>
+              </li>
+              <li>
+                <span
+                  class="dropdown-item pointer"
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  style="cursor: pointer"
+                  @click.prevent="logout"
+                  >Log out</span
                 >
               </li>
             </div>
@@ -181,6 +204,10 @@ export default {
       this.mode === "Light" ? (this.mode = "Dark") : (this.mode = "Light");
       this.$store.commit("changeMode", this.mode);
       this.$emit("updateMode");
+    },
+    logout() {
+      this.$store.dispatch("logout");
+      this.$router.push("/dashboard/smartHome");
     },
   },
   created() {

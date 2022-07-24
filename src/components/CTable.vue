@@ -68,7 +68,7 @@
               <div
                 v-for="n in e.colorOption"
                 :key="n"
-                class="color-block me-2"
+                class="color-block ms-0"
                 :class="n"
               ></div>
             </div>

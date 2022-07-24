@@ -1,30 +1,33 @@
 <template>
   <div>
-    <div class="row">
-      <div class="col-12">
-        <div v-if="label === 'Account'">
-          <CAccount :data="data" />
+    <div v-if="!auth">
+      <CLogin :mode="mode" @reload="reload" />
+    </div>
+    <div v-else>
+      <div>
+        <div v-if="headerLabel === 'Account'" :mode="mode">
+          <CAccount :mode="mode" />
         </div>
       </div>
-      <div class="col-12 col-md-6">
-        <div v-if="label === 'Cart'">
+      <div>
+        <div v-if="headerLabel === 'Cart'">
           <CCart
             v-if="!orderPlaced"
-            :data="data"
-            @toConfig="toConfig"
+            :mode="mode"
             @toPlaceOrder="toPlaceOrder"
           />
-          <CPlaceOrder v-if="orderPlaced" />
+          <CPlaceOrder v-if="orderPlaced" :mode="mode" @cancelPlaceOrder="cancelPlaceOrder" />
         </div>
-        <div v-if="label === 'Order'">
-          <COrder :data="data" />
-        </div>
+      </div>
+      <div v-if="headerLabel === 'Order'">
+        <COrder :mode="mode" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CLogin from "@/components/CLogin";
 import CAccount from "@/components/Form/CAccount";
 import CCart from "@/components/Form/CCart";
 import CPlaceOrder from "@/components/Form/CPlaceOrder";
@@ -32,32 +35,37 @@ import COrder from "@/components/Form/COrder";
 
 export default {
   name: "CForm",
-  components: { CAccount, CCart, CPlaceOrder, COrder },
+  components: { CLogin, CAccount, CCart, CPlaceOrder, COrder },
   props: {
-    label: {
+    headerLabel: {
       type: String,
       require: true,
     },
   },
+  computed: {},
   data() {
     return {
-      data: [],
+      mode: "",
+      auth: this.$store.state.auth,
       orderPlaced: false,
     };
   },
   methods: {
-    fetchData() {
-      console.log("fetchData");
-    },
     toConfig() {
       this.$emit("toConfig");
     },
     toPlaceOrder() {
       this.orderPlaced = true;
     },
+    cancelPlaceOrder() {
+      this.orderPlaced = false;
+    },
+    reload() {
+      this.$emit('reload');
+    }
   },
   created() {
-    this.getForm();
+    this.mode = this.$store.state.mode;
   },
 };
 </script>

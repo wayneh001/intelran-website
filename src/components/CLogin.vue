@@ -1,0 +1,124 @@
+<template>
+  <div>
+    <div class="container mt-5">
+      <div class="col-6 mx-auto">
+        <div class="mb-5">
+          <div class="w-100 mb-3">
+            <label
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+              ><span
+                :class="[
+                  { 'custom-text-dark': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >Username</span
+              ><input
+                type="text"
+                class="text-end"
+                :class="[
+                  { 'input-light': this.mode === 'Light' },
+                  { 'input-dark': this.mode === 'Dark' },
+                ]"
+                placeholder="Username"
+                v-model="user.username"
+            /></label>
+          </div>
+          <div class="w-100 mb-3">
+            <label
+              :class="[
+                { 'form-label-light': this.mode === 'Light' },
+                { 'form-label-dark': this.mode === 'Dark' },
+              ]"
+              ><span
+                :class="[
+                  { 'custom-text-dark': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
+                >Password</span
+              ><input
+                type="password"
+                class="text-end"
+                :class="[
+                  { 'input-light': this.mode === 'Light' },
+                  { 'input-dark': this.mode === 'Dark' },
+                ]"
+                placeholder="Password"
+                v-model="user.password"
+            /></label>
+          </div>
+          <button
+            type="button"
+            class="btn w-100 mb-3"
+            :class="[
+              { 'btn-main-light': this.mode === 'Light' },
+              { 'btn-main-dark': this.mode === 'Dark' },
+            ]"
+            @click.prevent="login"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn w-100 mb-3"
+            :class="[
+              { 'btn-main-light': this.mode === 'Light' },
+              { 'btn-main-dark': this.mode === 'Dark' },
+            ]"
+            @click.prevent="registrate"
+          >
+            Registrate
+          </button>
+          <button
+            type="button"
+            class="btn btn-light w-100 mb-3"
+            :class="[
+              { 'btn-outline-main-light': this.mode === 'Light' },
+              { 'btn-outline-main-dark': this.mode === 'Dark' },
+            ]"
+            @click.prevent="cancel"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <CAlert ref="alert" :msg="msg" />
+  </div>
+</template>
+
+<script>
+import CAlert from "@/components/CAlert";
+export default {
+  name: "CLogin",
+  components: {
+    CAlert,
+  },
+  props: {
+    mode: {
+      type: String,
+    },
+  },
+  data() {
+    return {
+      user: {
+        username: "",
+        password: "",
+      },
+      msg: "Invalid username or password, please try again later.",
+    };
+  },
+  methods: {
+    login() {
+      if (this.user.username === "admin" && this.user.password === "admin") {
+        this.$store.dispatch("login");
+        this.$emit("reload");
+      } else {
+        this.$refs.alert.showModal();
+      }
+    },
+  },
+};
+</script>

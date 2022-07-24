@@ -10,12 +10,6 @@
           ]"
         >
           Configuring the product
-          <!-- <button
-            type="button"
-            class="btn-close btn-close-color"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button> -->
         </div>
         <div
           class="modal-body"
@@ -43,7 +37,7 @@
             </div>
             <div class="col-12 col-md-6">
               <div class="mb-3">
-                <div class="mb-3 w-100">
+                <div class="w-100 mb-3">
                   <label
                     id="product"
                     :class="[
@@ -52,10 +46,10 @@
                     ]"
                   >
                     <span>{{ product.name }}</span>
-                    <span>{{ product.price }}</span>
+                    <span>${{ product.price }}</span>
                   </label>
                 </div>
-                <div class="mb-3 w-100">
+                <div class="w-100 mb-3">
                   <label
                     id="color"
                     :class="[
@@ -93,7 +87,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="mb-3 w-100">
+                <div class="w-100 mb-3">
                   <label
                     id="quantity"
                     :class="[
@@ -131,48 +125,70 @@
                     ]"
                   >
                     <span>Config</span>
-                    <span></span>
+                    <span>Label on Switch</span>
                   </label>
                   <div class="d-flex flex-wrap">
-                    <input
-                      v-for="i in 8"
-                      :key="i"
-                      type="text"
+                    <label
+                      v-for="(c, j) in getConfig(presetConfig)"
+                      :key="j"
                       :class="[
                         { 'config-setter-body-light': this.mode === 'Light' },
                         { 'config-setter-body-dark': this.mode === 'Dark' },
                       ]"
-                      :placeholder="presetConfig[i]"
-                      :v-model="product.config[i]"
-                    />
-                  </div>
-                </div>
-                <div v-if="this.product.name === 'Blinds Driver'" class="mb-3">
-                  <label
-                    id="blindsConfig"
-                    :class="[
-                      { 'config-setter-header-light': this.mode === 'Light' },
-                      { 'config-setter-header-dark': this.mode === 'Dark' },
-                    ]"
-                  >
-                    <span>Config</span>
-                    <span></span>
-                  </label>
-                  <div class="d-flex flex-wrap">
-                    <input
-                      :key="i"
-                      type="text"
-                      :class="[
-                        { 'config-setter-body-light': this.mode === 'Light' },
-                        { 'config-setter-body-dark': this.mode === 'Dark' },
-                      ]"
-                      style="width: 100%; border-radius: 0 0 0.5rem 0.5rem"
-                      placeholder="Length or track (m)"
-                      :v-model="product.config[i]"
-                    />
+                      style="width: 50%"
+                      ><span
+                        :class="[
+                          { 'custom-text-dark': this.mode === 'Light' },
+                          { 'custom-text-white': this.mode === 'Dark' },
+                        ]"
+                        ><img :src="c.src" class="icon-18" /></span
+                      ><input
+                        type="text"
+                        class="text-end"
+                        :class="[
+                          { 'input-light': this.mode === 'Light' },
+                          { 'input-dark': this.mode === 'Dark' },
+                        ]"
+                        :placeholder="c.name"
+                        :value="product.config[j]"
+                    /></label>
                   </div>
                 </div>
               </div>
+              <div v-if="this.product.name === 'Blinds Driver'" class="mb-3">
+                <label
+                  id="blindsConfig"
+                  :class="[
+                    { 'config-setter-header-light': this.mode === 'Light' },
+                    { 'config-setter-header-dark': this.mode === 'Dark' },
+                  ]"
+                >
+                  <span>Config</span>
+                  <span>Length of Track</span>
+                </label>
+                <div class="d-flex flex-wrap">
+                  <label
+                    :class="[
+                      { 'config-setter-body-light': this.mode === 'Light' },
+                      { 'config-setter-body-dark': this.mode === 'Dark' },
+                    ]"
+                    style="border-radius: 0 0 0.5rem 0.5rem;"
+                    ><span
+                      :class="[
+                        { 'custom-text-dark': this.mode === 'Light' },
+                        { 'custom-text-white': this.mode === 'Dark' },
+                      ]"
+                      >Length (m)</span
+                    ><input
+                      type="text"
+                      class="text-end"
+                      placeholder="m"
+                      v-model="this.product.config[0]"
+                  /></label>
+                </div>
+              </div>
+            </div>
+            <div class="px-3">
               <button
                 type="button"
                 class="btn w-100 mb-3"
@@ -198,14 +214,14 @@
             </div>
           </div>
         </div>
-        <div
-          class="modal-footer"
-          :class="[
-            { 'modal-primary-light': this.mode === 'Light' },
-            { 'modal-primary-dark': this.mode === 'Dark' },
-          ]"
-        ></div>
       </div>
+      <div
+        class="modal-footer"
+        :class="[
+          { 'modal-primary-light': this.mode === 'Light' },
+          { 'modal-primary-dark': this.mode === 'Dark' },
+        ]"
+      ></div>
     </div>
   </div>
 </template>
@@ -214,7 +230,7 @@
 import _ from "lodash";
 import Modal from "bootstrap/js/dist/modal";
 import { products } from "@/content/products";
-import { funcIcons } from "@/content/icons";
+import { funcIcons, presetConfig } from "@/content/icons";
 
 export default {
   name: "CConfig",
@@ -229,17 +245,7 @@ export default {
       mode: "",
       products: [],
       color: [],
-      presetConfig: [
-        "",
-        "Home",
-        "Leaving",
-        "Morning",
-        "Night",
-        "Chandelier",
-        "Downlight",
-        "Lamp",
-        "Strip",
-      ],
+      presetConfig: presetConfig,
       product: {},
       minusIconSrc: "",
       addIconSrc: "",
@@ -262,11 +268,11 @@ export default {
         "label",
         "height",
         "colorOption",
-        "src",
         "image",
       ]);
       this.product.color = product.image[0].name;
       this.product.quantity = 1;
+      this.sum = this.product.quantity * this.product.price;
       this.product.config = [];
       this.product.uid = "";
       this.filterColor();
@@ -294,6 +300,7 @@ export default {
       }
     },
     selectProduct(e) {
+      console.log(e);
       this.filterProducts();
       this.setProduct(e);
     },
@@ -319,7 +326,6 @@ export default {
           }
         }
       }
-      console.log(this.products);
       this.product.color = n;
     },
     minus() {
@@ -330,16 +336,21 @@ export default {
     add() {
       this.product.quantity += 1;
     },
-    addToCart() {
-      if (this.product.uid === "") {
-        this.insertOne();
-      } else {
-        this.updateOne();
+    getConfig(array) {
+      let src = `${this.mode}`;
+      for (let i in array) {
+        array[i].src = require(`@/assets/img/icons/indicator/${
+          parseInt(i) + 1
+        }@${src}.svg`);
       }
+      return array;
     },
-    fetchOne() {},
-    insertOne() {},
-    updateOne() {},
+    addToCart() {
+      this.product.sum = parseInt(this.product.price * this.product.quantity);
+      this.$store.commit("addToCart", this.product);
+      this.hideModal();
+      this.$router.push("/dashboard/cart");
+    },
     cancel() {
       this.hideModal();
     },
@@ -353,11 +364,8 @@ export default {
   created() {
     this.mode = this.$store.state.mode;
     this.filterProducts();
-    this.setProduct(this.products[0]);
     this.getQuantityIcons();
-    if (this.$store.state.productUid !== "") {
-      this.fetchOne();
-    }
+    this.setProduct(this.products[0]);
   },
   mounted() {
     this.modal = new Modal(this.$refs.modal);

@@ -4,7 +4,7 @@
       <div class="modal-content border-0">
         <div class="modal-header bg-danger custom-text-white">
           <h5 class="modal-title">
-            <span>Error</span>
+            <span>Delete {{ item.title }}</span>
           </h5>
           <button
             type="button"
@@ -14,15 +14,24 @@
           ></button>
         </div>
         <div class="modal-body">
-          {{ msg }}
+          Confirm delete?
+          <strong class="text-danger">{{ item.title }}</strong>
+          can not be restored after delete.
         </div>
         <div class="modal-footer">
           <button
             type="button"
-            class="btn btn-danger"
-            @click.prevent="hideModal"
+            class="btn btn-outline-secondary"
+            data-bs-dismiss="modal"
           >
-            OK
+            cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            @click.prevent="$emit('confirm')"
+          >
+            confirm
           </button>
         </div>
       </div>
@@ -31,25 +40,15 @@
 </template>
 
 <script>
-import Modal from "bootstrap/js/dist/modal";
 export default {
   name: "CAlert",
   props: {
-    msg: {
-      type: String,
-      require: true,
-    }
+    item: {},
   },
-  methods: {
-    showModal() {
-      this.modal.show();
-    },
-    hideModal() {
-      this.modal.hide();
-    },
-  },
-  mounted() {
-    this.modal = new Modal(this.$refs.modal);
+  data() {
+    return {
+      modal: "",
+    };
   },
 };
 </script>

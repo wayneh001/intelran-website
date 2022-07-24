@@ -571,7 +571,7 @@ export const cooperation = {
 export const account = {
   nav: "User",
   headerLabel: "Account",
-  headerIcon: "User",
+  headerIcon: "Account",
 };
 
 export const cart = {

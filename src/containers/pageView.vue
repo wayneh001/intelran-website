@@ -8,7 +8,13 @@
   >
     <CNav :nav="content.nav" class="px-5 pt-3" @updateMode="updateMode" />
     <div class="px-5">
-      <div class="px-5">
+      <div
+        class="px-5"
+        :class="[
+          { 'hr-light': this.mode === 'Light' },
+          { 'hr-dark': this.mode === 'Dark' },
+        ]"
+      >
         <hr />
       </div>
     </div>
@@ -22,8 +28,8 @@
         <h3
           class="fw-bolder"
           :class="[
-            { 'text-main-light': this.mode === 'Light' },
-            { 'text-main-dark': this.mode === 'Dark' },
+            { 'custom-text-dark': this.mode === 'Light' },
+            { 'custom-text-white': this.mode === 'Dark' },
           ]"
         >
           {{ content.title }}
@@ -36,9 +42,6 @@
         >
           {{ content.subtitle }}
         </h5>
-      </div>
-      <div v-if="content.nav === 'User'" class="px-5">
-        <CForm @toConfig="toConfig(item)" />
       </div>
       <div v-if="content.title === 'IntelRAN'" class="px-5">
         <div class="row">
@@ -67,7 +70,18 @@
           </div>
         </div>
       </div>
-      <div v-if="content.title !== 'IntelRAN'" class="px-5">
+      <div v-if="content.nav === 'User'" class="px-5">
+        <CForm
+          :headerLabel="content.headerLabel"
+          @reload="reload"
+          @toConfig="toConfig(item)"
+          :key="componentKey"
+        />
+      </div>
+      <div
+        v-if="content.nav !== 'User' && content.title !== 'IntelRAN'"
+        class="px-5"
+      >
         <div
           v-for="(e, i) in addIconsUrl(content.article)"
           :key="i"
@@ -133,7 +147,21 @@
         </button>
       </div>
       <div v-if="content.nav === 'Solutions'">
-        <CConfig ref="config" :headerLabel="content.headerLabel" />
+        <CConfig
+          ref="config"
+          :headerLabel="content.headerLabel"
+        />
+      </div>
+    </div>
+    <div class="px-5">
+      <div
+        class="px-5"
+        :class="[
+          { 'hr-light': this.mode === 'Light' },
+          { 'hr-dark': this.mode === 'Dark' },
+        ]"
+      >
+        <hr />
       </div>
     </div>
     <CFooter />
@@ -170,6 +198,7 @@ export default {
   data() {
     return {
       mode: "",
+      componentKey: 0,
     };
   },
   methods: {
@@ -202,6 +231,9 @@ export default {
     },
     updateMode() {
       this.$emit("updateMode");
+    },
+    reload() {
+      this.componentKey += 1;
     },
   },
   created() {

@@ -123,7 +123,7 @@ export const headerIcons = [
   {
     nav: "User",
     name: "Account",
-    route: "user/account",
+    route: "account",
     url: {
       activeLight: "Account@Active@Light.svg",
       inactiveLight: "Account@Inactive@Light.svg",
@@ -134,7 +134,7 @@ export const headerIcons = [
   {
     nav: "User",
     name: "Cart",
-    route: "user/cart",
+    route: "cart",
     url: {
       activeLight: "Cart@Active@Light.svg",
       inactiveLight: "Cart@Inactive@Light.svg",
@@ -145,7 +145,7 @@ export const headerIcons = [
   {
     nav: "User",
     name: "Order",
-    route: "user/order",
+    route: "order",
     url: {
       activeLight: "Order@Active@Light.svg",
       inactiveLight: "Order@Inactive@Light.svg",
@@ -205,7 +205,7 @@ export const funcIcons = [
       dark: "Mode@Dark.svg",
     },
   },
-]
+];
 
 export const contentIcons = [
   {
@@ -294,25 +294,36 @@ export const contentIcons = [
   },
 ];
 
+export const presetConfig = [
+  { name: "Home", urlLight: "1@Light.svg", urlDark: "1@Dark.svg" },
+  { name: "Leaving", urlLight: "2@Light.svg", urlDark: "2@Dark.svg" },
+  { name: "Morning", urlLight: "3@Light.svg", urlDark: "3@Dark.svg" },
+  { name: "Night", urlLight: "4@Light.svg", urlDark: "4@Dark.svg" },
+  { name: "Chandelier", urlLight: "5@Light.svg", urlDark: "5@Dark.svg" },
+  { name: "Downlight", urlLight: "6@Light.svg", urlDark: "6@Dark.svg" },
+  { name: "Lamp", urlLight: "7@Light.svg", urlDark: "7@Dark.svg" },
+  { name: "Strip", urlLight: "8@Light.svg", urlDark: "8@Dark.svg" },
+];
+
 export const socialApps = [
   {
-    name: "What's App",
-    url: ""
+    name: "WhatsApp",
+    url: "WhatsApp.svg",
   },
   {
     name: "Twitter",
-    url: ""
+    url: "Twitter.svg",
   },
   {
     name: "Telegram",
-    url: ""
+    url: "Telegram.svg",
   },
   {
     name: "Line",
-    url: ""
+    url: "Line.svg",
   },
   {
     name: "Facebook",
-    url: ""
+    url: "Facebook.svg",
   },
 ];
