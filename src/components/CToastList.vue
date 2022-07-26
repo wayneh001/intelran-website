@@ -13,17 +13,14 @@ import CToast from "@/components/CToast";
 export default {
   name: "CToastList",
   components: { CToast },
-  data() {
-    return {
-      messages: [],
-    };
+  props: {
+    messages: {
+      type: Array,
+      require: true,
+    }
   },
-  inject: ["emitter"],
-  mounted() {
-    this.emitter.on("push-message", (message) => {
-      const { style = "danger", title, content } = message;
-      this.messages.push({ style, title, content });
-    });
-  },
+  created() {
+    console.log('created');
+  }
 };
 </script>

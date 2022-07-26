@@ -1,12 +1,11 @@
 <template>
   <div>
-    <div class="d-flex justify-content-start align-items-center px-5">
+    <div class="d-flex flex-nowrap overflow-auto justify-content-start align-items-center px-1 px-md-5">
       <router-link
         v-for="(e, i) in icons"
         :key="i"
         :to="/dashboard/ + e.route"
-        class="m-2"
-        style="width: 5rem"
+        class="col-3 col-md-1 m-2"
       >
         <div class="justify-content-center">
           <div class="text-center mb-2">

@@ -31,6 +31,10 @@ td {
   vertical-align: middle;
 }
 
+.custom-bg-main {
+  background-color: #1a56a2;
+}
+
 .custom-bg-light {
   background-color: #f5f7f9;
 }
@@ -433,23 +437,19 @@ input:focus:-webkit-autofill {
 }
 
 .product-img-light {
-  display: inline-block;
   cursor: pointer;
 }
 
 .product-img-light:hover {
-  display: inline-block;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.75);
 }
 
 .product-img-dark {
-  display: inline-block;
   cursor: pointer;
 }
 
 .product-img-dark:hover {
-  display: inline-block;
   cursor: pointer;
   background-color: rgba(38, 38, 39, 0.75);
 }

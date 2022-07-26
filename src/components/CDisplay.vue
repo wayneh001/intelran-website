@@ -1,11 +1,13 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center">
+  <div
+    class="d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center"
+  >
     <img
       v-for="(e, i) in products"
-      :style="{ height: e.height }"
       :key="i"
       :src="e.src"
-      class="my-3 mx-5"
+      class="mx-3 mx-md-5 my-3 my-md-3 "
+      :style="{ height: getImgHeight(e.height) }"
     />
   </div>
 </template>
@@ -26,6 +28,7 @@ export default {
   },
   data() {
     return {
+      screenSize: this.$store.state.screenSize,
       products: [],
     };
   },
@@ -56,7 +59,10 @@ export default {
             }
             break;
         }
-        if (products[i].headerLabel === this.headerLabel && products[i].seq === this.seq) {
+        if (
+          products[i].headerLabel === this.headerLabel &&
+          products[i].seq === this.seq
+        ) {
           let product1 = {
             name: products[i].name,
             headerLabel: products[i].headerLabel,
@@ -78,6 +84,15 @@ export default {
         }
       }
     },
+    getImgHeight(height) {
+      let adjust = 0;
+      if (this.screenSize > 768) {
+        adjust = parseInt(height.replace("px", ""));
+      } else {
+        adjust = parseInt(height.replace("px", "")) / 2;
+      }
+      return `${adjust}px`;
+    },
   },
   created() {
     this.mode = this.$store.state.mode;
@@ -86,4 +101,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.img-width-150 {
+  width: 150px;
+  height: auto;
+}
+
+.img-width-450 {
+  width: 450px;
+  height: auto;
+}
+</style>

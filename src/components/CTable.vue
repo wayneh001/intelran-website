@@ -64,7 +64,7 @@
             {{ e.texture }}
           </td>
           <td class="align-middle">
-            <div class="d-flex align-items-center">
+            <div class="d-flex flex-wrap align-items-center">
               <div
                 v-for="n in e.colorOption"
                 :key="n"

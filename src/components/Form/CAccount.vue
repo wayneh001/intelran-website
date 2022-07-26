@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-12 col-md-6">
-        <div class="mb-5">
+      <!-- <Form @submit="update"> -->
+      <div class="col-12 col-md-6 mb-4 mb-md-5">
+        <div class="mb-4 mb-md-3">
           <h5
-            class="ms-2"
+            class="ms-md-2"
             :class="[
               { 'custom-text-dark': this.mode === 'Light' },
               { 'custom-text-white': this.mode === 'Dark' },
@@ -12,7 +13,7 @@
           >
             Info
           </h5>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -32,10 +33,16 @@
                   { 'input-dark': this.mode === 'Dark' },
                 ]"
                 placeholder="Name"
+                rules="required"
                 v-model="account.info.name"
-            /></label>
+              />
+              <!-- <ErrorMessage
+                  name="Name"
+                  class="invalid-feedback"
+                ></ErrorMessage >-->
+            </label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -58,7 +65,7 @@
                 v-model="account.info.password"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -81,7 +88,7 @@
                 v-model="account.info.email"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -106,10 +113,10 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6">
-        <div class="mb-5">
+      <div class="col-12 col-md-6 mb-4 mb-md-5">
+        <div class="mb-4 mb-md-3">
           <h5
-            class="ms-2"
+            class="ms-md-2"
             :class="[
               { 'custom-text-dark': this.mode === 'Light' },
               { 'custom-text-white': this.mode === 'Dark' },
@@ -117,7 +124,7 @@
           >
             Address
           </h5>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -140,7 +147,7 @@
                 v-model="account.address.line1"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -163,7 +170,7 @@
                 v-model="account.address.line2"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -186,7 +193,7 @@
                 v-model="account.address.zipCode"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -211,10 +218,10 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6">
-        <div class="mb-5">
+      <div class="col-12 col-md-6 mb-4 mb-md-5">
+        <div class="mb-4 mb-md-3">
           <h5
-            class="ms-2"
+            class="ms-md-2"
             :class="[
               { 'custom-text-dark': this.mode === 'Light' },
               { 'custom-text-white': this.mode === 'Dark' },
@@ -222,7 +229,7 @@
           >
             Payment
           </h5>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -245,7 +252,7 @@
                 v-model="account.payment.card"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -268,7 +275,7 @@
                 v-model="account.payment.expire"
             /></label>
           </div>
-          <div class="mb-3 w-100">
+          <div class="mb-2 mb-md-3 w-100">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -296,7 +303,7 @@
       <div class="col-12">
         <button
           type="button"
-          class="btn w-100 mb-3"
+          class="btn w-100 mb-2 mb-md-3"
           :class="[
             { 'btn-main-light': this.mode === 'Light' },
             { 'btn-main-dark': this.mode === 'Dark' },
@@ -306,6 +313,7 @@
           Update
         </button>
       </div>
+      <!-- </Form> -->
     </div>
   </div>
 </template>
@@ -331,8 +339,12 @@ export default {
       }
     },
     update() {
-      this.$store.commit('editAccount', this.account);
-    }
+      this.$store.commit("editAccount", this.account);
+      this.$emit("showToast", {
+        title: "Edit account",
+        content: "Account is successfully updated.",
+      });
+    },
   },
   created() {
     this.checkAuth();

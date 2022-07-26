@@ -1,15 +1,15 @@
 <template>
   <div>
     <nav
-      class="navbar navbar-expand-lg px-5"
+      class="navbar navbar-expand-lg px-1 px-md-5 pt-3 pt-md-5"
       :class="[
         { 'custom-bg-light': this.mode === 'Light' },
         { 'custom-bg-black': this.mode === 'Dark' },
       ]"
     >
-      <div class="container-fluid">
+      <div class="container d-flex align-items-center">
         <label
-          class="navbar-brand fw-bolder"
+          class="navbar-brand fw-bolder d-none d-md-inline-block"
           :class="[
             { 'custom-text-dark': this.mode === 'Light' },
             { 'custom-text-white': this.mode === 'Dark' },
@@ -17,7 +17,7 @@
           >IntelRAN</label
         >
         <button
-          class="navbar-toggler"
+          class="navbar-toggler mt-2"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -25,8 +25,98 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span
+            class="navbar-toggler-icon"
+            :class="[
+              { 'navbar-toggler-icon-light': this.mode === 'Light' },
+              { 'navbar-toggler-icon-dark': this.mode === 'Dark' },
+            ]"
+          ></span>
         </button>
+        <div class="d-flex d-md-none jutify-content-center align-items-center">
+          <div class="nav-item">
+            <img
+              :src="modeIconSrc"
+              class="icon-22 mx-3 mx-md-5 image-cursor"
+              @click.prevent="changeMode"
+            />
+          </div>
+          <div class="nav-item dropdown">
+            <a
+              id="dropdown-toggle"
+              class="nav-link p-0"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              ><img :src="userIconSrc" class="icon-22 mx-md-2 image-cursor" />
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-end dropdown-menu-md-start"
+              :class="[
+                { 'custom-bg-light': this.mode === 'Light' },
+                { 'custom-bg-dark': this.mode === 'Dark' },
+              ]"
+            >
+              <li>
+                <router-link
+                  class="dropdown-item"
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  to="/dashboard/account"
+                  >Account</router-link
+                >
+              </li>
+              <li>
+                <router-link
+                  class="dropdown-item"
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  to="/dashboard/cart"
+                  >Cart</router-link
+                >
+              </li>
+              <li>
+                <router-link
+                  class="dropdown-item"
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  to="/dashboard/order"
+                  >Order</router-link
+                >
+              </li>
+              <li>
+                <div
+                  class="px-md-2"
+                  :class="[
+                    { 'hr-light': this.mode === 'Light' },
+                    { 'hr-dark': this.mode === 'Dark' },
+                  ]"
+                >
+                  <hr class="dropdown-divider" />
+                </div>
+              </li>
+              <li>
+                <span
+                  class="dropdown-item pointer"
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  style="cursor: pointer"
+                  @click.prevent="logout"
+                  >Log out</span
+                >
+              </li>
+            </div>
+          </div>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -35,7 +125,9 @@
                 :class="[
                   { 'text-nav-light': this.mode === 'Light' },
                   { 'text-nav-dark': this.mode === 'Dark' },
-                  { 'active-light': this.mode === 'Light' && navActive === 0 },
+                  {
+                    'active-light': this.mode === 'Light' && navActive === 0,
+                  },
                   { 'active-dark': this.mode === 'Dark' && navActive === 0 },
                 ]"
                 to="/dashboard/smartHome"
@@ -48,7 +140,9 @@
                 :class="[
                   { 'text-nav-light': this.mode === 'Light' },
                   { 'text-nav-dark': this.mode === 'Dark' },
-                  { 'active-light': this.mode === 'Light' && navActive === 1 },
+                  {
+                    'active-light': this.mode === 'Light' && navActive === 1,
+                  },
                   { 'active-dark': this.mode === 'Dark' && navActive === 1 },
                 ]"
                 to="/dashboard/hub"
@@ -61,7 +155,9 @@
                 :class="[
                   { 'text-nav-light': this.mode === 'Light' },
                   { 'text-nav-dark': this.mode === 'Dark' },
-                  { 'active-light': this.mode === 'Light' && navActive === 2 },
+                  {
+                    'active-light': this.mode === 'Light' && navActive === 2,
+                  },
                   { 'active-dark': this.mode === 'Dark' && navActive === 2 },
                 ]"
                 to="/dashboard/about"
@@ -70,7 +166,7 @@
             </li>
           </ul>
         </div>
-        <div class="d-flex jutify-content-center align-items-center">
+        <div class="d-none d-md-flex jutify-content-center align-items-center">
           <img
             :src="modeIconSrc"
             class="icon-22 mx-2 image-cursor"
@@ -79,12 +175,12 @@
           <div class="nav-item dropdown">
             <a
               id="dropdown-toggle"
-              class="nav-link"
+              class="nav-link p-0"
               href="#"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              ><img :src="userIconSrc" class="icon-22 mx-2 image-cursor" />
+              ><img :src="userIconSrc" class="icon-22 mx-md-2 image-cursor" />
             </a>
             <div
               class="dropdown-menu dropdown-menu-left"
@@ -128,7 +224,7 @@
               </li>
               <li>
                 <div
-                  class="px-2"
+                  class="px-md-2"
                   :class="[
                     { 'hr-light': this.mode === 'Light' },
                     { 'hr-dark': this.mode === 'Dark' },
@@ -219,6 +315,20 @@ export default {
 </script>
 
 <style>
+.navbar-toggler {
+  padding: 0;
+}
+
+.navbar-toggler-icon-light {
+  width: 18px;
+  background-image: url("@/assets/img/icons/header/Hambergur@Light.svg");
+}
+
+.navbar-toggler-icon-dark {
+  width: 18px;
+  background-image: url("@/assets/img/icons/header/Hambergur@Dark.svg");
+}
+
 .active-light {
   color: #1a56a2;
 }

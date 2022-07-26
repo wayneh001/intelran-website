@@ -6,7 +6,7 @@
     <div v-else>
       <div>
         <div v-if="headerLabel === 'Account'" :mode="mode">
-          <CAccount :mode="mode" />
+          <CAccount :mode="mode" @showToast="showToast" />
         </div>
       </div>
       <div>
@@ -15,12 +15,19 @@
             v-if="!orderPlaced"
             :mode="mode"
             @toPlaceOrder="toPlaceOrder"
+            @showToast="showToast"
           />
-          <CPlaceOrder v-if="orderPlaced" :mode="mode" @cancelPlaceOrder="cancelPlaceOrder" />
+          <CPlaceOrder
+            v-if="orderPlaced"
+            :mode="mode"
+            @cancelPlaceOrder="cancelPlaceOrder"
+            @finishedPlaceOrder="finishedPlaceOrder"
+            @showToast="showToast"
+          />
         </div>
       </div>
       <div v-if="headerLabel === 'Order'">
-        <COrder :mode="mode" />
+        <COrder :mode="mode" @showToast="showToast" />
       </div>
     </div>
   </div>
@@ -57,11 +64,17 @@ export default {
     toPlaceOrder() {
       this.orderPlaced = true;
     },
+    finishedPlaceOrder() {
+      this.orderPlaced = false;
+    },
     cancelPlaceOrder() {
       this.orderPlaced = false;
     },
     reload() {
-      this.$emit('reload');
+      this.$emit("reload");
+    },
+    showToast(msg) {
+      this.$emit("showToast", msg)
     }
   },
   created() {

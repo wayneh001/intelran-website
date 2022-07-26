@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="d-flex justify-content-center align-items-center">
-        <div v-for="(e, i) in socialApps" :key="i" class="mx-3 my-5">
+        <div v-for="(e, i) in socialApps" :key="i" class="mx-2 my-4 mx-md-3 my-md-5">
           <img :src="e.src" class="d-inline-block" style="cursor: pointer" />
         </div>
       </div>

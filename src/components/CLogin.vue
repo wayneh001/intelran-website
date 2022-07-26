@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="container mt-5">
-      <div class="col-6 mx-auto">
-        <div class="mb-5">
-          <div class="w-100 mb-3">
+    <div class="container mt-md-5">
+      <div class="col-12 col-md-6 mx-auto">
+        <div class="mb-4 mb-md-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -26,7 +26,7 @@
                 v-model="user.username"
             /></label>
           </div>
-          <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -51,7 +51,7 @@
           </div>
           <button
             type="button"
-            class="btn w-100 mb-3"
+            class="btn w-100 mb-2 mb-md-3"
             :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
@@ -62,7 +62,7 @@
           </button>
           <button
             type="button"
-            class="btn w-100 mb-3"
+            class="btn w-100 mb-2 mb-md-3"
             :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
@@ -73,7 +73,7 @@
           </button>
           <button
             type="button"
-            class="btn btn-light w-100 mb-3"
+            class="btn btn-light w-100 mb-2 mb-md-3"
             :class="[
               { 'btn-outline-main-light': this.mode === 'Light' },
               { 'btn-outline-main-dark': this.mode === 'Dark' },

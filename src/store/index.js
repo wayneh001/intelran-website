@@ -4,6 +4,8 @@ import { account, cart, order } from "@/content/user";
 
 export default createStore({
   state: {
+    screenSize: 0,
+    time: "day",
     mode: "Light",
     auth: false,
     account: {},
@@ -17,8 +19,19 @@ export default createStore({
     order: Array,
   },
   mutations: {
+    saveScreenSize(state, size) {
+      state.screenSize = size;
+    },
     auth(state, auth) {
       state.auth = auth;
+    },
+    setTime(state, time) {
+      state.time = time;
+      if (state.time === "day") {
+        this.commit("changeMode", "Light")
+      } else {
+        this.commit("changeMode", "Dark")
+      }
     },
     changeMode(state, mode) {
       state.mode = mode;
@@ -48,9 +61,9 @@ export default createStore({
         },
         extendedWarranty: {
           enabled: false,
-          fee: 0
+          fee: 0,
         },
-      }
+      };
       state.cart.total = 0;
     },
     fetchOrder(state) {

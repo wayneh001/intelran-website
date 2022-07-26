@@ -20,24 +20,29 @@
         >
           <div class="row">
             <div
-              class="col-12 col-md-6 overflow-auto"
+              class="d-flex d-md-block col-12 col-md-6 mb-4 mb-md-5 overflow-auto justify-content-center"
               style="max-height: 37.5rem"
             >
               <div
                 v-for="(e, i) in products"
                 :key="i"
+                class="d-flex justify-content-center align-items-center w-100"
                 :class="[
                   { 'product-img-light': this.mode === 'Light' },
                   { 'product-img-dark': this.mode === 'Dark' },
                 ]"
                 @click.prevent="selectProduct(e)"
               >
-                <img style="width: 300px" :src="e.src" class="my-5 mx-5" />
+                <img
+                  :src="e.src"
+                  class="mx-5 my-5 "
+                  style="width: 200px;"
+                />
               </div>
             </div>
-            <div class="col-12 col-md-6">
-              <div class="mb-3">
-                <div class="w-100 mb-3">
+            <div class="col-12 col-md-6 mb-4 mb-md-5">
+              <div class="mb-2 mb-md-3">
+                <div class="w-100 mb-2 mb-md-3">
                   <label
                     id="product"
                     :class="[
@@ -49,7 +54,7 @@
                     <span>${{ product.price }}</span>
                   </label>
                 </div>
-                <div class="w-100 mb-3">
+                <div class="w-100 mb-2 mb-md-3">
                   <label
                     id="color"
                     :class="[
@@ -66,7 +71,7 @@
                       { 'color-selector-body-dark': this.mode === 'Dark' },
                     ]"
                   >
-                    <div class="row d-flex justify-content-center">
+                    <div class="row d-flex justify-content-start">
                       <div
                         v-for="n in color"
                         :key="n"
@@ -87,7 +92,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="w-100 mb-3">
+                <div class="w-100 mb-2 mb-md-3">
                   <label
                     id="quantity"
                     :class="[
@@ -97,7 +102,7 @@
                   >
                     <span>Quantity</span>
                     <div
-                      class="col-4 d-flex justify-content-between align-items-center"
+                      class="col-4 d-flex overflow-auto justify-content-between align-items-center"
                     >
                       <img
                         :src="minusIconSrc"
@@ -115,7 +120,7 @@
                 </div>
                 <div
                   v-if="this.product.name === 'Universal Switch'"
-                  class="mb-3"
+                  class="mb-2 mb-md-3"
                 >
                   <label
                     id="switchConfig"
@@ -134,8 +139,8 @@
                       :class="[
                         { 'config-setter-body-light': this.mode === 'Light' },
                         { 'config-setter-body-dark': this.mode === 'Dark' },
+                        { 'w-50': this.screenSize >= 768 },
                       ]"
-                      style="width: 50%"
                       ><span
                         :class="[
                           { 'custom-text-dark': this.mode === 'Light' },
@@ -155,7 +160,10 @@
                   </div>
                 </div>
               </div>
-              <div v-if="this.product.name === 'Blinds Driver'" class="mb-3">
+              <div
+                v-if="this.product.name === 'Blinds Driver'"
+                class="mb-2 mb-md-3"
+              >
                 <label
                   id="blindsConfig"
                   :class="[
@@ -172,7 +180,7 @@
                       { 'config-setter-body-light': this.mode === 'Light' },
                       { 'config-setter-body-dark': this.mode === 'Dark' },
                     ]"
-                    style="border-radius: 0 0 0.5rem 0.5rem;"
+                    style="border-radius: 0 0 0.5rem 0.5rem"
                     ><span
                       :class="[
                         { 'custom-text-dark': this.mode === 'Light' },
@@ -182,16 +190,20 @@
                     ><input
                       type="text"
                       class="text-end"
+                      :class="[
+                        { 'input-light': this.mode === 'Light' },
+                        { 'input-dark': this.mode === 'Dark' },
+                      ]"
                       placeholder="m"
                       v-model="this.product.config[0]"
                   /></label>
                 </div>
               </div>
             </div>
-            <div class="px-3">
+            <div class="px-md-3">
               <button
                 type="button"
-                class="btn w-100 mb-3"
+                class="btn w-100 mb-2 mb-md-3"
                 :class="[
                   { 'btn-main-light': this.mode === 'Light' },
                   { 'btn-main-dark': this.mode === 'Dark' },
@@ -202,7 +214,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-light w-100 mb-3"
+                class="btn btn-light w-100 mb-2 mb-md-3"
                 :class="[
                   { 'btn-outline-main-light': this.mode === 'Light' },
                   { 'btn-outline-main-dark': this.mode === 'Dark' },
@@ -242,6 +254,7 @@ export default {
   },
   data() {
     return {
+      screenSize: this.$store.state.screenSize,
       mode: "",
       products: [],
       color: [],
@@ -263,10 +276,18 @@ export default {
         }
       }
     },
+    getImgHeight(height) {
+      let adjust = 0;
+      if (this.screenSize > 768) {
+        adjust = parseInt(height.replace("px", "")) * 1.5;
+      } else {
+        adjust = parseInt(height.replace("px", ""));
+      }
+      return `${adjust}px`;
+    },
     setProduct(product) {
       this.product = _.omit(product, [
         "label",
-        "height",
         "colorOption",
         "image",
       ]);
@@ -347,9 +368,12 @@ export default {
     },
     addToCart() {
       this.product.sum = parseInt(this.product.price * this.product.quantity);
-      this.$store.commit("addToCart", this.product);
       this.hideModal();
-      this.$router.push("/dashboard/cart");
+      this.$store.commit("addToCart", this.product);
+      this.$emit("showToast", {
+        title: "Add to Cart",
+        content: "The selected product is successfully added to cart.",
+      });
     },
     cancel() {
       this.hideModal();
@@ -372,3 +396,50 @@ export default {
   },
 };
 </script>
+
+<style>
+.config-setter-body-light:nth-last-child(1) {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.config-setter-body-light:nth-last-child(2) {
+  border-radius: 0 0 0 0;
+}
+
+.config-setter-body-light input:-webkit-autofill,
+input:focus:-webkit-autofill {
+  -webkit-text-fill-color: #262627;
+  box-shadow: 0 0 0 100px rgba(255, 255, 255) inset;
+}
+
+.config-setter-body-dark:nth-last-child(1) {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.config-setter-body-dark:nth-last-child(2) {
+  border-radius: 0 0 0 0;
+}
+
+.config-setter-body-dark input:-webkit-autofill,
+input:focus:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0 100px rgba(38, 38, 39) inset;
+}
+
+@media (min-width: 768px) {
+  .config-setter-body-light:nth-last-child(1) {
+    border-radius: 0 0 0.5rem 0;
+  }
+
+  .config-setter-body-dark:nth-last-child(1) {
+    border-radius: 0 0 0.5rem 0;
+  }
+
+  .config-setter-body-light:nth-last-child(2) {
+    border-radius: 0 0 0 0.5rem;
+  }
+  .config-setter-body-dark:nth-last-child(2) {
+    border-radius: 0 0 0 0.5rem;
+  }
+}
+</style>

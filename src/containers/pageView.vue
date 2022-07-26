@@ -6,10 +6,14 @@
       { 'custom-bg-black': this.mode === 'Dark' },
     ]"
   >
-    <CNav :nav="content.nav" class="px-5 pt-3" @updateMode="updateMode" />
-    <div class="px-5">
+    <CNav
+      :nav="content.nav"
+      class="px-1 px-md-5 pt-md-33"
+      @updateMode="updateMode"
+    />
+    <div class="px-1 px-md-5">
       <div
-        class="px-5"
+        class="px-1 px-md-5"
         :class="[
           { 'hr-light': this.mode === 'Light' },
           { 'hr-dark': this.mode === 'Dark' },
@@ -21,10 +25,11 @@
     <CHeader
       :nav="content.nav"
       :headerIcon="content.headerIcon"
-      class="mb-5 px-5"
+      class="mb-4 mb-md-3 px-1 px-md-5"
     />
-    <div class="mb-3 px-5">
-      <div class="mb-5 px-5">
+    <CToast ref="toast" :msg="msg" />
+    <div class="mb-2 mb-md-3 px-1 px-md-5">
+      <div class="mb-4 mb-md-3 px-1 px-md-5">
         <h3
           class="fw-bolder"
           :class="[
@@ -43,10 +48,10 @@
           {{ content.subtitle }}
         </h5>
       </div>
-      <div v-if="content.title === 'IntelRAN'" class="px-5">
+      <div v-if="content.title === 'IntelRAN'" class="px-1 px-md-5">
         <div class="row">
           <div
-            class="col-12 col-md-6 py-3"
+            class="col-12 col-md-6 mb-4 mb-md-5 py-md-33"
             v-for="(e, i) in content.article"
             :key="i"
           >
@@ -70,22 +75,23 @@
           </div>
         </div>
       </div>
-      <div v-if="content.nav === 'User'" class="px-5">
+      <div v-if="content.nav === 'User'" class="px-1 px-md-5">
         <CForm
           :headerLabel="content.headerLabel"
           @reload="reload"
           @toConfig="toConfig(item)"
+          @showToast="showToast"
           :key="componentKey"
         />
       </div>
       <div
         v-if="content.nav !== 'User' && content.title !== 'IntelRAN'"
-        class="px-5"
+        class="px-1 px-md-5"
       >
         <div
           v-for="(e, i) in addIconsUrl(content.article)"
           :key="i"
-          class="mb-5"
+          class="mb-4 mb-md-3"
         >
           <div v-show="e.type === 'text'">
             <h5
@@ -106,8 +112,23 @@
               {{ e.article }}
             </p>
           </div>
-          <div v-if="e.type === 'label'" class="row">
-            <h5 class="fw-bold">{{ e.title }}</h5>
+          <div
+            v-if="e.type === 'label'"
+            class="row"
+            :class="[
+              { 'justify-content-between': this.screenSize >= 768 },
+              { 'justify-content-center': this.screenSize < 768 },
+            ]"
+          >
+            <h5
+              class="fw-bold"
+              :class="[
+                { 'custom-text-dark': this.mode === 'Light' },
+                { 'custom-text-white': this.mode === 'Dark' },
+              ]"
+            >
+              {{ e.title }}
+            </h5>
             <div
               v-for="(f, j) in e.content"
               :key="j"
@@ -115,9 +136,11 @@
               :class="[
                 { 'content-label-light': this.mode === 'Light' },
                 { 'content-label-dark': this.mode === 'Dark' },
+                { 'col-5': this.screenSize >= 768 },
+                { 'col-10': this.screenSize < 768 },
               ]"
             >
-              <img :src="f.src" class="icon-22 me-2" /><span
+              <img :src="f.src" class="icon-22 me-md-2" /><span
                 :class="[
                   { 'custom-text-dark': this.mode === 'Light' },
                   { 'custom-text-white': this.mode === 'Dark' },
@@ -127,7 +150,7 @@
             </div>
           </div>
           <CDisplay
-            class="mb-3"
+            class="mb-2 mb-md-3"
             v-if="content.nav === 'Solutions'"
             :headerLabel="content.headerLabel"
             :seq="i"
@@ -150,12 +173,13 @@
         <CConfig
           ref="config"
           :headerLabel="content.headerLabel"
+          @showToast="showToast"
         />
       </div>
     </div>
-    <div class="px-5">
+    <div class="px-1 px-md-5">
       <div
-        class="px-5"
+        class="px-1 px-md-5"
         :class="[
           { 'hr-light': this.mode === 'Light' },
           { 'hr-dark': this.mode === 'Dark' },
@@ -175,6 +199,7 @@ import CDisplay from "@/components/CDisplay";
 import CTable from "@/components/CTable";
 import CForm from "@/components/CForm";
 import CConfig from "@/components/CConfig";
+import CToast from "@/components/CToast";
 import CFooter from "@/components/CFooter";
 import { contentIcons } from "@/content/icons";
 
@@ -183,6 +208,7 @@ export default {
   components: {
     CNav,
     CHeader,
+    CToast,
     CDisplay,
     CTable,
     CForm,
@@ -197,7 +223,9 @@ export default {
   },
   data() {
     return {
+      screenSize: this.$store.state.screenSize,
       mode: "",
+      msg: {},
       componentKey: 0,
     };
   },
@@ -231,6 +259,10 @@ export default {
     },
     updateMode() {
       this.$emit("updateMode");
+    },
+    showToast(msg) {
+      this.msg = msg;
+      this.$refs.toast.showToast();
     },
     reload() {
       this.componentKey += 1;

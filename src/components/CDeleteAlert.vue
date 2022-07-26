@@ -15,8 +15,6 @@
         </div>
         <div class="modal-body">
           Confirm delete?
-          <strong class="text-danger">{{ item.title }}</strong>
-          can not be restored after delete.
         </div>
         <div class="modal-footer">
           <button
@@ -29,7 +27,7 @@
           <button
             type="button"
             class="btn btn-danger"
-            @click.prevent="$emit('confirm')"
+            @click.prevent="confirm"
           >
             confirm
           </button>
@@ -40,15 +38,29 @@
 </template>
 
 <script>
+import Modal from "bootstrap/js/dist/modal";
 export default {
-  name: "CAlert",
+  name: "CDeleteAlert",
   props: {
-    item: {},
+    item: {
+      type: Object,
+      require: true
+    },
   },
-  data() {
-    return {
-      modal: "",
-    };
+  methods: {
+    showModal() {
+      this.modal.show();
+    },
+    hideModal() {
+      this.modal.hide();
+    },
+    confirm() {
+      this.$emit('confirm', this.item)
+      this.hideModal();
+    }
+  },
+  mounted() {
+    this.modal = new Modal(this.$refs.modal);
   },
 };
 </script>

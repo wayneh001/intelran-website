@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-12 col-md-6">
-        <div class="mb-5">
+      <div class="col-12 col-md-6 mb-4 mb-md-5">
+        <div class="mb-4 mb-md-3">
           <h5
-            class="ms-2"
+            class="ms-md-2"
             :class="[
               { 'custom-text-dark': this.mode === 'Light' },
               { 'custom-text-white': this.mode === 'Dark' },
@@ -14,7 +14,7 @@
           </h5>
           <button
             type="button"
-            class="btn w-100 mb-3"
+            class="btn w-100 mb-2 mb-md-3"
             :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
@@ -23,7 +23,7 @@
           >
             Load My Info
           </button>
-          <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -46,7 +46,7 @@
                 v-model="info.name"
             /></label>
           </div>
-          <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -70,7 +70,7 @@
             /></label>
           </div>
           <h5
-            class="ms-2"
+            class="ms-md-2"
             :class="[
               { 'custom-text-dark': this.mode === 'Light' },
               { 'custom-text-white': this.mode === 'Dark' },
@@ -80,7 +80,7 @@
           </h5>
           <button
             type="button"
-            class="btn w-100 mb-3"
+            class="btn w-100 mb-2 mb-md-3"
             :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
@@ -89,8 +89,8 @@
           >
             Load My Address
           </button>
-          <div class="w-100 mb-3">
-            <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
+            <div class="w-100 mb-2 mb-md-3">
               <label
                 :class="[
                   { 'form-label-light': this.mode === 'Light' },
@@ -114,7 +114,7 @@
               /></label>
             </div>
           </div>
-          <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -137,7 +137,7 @@
                 v-model="address.line2"
             /></label>
           </div>
-          <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -160,7 +160,7 @@
                 v-model="address.zipCode"
             /></label>
           </div>
-          <div class="w-100 mb-3">
+          <div class="w-100 mb-2 mb-md-3">
             <label
               :class="[
                 { 'form-label-light': this.mode === 'Light' },
@@ -185,11 +185,11 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6">
-        <div class="mb-3">
-          <div class="mb-5">
+      <div class="col-12 col-md-6 mb-4 mb-md-5">
+        <div class="mb-2 mb-md-3">
+          <div class="mb-4 mb-md-3">
             <h5
-              class="ms-2"
+              class="ms-md-2"
               :class="[
                 { 'custom-text-dark': this.mode === 'Light' },
                 { 'custom-text-white': this.mode === 'Dark' },
@@ -199,7 +199,7 @@
             </h5>
             <button
               type="button"
-              class="btn w-100 mb-3"
+              class="btn w-100 mb-2 mb-md-3"
               :class="[
                 { 'btn-main-light': this.mode === 'Light' },
                 { 'btn-main-dark': this.mode === 'Dark' },
@@ -208,7 +208,7 @@
             >
               Load My Payment
             </button>
-            <div class="w-100 mb-3">
+            <div class="w-100 mb-2 mb-md-3">
               <label
                 :class="[
                   { 'form-label-light': this.mode === 'Light' },
@@ -231,7 +231,7 @@
                   v-model="payment.card"
               /></label>
             </div>
-            <div class="w-100 mb-3">
+            <div class="w-100 mb-2 mb-md-3">
               <label
                 :class="[
                   { 'form-label-light': this.mode === 'Light' },
@@ -254,7 +254,7 @@
                   v-model="payment.expire"
               /></label>
             </div>
-            <div class="w-100 mb-3">
+            <div class="w-100 mb-2 mb-md-3">
               <label
                 :class="[
                   { 'form-label-light': this.mode === 'Light' },
@@ -281,7 +281,7 @@
         </div>
         <button
           type="button"
-          class="btn w-100 mb-3"
+          class="btn w-100 mb-2 mb-md-3"
           :class="[
             { 'btn-main-light': this.mode === 'Light' },
             { 'btn-main-dark': this.mode === 'Dark' },
@@ -292,7 +292,7 @@
         </button>
         <button
           type="button"
-          class="btn w-100 mb-3"
+          class="btn w-100 mb-2 mb-md-3"
           :class="[
             { 'btn-main-light': this.mode === 'Light' },
             { 'btn-main-dark': this.mode === 'Dark' },
@@ -307,7 +307,7 @@
         </button>
         <button
           type="button"
-          class="btn w-100 mb-3"
+          class="btn w-100 mb-2 mb-md-3"
           :class="[
             { 'btn-main-light': this.mode === 'Light' },
             { 'btn-main-dark': this.mode === 'Dark' },
@@ -318,7 +318,7 @@
         </button>
         <button
           type="button"
-          class="btn btn-light w-100 mb-3"
+          class="btn btn-light w-100 mb-2 mb-md-3"
           :class="[
             { 'btn-outline-main-light': this.mode === 'Light' },
             { 'btn-outline-main-dark': this.mode === 'Dark' },
@@ -390,7 +390,11 @@ export default {
         },
       };
       this.$store.commit("placeAnOrder", order);
-      this.$router.push("/dashboard/order");
+      this.$emit("showToast", {
+        title: "Place order",
+        content: "We have successfully reveived your order.",
+      });
+      this.$emit("finishedPlaceOrder");
     },
   },
   created() {
