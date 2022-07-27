@@ -13,7 +13,7 @@ export const account = {
   },
   payment: {
     card: "4475-9840-5720-4268",
-    expire: "08/2025",
+    expiry: "08/2025",
     cvc: "720",
   },
 };
@@ -164,7 +164,7 @@ export const order = [
     },
     payment: {
       card: "4475-9840-5720-4268",
-      expire: "08/2025",
+      expiry: "08/2025",
       cvc: "720",
     },
     shipping: {
@@ -218,7 +218,7 @@ export const order = [
     },
     payment: {
       card: "4475-9840-5720-4268",
-      expire: "08/2025",
+      expiry: "08/2025",
       cvc: "720",
     },
     shipping: {
