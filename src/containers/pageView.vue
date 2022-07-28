@@ -282,6 +282,7 @@ export default {
     reload() {
       this.toLogin = false;
       this.pageShow = true;
+      this.componentKey += 1;
     },
   },
   created() {

@@ -403,6 +403,28 @@ export default {
       }
       return color;
     },
+    setProductImage() {
+      if (this.selectedProducts.length > 0) {
+        for (let i in this.products) {
+          for (let e in this.selectedProducts) {
+            if (
+              this.selectedProducts[e].name === this.products[i].name &&
+              this.selectedProducts[e].texture === this.products[i].texture
+            ) {
+              for (let c in this.products[i].image) {
+                if (
+                  this.selectedProducts[e].color === this.products[i].image[c].name
+                ) {
+                  this.selectedProducts[
+                    e
+                  ].src = require(`@/assets/img/products/${this.products[i].image[c].url}`);
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     getQuantityIcons() {
       if (this.mode === "Light") {
         this.minusIconSrc = require(`@/assets/img/icons/func/${funcIcons[4].url.light}`);
@@ -416,9 +438,9 @@ export default {
       e.color = n;
       for (let i in products) {
         if (products[i].name === e.name && products[i].texture === e.texture) {
-          for (let c in products[i].image) {
-            if (products[i].image[c].name === n) {
-              e.src = require(`@/assets/img/products/${products[i].image[c].url}`);
+          for (let c in this.products[i].image) {
+            if (this.products[i].image[c].name === n) {
+              e.src = require(`@/assets/img/products/${this.products[i].image[c].url}`);
             }
           }
         }
@@ -501,6 +523,7 @@ export default {
   },
   created() {
     this.checkAuth();
+    this.setProductImage();
     this.getQuantityIcons();
     this.init();
   },
