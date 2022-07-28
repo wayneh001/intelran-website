@@ -22,14 +22,14 @@
             class="btn btn-outline-secondary"
             data-bs-dismiss="modal"
           >
-            cancel
+            Cancel
           </button>
           <button
             type="button"
             class="btn btn-danger"
             @click.prevent="confirm"
           >
-            confirm
+            Confirm
           </button>
         </div>
       </div>

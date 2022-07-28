@@ -71,17 +71,6 @@
           >
             Registrate
           </button>
-          <button
-            type="button"
-            class="btn btn-light w-100 mb-2 mb-md-3"
-            :class="[
-              { 'btn-outline-main-light': this.mode === 'Light' },
-              { 'btn-outline-main-dark': this.mode === 'Dark' },
-            ]"
-            @click.prevent="cancel"
-          >
-            Cancel
-          </button>
         </div>
       </div>
     </div>

@@ -46,10 +46,10 @@
                   ]"
                   placeholder="Name"
                   v-model="info.name"
-                  :rules="validate" />
-                </label>
-                <ErrorMessage class="errorMessage" name="name"
-              />
+                  :rules="validate"
+                />
+                <ErrorMessage class="errorMessage" name="name" />
+              </label>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
@@ -335,7 +335,7 @@
             Pay
           </button>
           <button
-            type="button"
+            type="submit"
             class="btn w-100 mb-2 mb-md-3"
             :class="[
               { 'btn-main-light': this.mode === 'Light' },
@@ -425,12 +425,12 @@ export default {
         uid: "",
         no: `${no}`,
         date: date,
-        cart: this.$store.state.cart,
+        cart: {...this.$store.state.cart},
         receiver: {
-          info: this.info,
-          address: this.address,
+          info: {...this.info},
+          address: {...this.address},
         },
-        payment: this.payment,
+        payment: {...this.payment},
         shipping: {
           status: "Order received",
           no: `${shippingNo}`,

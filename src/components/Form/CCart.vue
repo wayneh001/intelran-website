@@ -114,10 +114,10 @@
                 <label
                   v-for="(c, j) in getConfig(presetConfig)"
                   :key="j"
-                  class="w-100 w-md-50"
                   :class="[
                     { 'config-setter-body-light': this.mode === 'Light' },
                     { 'config-setter-body-dark': this.mode === 'Dark' },
+                    { 'w-50': this.screenSize >= 768 },
                   ]"
                   ><span
                     :class="[
@@ -431,7 +431,6 @@ export default {
     },
     toDeleteProduct(e) {
       this.productToDelete = e;
-      console.log(this.productToDelete);
       this.productToDelete.title = this.productToDelete.name;
       this.$refs.deleteAlert.showModal();
     },

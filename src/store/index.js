@@ -28,9 +28,9 @@ export default createStore({
     setTime(state, time) {
       state.time = time;
       if (state.time === "day") {
-        this.commit("changeMode", "Light")
+        this.commit("changeMode", "Light");
       } else {
-        this.commit("changeMode", "Dark")
+        this.commit("changeMode", "Dark");
       }
     },
     changeMode(state, mode) {
@@ -48,11 +48,7 @@ export default createStore({
     addToCart(state, product) {
       state.cart.selectedProducts.push(product);
     },
-    editCart(state, cart) {
-      state.cart = cart;
-    },
-    placeAnOrder(state, order) {
-      state.order.unshift(order);
+    initCart(state) {
       state.cart.selectedProducts = [];
       state.cart.service = {
         installation: {
@@ -65,6 +61,13 @@ export default createStore({
         },
       };
       state.cart.total = 0;
+    },
+    editCart(state, cart) {
+      state.cart = cart;
+    },
+    placeAnOrder(state, order) {
+      state.order.unshift(order);
+      this.commit("initCart");
     },
     fetchOrder(state) {
       state.order = order;

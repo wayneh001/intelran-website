@@ -237,8 +237,9 @@ export default {
       });
     },
   },
-  crated() {
+  created() {
     this.checkAuth();
+    console.log(this.order);
   },
 };
 </script>

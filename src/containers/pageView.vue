@@ -225,6 +225,7 @@ export default {
     return {
       screenSize: this.$store.state.screenSize,
       mode: "",
+      auth: this.$store.state.auth,
       msg: {},
       componentKey: 0,
     };
@@ -255,7 +256,11 @@ export default {
       return array;
     },
     toConfig() {
-      this.$refs.config.showModal();
+      if (this.auth === true) {
+        this.$refs.config.showModal();
+      } else {
+        this.$router.push("/dashboard/account");
+      }
     },
     updateMode() {
       this.$emit("updateMode");
