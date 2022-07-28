@@ -70,7 +70,7 @@
                     >{{ c.name }}</span
                   ><span
                     :class="[
-                      { 'custom-text-dark': this.mode === 'Light' },
+                      { 'custom-text-main': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
                     >X{{ c.quantity }}</span
@@ -92,7 +92,7 @@
                 <span>Installation</span>
                 <span
                   :class="[
-                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
                   >${{ e.cart.service.installation.fee }}</span
@@ -113,7 +113,7 @@
                 <span>Extended Warranty</span>
                 <span
                   :class="[
-                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
                   >${{ e.cart.service.extendedWarranty.fee }}</span
@@ -131,7 +131,7 @@
                 <span>Overall Total</span>
                 <span
                   :class="[
-                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
                   >${{ e.cart.total }}</span

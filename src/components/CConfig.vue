@@ -33,11 +33,7 @@
                 ]"
                 @click.prevent="selectProduct(e)"
               >
-                <img
-                  :src="e.src"
-                  class="mx-5 my-5 "
-                  style="width: 200px;"
-                />
+                <img :src="e.src" class="mx-5 my-5" style="width: 200px" />
               </div>
             </div>
             <div class="col-12 col-md-6 mb-4 mb-md-5">
@@ -51,7 +47,13 @@
                     ]"
                   >
                     <span>{{ product.name }}</span>
-                    <span>${{ product.price }}</span>
+                    <span
+                      :class="[
+                        { 'custom-text-main': this.mode === 'Light' },
+                        { 'custom-text-white': this.mode === 'Dark' },
+                      ]"
+                      >${{ product.price }}</span
+                    >
                   </label>
                 </div>
                 <div class="w-100 mb-2 mb-md-3">
@@ -63,7 +65,13 @@
                     ]"
                   >
                     <span>Color</span>
-                    <span>{{ product.color }}</span>
+                    <span
+                      :class="[
+                        { 'custom-text-main': this.mode === 'Light' },
+                        { 'custom-text-white': this.mode === 'Dark' },
+                      ]"
+                      >{{ product.color }}</span
+                    >
                   </label>
                   <div
                     :class="[
@@ -130,7 +138,13 @@
                     ]"
                   >
                     <span>Config</span>
-                    <span>Label on Switch</span>
+                    <span
+                      :class="[
+                        { 'custom-text-main': this.mode === 'Light' },
+                        { 'custom-text-white': this.mode === 'Dark' },
+                      ]"
+                      >Label on Switch</span
+                    >
                   </label>
                   <div class="d-flex flex-wrap">
                     <label
@@ -172,7 +186,13 @@
                   ]"
                 >
                   <span>Config</span>
-                  <span>Length of Track</span>
+                  <span
+                    :class="[
+                      { 'custom-text-main': this.mode === 'Light' },
+                      { 'custom-text-white': this.mode === 'Dark' },
+                    ]"
+                    >Length of Track</span
+                  >
                 </label>
                 <div class="d-flex flex-wrap">
                   <label
@@ -286,11 +306,7 @@ export default {
       return `${adjust}px`;
     },
     setProduct(product) {
-      this.product = _.omit(product, [
-        "label",
-        "colorOption",
-        "image",
-      ]);
+      this.product = _.omit(product, ["label", "colorOption", "image"]);
       this.product.color = product.image[0].name;
       this.product.quantity = 1;
       this.sum = this.product.quantity * this.product.price;

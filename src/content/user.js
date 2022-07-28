@@ -27,7 +27,7 @@ export const cart = {
       price: 89,
       height: "200px",
       color: "Ferrari-Red",
-      src: "/img/UniversalSwitch@Ferrari-Red.a63cd90b.png",
+      src: "/img/UniversalSwitch@Ferrari-Red.9fddbafa.png",
       quantity: 1,
       sum: 89,
       config: [
@@ -96,7 +96,7 @@ export const order = [
           price: 89,
           height: "200px",
           color: "Hawaiian-Blue",
-          src: "/img/UniversalSwitch@Ferrari-Red.a63cd90b.png",
+          src: "/img/UniversalSwitch@Ferrari-Red.9fddbafa.png",
           quantity: 1,
           sum: 89,
           config: [

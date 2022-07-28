@@ -15,11 +15,7 @@
               class="d-flex justify-content-center align-items-center mb-2 mb-md-3"
             >
               <div style="height: 200px; line-height: 200px">
-                <img
-                  :src="e.src"
-                  class="mx-auto"
-                  style="width: 200px;"
-                />
+                <img :src="e.src" class="mx-auto" style="width: 200px" />
               </div>
             </div>
             <div class="w-100 mb-2 mb-md-3">
@@ -31,7 +27,13 @@
                 ]"
               >
                 <span>{{ e.name }}</span>
-                <span>${{ e.price }}</span>
+                <span
+                  :class="[
+                    { 'custom-text-main': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >${{ e.price }}</span
+                >
               </label>
             </div>
             <div class="w-100 mb-2 mb-md-3">
@@ -43,7 +45,13 @@
                 ]"
               >
                 <span>Color</span>
-                <span>{{ e.color }}</span>
+                <span
+                  :class="[
+                    { 'custom-text-main': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >{{ e.color }}</span
+                >
               </label>
               <div
                 class="px-4 px-md-4"
@@ -108,7 +116,13 @@
                 ]"
               >
                 <span>Config</span>
-                <span>Label on Switch</span>
+                <span
+                  :class="[
+                    { 'custom-text-main': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >Label on Switch</span
+                >
               </label>
               <div class="d-flex flex-wrap">
                 <label
@@ -146,7 +160,13 @@
                 ]"
               >
                 <span>Config</span>
-                <span>Length of Track</span>
+                <span
+                  :class="[
+                    { 'custom-text-main': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >Length of Track</span
+                >
               </label>
               <div class="d-flex flex-wrap">
                 <label
@@ -181,7 +201,13 @@
                 ]"
               >
                 <span>Sum</span>
-                <span>${{ e.sum }}</span>
+                <span
+                  :class="[
+                    { 'custom-text-main': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+                  >${{ e.sum }}</span
+                >
               </label>
             </div>
             <button
@@ -226,7 +252,12 @@
               ]"
             >
               <span>Fee</span>
-              <span v-show="service.installation.enabled"
+              <span
+                v-show="service.installation.enabled"
+                :class="[
+                  { 'custom-text-main': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
                 >${{ service.installation.fee }}</span
               >
             </label>
@@ -263,7 +294,12 @@
               ]"
             >
               <span>Fee</span>
-              <span v-show="service.extendedWarranty.enabled"
+              <span
+                v-show="service.extendedWarranty.enabled"
+                :class="[
+                  { 'custom-text-main': this.mode === 'Light' },
+                  { 'custom-text-white': this.mode === 'Dark' },
+                ]"
                 >${{ service.extendedWarranty.fee }}</span
               >
             </label>
@@ -279,7 +315,13 @@
           ]"
         >
           <span>Overall Total</span>
-          <span>${{ total }}</span>
+          <span
+            :class="[
+              { 'custom-text-main': this.mode === 'Light' },
+              { 'custom-text-white': this.mode === 'Dark' },
+            ]"
+            >${{ total }}</span
+          >
         </label>
       </div>
       <button
