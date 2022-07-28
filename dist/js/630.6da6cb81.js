@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkintelran_website"]=self["webpackChunkintelran_website"]||[]).push([[630],{19630:function(e,n,r){r.r(n),r.d(n,{default:function(){return c}});var t=r(73396);function u(e,n){const r=(0,t.up)("router-view");return(0,t.wg)(),(0,t.iD)("div",null,[(0,t.Wm)(r)])}var i=r(40089);const s={},a=(0,i.Z)(s,[["render",u]]);var c=a}}]);
-//# sourceMappingURL=630.6da6cb81.js.map

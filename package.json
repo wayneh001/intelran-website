@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build && node ./deploy/ghpages.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
@@ -17,6 +18,7 @@
     "core-js": "^3.8.3",
     "express": "^4.18.1",
     "firebase": "^9.9.0",
+    "gh-pages": "^4.0.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
