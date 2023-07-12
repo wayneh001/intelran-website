@@ -1,16 +1,16 @@
 <template>
   <div>
-    <pageView :content="content" @updateMode="updateMode" :key="componentKey" />
+    <pageView :key="componentKey" :content="content" @updateMode="updateMode"/>
   </div>
 </template>
 
 <script>
 import pageView from "@/containers/pageView";
-import { blinds } from "@/content/content";
+import {blinds} from "@/content/content";
 
 export default {
   name: "blinds",
-  components: { pageView },
+  components: {pageView},
   componentKey: 0,
   data() {
     return {

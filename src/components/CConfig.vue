@@ -1,90 +1,89 @@
 <template>
-  <div class="modal fade" tabindex="-1" aria-hidden="true" ref="modal">
+  <div ref="modal" aria-hidden="true" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content border-0">
         <div
-          class="modal-header"
-          :class="[
+            :class="[
             { 'modal-primary-light': this.mode === 'Light' },
             { 'modal-primary-dark': this.mode === 'Dark' },
           ]"
+            class="modal-header"
         >
           Configuring the product
         </div>
         <div
-          class="modal-body"
-          :class="[
+            :class="[
             { 'modal-primary-light': this.mode === 'Light' },
             { 'modal-primary-dark': this.mode === 'Dark' },
           ]"
+            class="modal-body"
         >
           <div class="row">
             <div
-              class="d-flex d-md-block col-12 col-md-6 mb-4 mb-md-5 overflow-auto justify-content-center"
-              style="max-height: 37.5rem"
+                class="d-flex d-md-block col-12 col-md-6 mb-4 mb-md-5 overflow-auto justify-content-center"
+                style="max-height: 37.5rem"
             >
               <div
-                v-for="(e, i) in products"
-                :key="i"
-                class="d-flex justify-content-center align-items-center w-100"
-                :class="[
+                  v-for="(e, i) in products"
+                  :key="i"
+                  :class="[
                   { 'product-img-light': this.mode === 'Light' },
                   { 'product-img-dark': this.mode === 'Dark' },
                 ]"
-                @click.prevent="selectProduct(e)"
+                  class="d-flex justify-content-center align-items-center w-100"
+                  @click.prevent="selectProduct(e)"
               >
-                <img :src="e.src" class="mx-5 my-5" style="width: 200px" />
+                <img :src="e.src" alt="" class="mx-5 my-5" style="width: 200px"/>
               </div>
             </div>
             <div class="col-12 col-md-6 mb-4 mb-md-5">
               <div class="mb-2 mb-md-3">
                 <div class="w-100 mb-2 mb-md-3">
                   <label
-                    id="product"
-                    :class="[
+                      id="product"
+                      :class="[
                       { 'form-label-light': this.mode === 'Light' },
                       { 'form-label-dark': this.mode === 'Dark' },
                     ]"
                   >
                     <span>{{ product.name }}</span>
                     <span
-                      :class="[
+                        :class="[
                         { 'custom-text-main': this.mode === 'Light' },
                         { 'custom-text-white': this.mode === 'Dark' },
                       ]"
-                      >${{ product.price }}</span
+                    >${{ product.price }}</span
                     >
                   </label>
                 </div>
                 <div class="w-100 mb-2 mb-md-3">
                   <label
-                    id="color"
-                    :class="[
+                      id="color"
+                      :class="[
                       { 'color-selector-header-light': this.mode === 'Light' },
                       { 'color-selector-header-dark': this.mode === 'Dark' },
                     ]"
                   >
                     <span>Color</span>
                     <span
-                      :class="[
+                        :class="[
                         { 'custom-text-main': this.mode === 'Light' },
                         { 'custom-text-white': this.mode === 'Dark' },
                       ]"
-                      >{{ product.color }}</span
+                    >{{ product.color }}</span
                     >
                   </label>
                   <div
-                    :class="[
+                      :class="[
                       { 'color-selector-body-light': this.mode === 'Light' },
                       { 'color-selector-body-dark': this.mode === 'Dark' },
                     ]"
                   >
                     <div class="row d-flex justify-content-start">
                       <div
-                        v-for="n in color"
-                        :key="n"
-                        class="color-block color-block-click"
-                        :class="[
+                          v-for="n in color"
+                          :key="n"
+                          :class="[
                           n,
                           {
                             'color-block-selected-light':
@@ -95,151 +94,152 @@
                               this.mode === 'Dark' && n === this.product.color,
                           },
                         ]"
-                        @click.prevent="selectColor(n)"
+                          class="color-block color-block-click"
+                          @click.prevent="selectColor(n)"
                       ></div>
                     </div>
                   </div>
                 </div>
                 <div class="w-100 mb-2 mb-md-3">
                   <label
-                    id="quantity"
-                    :class="[
+                      id="quantity"
+                      :class="[
                       { 'form-label-light': this.mode === 'Light' },
                       { 'form-label-dark': this.mode === 'Dark' },
                     ]"
                   >
                     <span>Quantity</span>
                     <div
-                      class="col-4 d-flex overflow-auto justify-content-between align-items-center"
+                        class="col-4 d-flex overflow-auto justify-content-between align-items-center"
                     >
                       <img
-                        :src="minusIconSrc"
-                        class="icon-18"
-                        @click.prevent="minus"
-                      />
+                          :src="minusIconSrc"
+                          alt=""
+                          class="icon-18"
+                          @click.prevent="minus"/>
                       <span>{{ product.quantity }}</span>
                       <img
-                        :src="addIconSrc"
-                        class="icon-18"
-                        @click.prevent="add"
-                      />
+                          :src="addIconSrc"
+                          alt=""
+                          class="icon-18"
+                          @click.prevent="add"/>
                     </div>
                   </label>
                 </div>
                 <div
-                  v-if="this.product.name === 'Universal Switch'"
-                  class="mb-2 mb-md-3"
+                    v-if="this.product.name === 'Universal Switch'"
+                    class="mb-2 mb-md-3"
                 >
                   <label
-                    id="switchConfig"
-                    :class="[
+                      id="switchConfig"
+                      :class="[
                       { 'config-setter-header-light': this.mode === 'Light' },
                       { 'config-setter-header-dark': this.mode === 'Dark' },
                     ]"
                   >
                     <span>Config</span>
                     <span
-                      :class="[
+                        :class="[
                         { 'custom-text-main': this.mode === 'Light' },
                         { 'custom-text-white': this.mode === 'Dark' },
                       ]"
-                      >Label on Switch</span
+                    >Label on Switch</span
                     >
                   </label>
                   <div class="d-flex flex-wrap">
                     <label
-                      v-for="(c, j) in getConfig(presetConfig)"
-                      :key="j"
-                      :class="[
+                        v-for="(c, j) in getConfig(presetConfig)"
+                        :key="j"
+                        :class="[
                         { 'config-setter-body-light': this.mode === 'Light' },
                         { 'config-setter-body-dark': this.mode === 'Dark' },
                         { 'w-50': this.screenSize >= 768 },
                       ]"
-                      ><span
+                    ><span
                         :class="[
                           { 'custom-text-dark': this.mode === 'Light' },
                           { 'custom-text-white': this.mode === 'Dark' },
                         ]"
-                        ><img :src="c.src" class="icon-18" /></span
-                      ><input
-                        type="text"
-                        class="text-end"
+                    ><img :src="c.src" alt="" class="icon-18"/></span
+                    ><input
                         :class="[
                           { 'input-light': this.mode === 'Light' },
                           { 'input-dark': this.mode === 'Dark' },
                         ]"
                         :placeholder="c.name"
                         :value="product.config[j]"
+                        class="text-end"
+                        type="text"
                     /></label>
                   </div>
                 </div>
               </div>
               <div
-                v-if="this.product.name === 'Blinds Driver'"
-                class="mb-2 mb-md-3"
+                  v-if="this.product.name === 'Blinds Driver'"
+                  class="mb-2 mb-md-3"
               >
                 <label
-                  id="blindsConfig"
-                  :class="[
+                    id="blindsConfig"
+                    :class="[
                     { 'config-setter-header-light': this.mode === 'Light' },
                     { 'config-setter-header-dark': this.mode === 'Dark' },
                   ]"
                 >
                   <span>Config</span>
                   <span
-                    :class="[
+                      :class="[
                       { 'custom-text-main': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                    >Length of Track</span
+                  >Length of Track</span
                   >
                 </label>
                 <div class="d-flex flex-wrap">
                   <label
-                    :class="[
+                      :class="[
                       { 'config-setter-body-light': this.mode === 'Light' },
                       { 'config-setter-body-dark': this.mode === 'Dark' },
                     ]"
-                    style="border-radius: 0 0 0.5rem 0.5rem"
-                    ><span
+                      style="border-radius: 0 0 0.5rem 0.5rem"
+                  ><span
                       :class="[
                         { 'custom-text-dark': this.mode === 'Light' },
                         { 'custom-text-white': this.mode === 'Dark' },
                       ]"
-                      >Length (m)</span
-                    ><input
-                      type="text"
-                      class="text-end"
+                  >Length (m)</span
+                  ><input
+                      v-model="this.product.config[0]"
                       :class="[
                         { 'input-light': this.mode === 'Light' },
                         { 'input-dark': this.mode === 'Dark' },
                       ]"
+                      class="text-end"
                       placeholder="m"
-                      v-model="this.product.config[0]"
+                      type="text"
                   /></label>
                 </div>
               </div>
             </div>
             <div class="px-md-3">
               <button
-                type="button"
-                class="btn w-100 mb-2 mb-md-3"
-                :class="[
+                  :class="[
                   { 'btn-main-light': this.mode === 'Light' },
                   { 'btn-main-dark': this.mode === 'Dark' },
                 ]"
-                @click.prevent="addToCart"
+                  class="btn w-100 mb-2 mb-md-3"
+                  type="button"
+                  @click.prevent="addToCart"
               >
                 Add to Cart
               </button>
               <button
-                type="button"
-                class="btn btn-light w-100 mb-2 mb-md-3"
-                :class="[
+                  :class="[
                   { 'btn-outline-main-light': this.mode === 'Light' },
                   { 'btn-outline-main-dark': this.mode === 'Dark' },
                 ]"
-                @click.prevent="cancel"
+                  class="btn btn-light w-100 mb-2 mb-md-3"
+                  type="button"
+                  @click.prevent="cancel"
               >
                 Cancel
               </button>
@@ -248,11 +248,11 @@
         </div>
       </div>
       <div
-        class="modal-footer"
-        :class="[
+          :class="[
           { 'modal-primary-light': this.mode === 'Light' },
           { 'modal-primary-dark': this.mode === 'Dark' },
         ]"
+          class="modal-footer"
       ></div>
     </div>
   </div>
@@ -261,8 +261,8 @@
 <script>
 import _ from "lodash";
 import Modal from "bootstrap/js/dist/modal";
-import { products } from "@/content/products";
-import { funcIcons, presetConfig } from "@/content/icons";
+import {products} from "@/content/products";
+import {funcIcons, presetConfig} from "@/content/icons";
 
 export default {
   name: "CConfig",
@@ -318,8 +318,8 @@ export default {
       this.color = [];
       for (let i in products) {
         if (
-          products[i].name === this.product.name &&
-          products[i].texture === this.product.texture
+            products[i].name === this.product.name &&
+            products[i].texture === this.product.texture
         ) {
           for (let e in products[i].image) {
             this.color.push(products[i].image[e].name);
@@ -344,19 +344,19 @@ export default {
     selectColor(n) {
       for (let i in this.products) {
         if (
-          this.products[i].name === this.product.name &&
-          this.products[i].texture === this.product.texture
+            this.products[i].name === this.product.name &&
+            this.products[i].texture === this.product.texture
         ) {
           for (let e in products) {
             if (
-              products[e].name === this.products[i].name &&
-              products[e].texture === this.products[i].texture
+                products[e].name === this.products[i].name &&
+                products[e].texture === this.products[i].texture
             ) {
               for (let c in products[e].image) {
                 if (products[e].image[c].name === n) {
                   this.products[
-                    i
-                  ].src = require(`@/assets/img/products/${products[e].image[c].url}`);
+                      i
+                      ].src = require(`@/assets/img/products/${products[e].image[c].url}`);
                 }
               }
             }
@@ -377,13 +377,13 @@ export default {
       let src = `${this.mode}`;
       for (let i in array) {
         array[i].src = require(`@/assets/img/icons/indicator/${
-          parseInt(i) + 1
+            parseInt(i) + 1
         }@${src}.svg`);
       }
       return array;
     },
     addToCart() {
-      this.product.sum = parseInt(this.product.price * this.product.quantity);
+      this.product.sum = parseInt((this.product.price * this.product.quantity).toString());
       this.hideModal();
       this.$store.commit("addToCart", this.product);
       this.$emit("showToast", {
@@ -454,6 +454,7 @@ input:focus:-webkit-autofill {
   .config-setter-body-light:nth-last-child(2) {
     border-radius: 0 0 0 0.5rem;
   }
+
   .config-setter-body-dark:nth-last-child(2) {
     border-radius: 0 0 0 0.5rem;
   }

@@ -1,71 +1,70 @@
 <template>
   <div>
     <div v-if="selectedProducts.length === 0">
-      <CEmpty :mode="mode" />
+      <CEmpty :mode="mode"/>
     </div>
     <div v-else>
       <div class="row">
         <div
-          v-for="(e, i) in selectedProducts"
-          :key="i"
-          class="col-12 col-md-6 mb-4 mb-md-5 mb-4 mb-md-3"
+            v-for="(e, i) in selectedProducts"
+            :key="i"
+            class="col-12 col-md-6 mb-4 mb-md-5 mb-4 mb-md-3"
         >
           <div class="mb-2 mb-md-3">
             <div
-              class="d-flex justify-content-center align-items-center mb-2 mb-md-3"
+                class="d-flex justify-content-center align-items-center mb-2 mb-md-3"
             >
               <div style="height: 200px; line-height: 200px">
-                <img :src="e.src" class="mx-auto" style="width: 200px" />
+                <img :src="e.src" class="mx-auto" style="width: 200px"/>
               </div>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="product"
-                :class="[
+                  id="product"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>{{ e.name }}</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >${{ e.price }}</span
+                >${{ e.price }}</span
                 >
               </label>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="color"
-                :class="[
+                  id="color"
+                  :class="[
                   { 'color-selector-header-light': this.mode === 'Light' },
                   { 'color-selector-header-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Color</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >{{ e.color }}</span
+                >{{ e.color }}</span
                 >
               </label>
               <div
-                class="px-4 px-md-4"
-                :class="[
+                  :class="[
                   { 'color-selector-body-light': this.mode === 'Light' },
                   { 'color-selector-body-dark': this.mode === 'Dark' },
                 ]"
+                  class="px-4 px-md-4"
               >
                 <div class="row d-flex justify-content-start">
                   <div
-                    v-for="n in filterColor(e, products)"
-                    :key="n"
-                    class="color-block color-block-click"
-                    :class="[
+                      v-for="n in filterColor(e, products)"
+                      :key="n"
+                      :class="[
                       n,
                       {
                         'color-block-selected-light':
@@ -76,144 +75,145 @@
                           this.mode === 'Dark' && n === e.color,
                       },
                     ]"
-                    @click.prevent="selectColor(e, n, products)"
+                      class="color-block color-block-click"
+                      @click.prevent="selectColor(e, n, products)"
                   ></div>
                 </div>
               </div>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="quantity"
-                :class="[
+                  id="quantity"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Quantity</span>
                 <div
-                  class="col-4 d-flex justify-content-between align-items-center"
+                    class="col-4 d-flex justify-content-between align-items-center"
                 >
                   <img
-                    :src="minusIconSrc"
-                    class="icon-18"
-                    @click.prevent="minus(e)"
+                      :src="minusIconSrc"
+                      class="icon-18"
+                      @click.prevent="minus(e)"
                   />
                   <span>{{ e.quantity }}</span>
                   <img
-                    :src="addIconSrc"
-                    class="icon-18"
-                    @click.prevent="add(e)"
+                      :src="addIconSrc"
+                      class="icon-18"
+                      @click.prevent="add(e)"
                   />
                 </div>
               </label>
             </div>
             <div v-if="e.name === 'Universal Switch'" class="mb-2 mb-md-3">
               <label
-                id="switchConfig"
-                :class="[
+                  id="switchConfig"
+                  :class="[
                   { 'config-setter-header-light': this.mode === 'Light' },
                   { 'config-setter-header-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Config</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Label on Switch</span
+                >Label on Switch</span
                 >
               </label>
               <div class="d-flex flex-wrap">
                 <label
-                  v-for="(c, j) in getConfig(presetConfig)"
-                  :key="j"
-                  :class="[
+                    v-for="(c, j) in getConfig(presetConfig)"
+                    :key="j"
+                    :class="[
                     { 'config-setter-body-light': this.mode === 'Light' },
                     { 'config-setter-body-dark': this.mode === 'Dark' },
                     { 'w-50': this.screenSize >= 768 },
                   ]"
-                  ><span
+                ><span
                     :class="[
                       { 'custom-text-dark': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                    ><img :src="c.src" class="icon-18" /></span
-                  ><input
-                    type="text"
-                    class="text-end"
+                ><img :src="c.src" class="icon-18"/></span
+                ><input
                     :class="[
                       { 'input-light': this.mode === 'Light' },
                       { 'input-dark': this.mode === 'Dark' },
                     ]"
                     :placeholder="c.name"
                     :value="e.config[j]"
+                    class="text-end"
+                    type="text"
                 /></label>
               </div>
             </div>
             <div v-if="e.name === 'Blinds Driver'" class="mb-2 mb-md-3">
               <label
-                id="blindsConfig"
-                :class="[
+                  id="blindsConfig"
+                  :class="[
                   { 'config-setter-header-light': this.mode === 'Light' },
                   { 'config-setter-header-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Config</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Length of Track</span
+                >Length of Track</span
                 >
               </label>
               <div class="d-flex flex-wrap">
                 <label
-                  :class="[
+                    :class="[
                     { 'config-setter-body-light': this.mode === 'Light' },
                     { 'config-setter-body-dark': this.mode === 'Dark' },
                   ]"
-                  style="border-radius: 0 0 0.5rem 0.5rem"
-                  ><span
+                    style="border-radius: 0 0 0.5rem 0.5rem"
+                ><span
                     :class="[
                       { 'custom-text-dark': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                    >Length (m)</span
-                  ><input
-                    type="text"
-                    class="text-end"
+                >Length (m)</span
+                ><input
+                    v-model="e.config[0]"
                     :class="[
                       { 'input-light': this.mode === 'Light' },
                       { 'input-dark': this.mode === 'Dark' },
                     ]"
-                    v-model="e.config[0]"
+                    class="text-end"
+                    type="text"
                 /></label>
               </div>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="sum"
-                :class="[
+                  id="sum"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Sum</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >${{ e.sum }}</span
+                >${{ e.sum }}</span
                 >
               </label>
             </div>
             <button
-              type="button"
-              class="btn btn-danger w-100 mb-2 mb-md-3"
-              @click.prevent="toDeleteProduct(e)"
+                class="btn btn-danger w-100 mb-2 mb-md-3"
+                type="button"
+                @click.prevent="toDeleteProduct(e)"
             >
               Delete
             </button>
@@ -224,8 +224,8 @@
         <div class="col-12 col-md-6 mb-4 mb-md-5 mb-2 mb-md-3">
           <div class="w-100 mb-2 mb-md-3">
             <label
-              id="installation"
-              :class="[
+                id="installation"
+                :class="[
                 { 'service-setter-header-light': this.mode === 'Light' },
                 { 'service-setter-header-dark': this.mode === 'Dark' },
               ]"
@@ -233,32 +233,32 @@
               <span>Installation</span>
               <div class="form-check form-switch">
                 <input
-                  class="form-check-input"
-                  :class="[
+                    v-model="service.installation.enabled"
+                    :class="[
                     { 'form-check-input-light': this.mode === 'Light' },
                     { 'form-check-input-dark': this.mode === 'Dark' },
                   ]"
-                  type="checkbox"
-                  role="switch"
-                  v-model="service.installation.enabled"
+                    class="form-check-input"
+                    role="switch"
+                    type="checkbox"
                 />
               </div>
             </label>
             <label
-              id="installation"
-              :class="[
+                id="installation"
+                :class="[
                 { 'service-setter-body-light': this.mode === 'Light' },
                 { 'service-setter-body-dark': this.mode === 'Dark' },
               ]"
             >
               <span>Fee</span>
               <span
-                v-show="service.installation.enabled"
-                :class="[
+                  v-show="service.installation.enabled"
+                  :class="[
                   { 'custom-text-main': this.mode === 'Light' },
                   { 'custom-text-white': this.mode === 'Dark' },
                 ]"
-                >${{ service.installation.fee }}</span
+              >${{ service.installation.fee }}</span
               >
             </label>
           </div>
@@ -266,8 +266,8 @@
         <div class="col-12 col-md-6 mb-4 mb-md-5 mb-2 mb-md-3">
           <div class="w-100 mb-2 mb-md-3">
             <label
-              id="extendedWarranty"
-              :class="[
+                id="extendedWarranty"
+                :class="[
                 { 'service-setter-header-light': this.mode === 'Light' },
                 { 'service-setter-header-dark': this.mode === 'Dark' },
               ]"
@@ -275,32 +275,32 @@
               <span>Extended Warranty</span>
               <div class="form-check form-switch">
                 <input
-                  class="form-check-input"
-                  :class="[
+                    v-model="service.extendedWarranty.enabled"
+                    :class="[
                     { 'form-check-input-light': this.mode === 'Light' },
                     { 'form-check-input-dark': this.mode === 'Dark' },
                   ]"
-                  type="checkbox"
-                  role="switch"
-                  v-model="service.extendedWarranty.enabled"
+                    class="form-check-input"
+                    role="switch"
+                    type="checkbox"
                 />
               </div>
             </label>
             <label
-              id="installation"
-              :class="[
+                id="installation"
+                :class="[
                 { 'service-setter-body-light': this.mode === 'Light' },
                 { 'service-setter-body-dark': this.mode === 'Dark' },
               ]"
             >
               <span>Fee</span>
               <span
-                v-show="service.extendedWarranty.enabled"
-                :class="[
+                  v-show="service.extendedWarranty.enabled"
+                  :class="[
                   { 'custom-text-main': this.mode === 'Light' },
                   { 'custom-text-white': this.mode === 'Dark' },
                 ]"
-                >${{ service.extendedWarranty.fee }}</span
+              >${{ service.extendedWarranty.fee }}</span
               >
             </label>
           </div>
@@ -308,37 +308,37 @@
       </div>
       <div class="col-12 col-md-6 mb-4 mb-md-5 w-100 mb-2 mb-md-3">
         <label
-          id="total"
-          :class="[
+            id="total"
+            :class="[
             { 'form-label-light': this.mode === 'Light' },
             { 'form-label-dark': this.mode === 'Dark' },
           ]"
         >
           <span>Overall Total</span>
           <span
-            :class="[
+              :class="[
               { 'custom-text-main': this.mode === 'Light' },
               { 'custom-text-white': this.mode === 'Dark' },
             ]"
-            >${{ total }}</span
+          >${{ total }}</span
           >
         </label>
       </div>
       <button
-        type="button"
-        class="btn w-100 mb-2 mb-md-3"
-        :class="[
+          :class="[
           { 'btn-main-light': this.mode === 'Light' },
           { 'btn-main-dark': this.mode === 'Dark' },
         ]"
-        @click.prevent="toPlaceOrder"
+          class="btn w-100 mb-2 mb-md-3"
+          type="button"
+          @click.prevent="toPlaceOrder"
       >
         Place an Order
       </button>
       <CDeleteAlert
-        ref="deleteAlert"
-        :item="productToDelete"
-        @confirm="deleteProduct"
+          ref="deleteAlert"
+          :item="productToDelete"
+          @confirm="deleteProduct"
       />
     </div>
   </div>
@@ -347,8 +347,9 @@
 <script>
 import CEmpty from "@/components/CEmpty";
 import CDeleteAlert from "@/components/CDeleteAlert";
-import { products } from "@/content/products";
-import { funcIcons, presetConfig } from "@/content/icons";
+import {products} from "@/content/products";
+import {funcIcons, presetConfig} from "@/content/icons";
+
 export default {
   name: "CCart",
   components: {
@@ -369,9 +370,9 @@ export default {
       addIconSrc: "",
       presetConfig: presetConfig,
       selectedProducts:
-        this.$store.state.cart.selectedProducts === undefined
-          ? []
-          : this.$store.state.cart.selectedProducts,
+          this.$store.state.cart.selectedProducts === undefined
+              ? []
+              : this.$store.state.cart.selectedProducts,
       service: {
         installation: {
           enabled: true,
@@ -408,16 +409,16 @@ export default {
         for (let i in this.products) {
           for (let e in this.selectedProducts) {
             if (
-              this.selectedProducts[e].name === this.products[i].name &&
-              this.selectedProducts[e].texture === this.products[i].texture
+                this.selectedProducts[e].name === this.products[i].name &&
+                this.selectedProducts[e].texture === this.products[i].texture
             ) {
               for (let c in this.products[i].image) {
                 if (
-                  this.selectedProducts[e].color === this.products[i].image[c].name
+                    this.selectedProducts[e].color === this.products[i].image[c].name
                 ) {
                   this.selectedProducts[
-                    e
-                  ].src = require(`@/assets/img/products/${this.products[i].image[c].url}`);
+                      e
+                      ].src = require(`@/assets/img/products/${this.products[i].image[c].url}`);
                 }
               }
             }
@@ -462,14 +463,14 @@ export default {
       let src = `${this.mode}`;
       for (let i in array) {
         array[i].src = require(`@/assets/img/icons/indicator/${
-          parseInt(i) + 1
+            parseInt(i) + 1
         }@${src}.svg`);
       }
       return array;
     },
     init() {
       if (this.$store.state.cart.service !== undefined) {
-        this.service = { ...this.$store.state.cart.service };
+        this.service = {...this.$store.state.cart.service};
         this.reCalculatedFee();
       }
     },
@@ -486,11 +487,11 @@ export default {
       let installationFee = 0;
       let extendedWarrantyFee = 0;
       this.service.installation.enabled === true
-        ? (installationFee = this.service.installation.fee)
-        : (installationFee = 0);
+          ? (installationFee = this.service.installation.fee)
+          : (installationFee = 0);
       this.service.extendedWarranty.enabled === true
-        ? (extendedWarrantyFee = this.service.extendedWarranty.fee)
-        : (extendedWarrantyFee = 0);
+          ? (extendedWarrantyFee = this.service.extendedWarranty.fee)
+          : (extendedWarrantyFee = 0);
       this.total = sum + installationFee + extendedWarrantyFee;
     },
     toDeleteProduct(e) {
@@ -606,6 +607,7 @@ input:focus:-webkit-autofill {
   .config-setter-body-light:nth-last-child(2) {
     border-radius: 0 0 0 0.5rem;
   }
+
   .config-setter-body-dark:nth-last-child(2) {
     border-radius: 0 0 0 0.5rem;
   }

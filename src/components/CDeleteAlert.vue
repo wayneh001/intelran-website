@@ -1,5 +1,5 @@
 <template>
-  <div class="modal fade" tabindex="-1" ref="modal">
+  <div ref="modal" class="modal fade" tabindex="-1">
     <div class="modal-dialog" role="document">
       <div class="modal-content border-0">
         <div class="modal-header bg-danger custom-text-white">
@@ -7,10 +7,10 @@
             <span>Delete {{ item.title }}</span>
           </h5>
           <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
+              aria-label="Close"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              type="button"
           ></button>
         </div>
         <div class="modal-body">
@@ -18,16 +18,16 @@
         </div>
         <div class="modal-footer">
           <button
-            type="button"
-            class="btn btn-outline-secondary"
-            data-bs-dismiss="modal"
+              class="btn btn-outline-secondary"
+              data-bs-dismiss="modal"
+              type="button"
           >
             Cancel
           </button>
           <button
-            type="button"
-            class="btn btn-danger"
-            @click.prevent="confirm"
+              class="btn btn-danger"
+              type="button"
+              @click.prevent="confirm"
           >
             Confirm
           </button>
@@ -39,6 +39,7 @@
 
 <script>
 import Modal from "bootstrap/js/dist/modal";
+
 export default {
   name: "CDeleteAlert",
   props: {
@@ -55,7 +56,7 @@ export default {
       this.modal.hide();
     },
     confirm() {
-      this.$emit('confirm', this.item)
+      this.$emit('confirm', this.item);
       this.hideModal();
     }
   },

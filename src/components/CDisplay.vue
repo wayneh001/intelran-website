@@ -1,19 +1,20 @@
 <template>
   <div
-    class="d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center"
+      class="d-flex flex-wrap flex-md-nowrap justify-content-center align-items-center"
   >
     <img
-      v-for="(e, i) in products"
-      :key="i"
-      :src="e.src"
-      class="mx-3 mx-md-5 my-3 my-md-3 "
-      :style="{ height: getImgHeight(e.height) }"
-    />
+        v-for="(e, i) in products"
+        :key="i"
+        :src="e.src"
+        :style="{ height: getImgHeight(e.height) }"
+        alt=""
+        class="mx-3 mx-md-5 my-3 my-md-3 "/>
   </div>
 </template>
 
 <script>
-import { products } from "@/content/products";
+import {products} from "@/content/products";
+
 export default {
   name: "CDisplay",
   props: {
@@ -60,8 +61,8 @@ export default {
             break;
         }
         if (
-          products[i].headerLabel === this.headerLabel &&
-          products[i].seq === this.seq
+            products[i].headerLabel === this.headerLabel &&
+            products[i].seq === this.seq
         ) {
           let product1 = {
             name: products[i].name,

@@ -5,336 +5,356 @@
         <div class="col-12 col-md-6 mb-4 mb-md-5">
           <div class="mb-4 mb-md-3">
             <h5
-              class="ms-md-2"
-              :class="[
+                :class="[
                 { 'custom-text-dark': this.mode === 'Light' },
                 { 'custom-text-white': this.mode === 'Dark' },
               ]"
+                class="ms-md-2"
             >
               Info
             </h5>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Name</span
-                ><Field
-                  name="name"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >Name</span
+              >
+                <Field
+                    v-model="account.info.name"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="Name"
-                  v-model="account.info.name"
-                  :rules="validate" />
+                    :rules="validate"
+                    class="text-end"
+                    name="name"
+                    placeholder="Name"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="name"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Password</span
-                ><Field
-                  name="password"
-                  type="password"
-                  class="text-end"
-                  :class="[
+              >Password</span
+              >
+                <Field
+                    v-model="account.info.password"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="Password"
-                  v-model="account.info.password"
-                  :rules="validate" />
+                    :rules="validate"
+                    class="text-end"
+                    name="password"
+                    placeholder="Password"
+                    type="password"/>
                 <ErrorMessage class="errorMessage" name="password"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Email</span
-                ><Field
-                  name="email"
-                  type="email"
-                  class="text-end"
-                  :class="[
+              >Email</span
+              >
+                <Field
+                    v-model="account.info.email"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="Email"
-                  v-model="account.info.email"
-                  :rules="validateEmail" />
+                    :rules="validateEmail"
+                    class="text-end"
+                    name="email"
+                    placeholder="Email"
+                    type="email"/>
                 <ErrorMessage class="errorMessage" name="email"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Contact</span
-                ><Field
-                  name="contact"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >Contact</span
+              >
+                <Field
+                    v-model="account.info.contact"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="Contact"
-                  v-model="account.info.contact"
-                  :rules="validateContact" />
+                    :rules="validateContact"
+                    class="text-end"
+                    name="contact"
+                    placeholder="Contact"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="contact"
-              /></label>
+                />
+              </label>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-6 mb-4 mb-md-5">
           <div class="mb-4 mb-md-3">
             <h5
-              class="ms-md-2"
-              :class="[
+                :class="[
                 { 'custom-text-dark': this.mode === 'Light' },
                 { 'custom-text-white': this.mode === 'Dark' },
               ]"
+                class="ms-md-2"
             >
               Address
             </h5>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Line 1</span
-                ><Field
-                  name="line1"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >Line 1</span
+              >
+                <Field
+                    v-model="account.address.line1"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="Line 1"
-                  v-model="account.address.line1"
-                  :rules="validate" />
+                    :rules="validate"
+                    class="text-end"
+                    name="line1"
+                    placeholder="Line 1"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="line1"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Line 2</span
-                ><input
-                  type="text"
-                  class="text-end"
-                  :class="[
-                    { 'input-light': this.mode === 'Light' },
-                    { 'input-dark': this.mode === 'Dark' },
-                  ]"
-                  placeholder="Line 2"
+              >Line 2</span
+              ><input
                   v-model="account.address.line2"
-              /></label>
-            </div>
-            <div class="mb-2 mb-md-3 w-100">
-              <label
-                :class="[
-                  { 'form-label-light': this.mode === 'Light' },
-                  { 'form-label-dark': this.mode === 'Dark' },
-                ]"
-                ><span
-                  :class="[
-                    { 'custom-text-dark': this.mode === 'Light' },
-                    { 'custom-text-white': this.mode === 'Dark' },
-                  ]"
-                  >Zip Code</span
-                ><Field
-                  name="zipCode"
-                  type="text"
-                  class="text-end"
                   :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="Zip Code"
-                  maxLength="5"
-                  v-model="account.address.zipCode"
-                  :rules="validateZipCode" />
+                  class="text-end"
+                  placeholder="Line 2"
+                  type="text"
+              /></label>
+            </div>
+            <div class="mb-2 mb-md-3 w-100">
+              <label
+                  :class="[
+                  { 'form-label-light': this.mode === 'Light' },
+                  { 'form-label-dark': this.mode === 'Dark' },
+                ]"
+              ><span
+                  :class="[
+                    { 'custom-text-dark': this.mode === 'Light' },
+                    { 'custom-text-white': this.mode === 'Dark' },
+                  ]"
+              >Zip Code</span
+              >
+                <Field
+                    v-model="account.address.zipCode"
+                    :class="[
+                    { 'input-light': this.mode === 'Light' },
+                    { 'input-dark': this.mode === 'Dark' },
+                  ]"
+                    :rules="validateZipCode"
+                    class="text-end"
+                    maxLength="5"
+                    name="zipCode"
+                    placeholder="Zip Code"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="zipCode"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >State</span
-                ><Field
-                  name="state"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >State</span
+              >
+                <Field
+                    v-model="account.address.state"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="State"
-                  v-model="account.address.state"
-                  :rules="validate" />
+                    :rules="validate"
+                    class="text-end"
+                    name="state"
+                    placeholder="State"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="state"
-              /></label>
+                />
+              </label>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-6 mb-4 mb-md-5">
           <div class="mb-4 mb-md-3">
             <h5
-              class="ms-md-2"
-              :class="[
+                :class="[
                 { 'custom-text-dark': this.mode === 'Light' },
                 { 'custom-text-white': this.mode === 'Dark' },
               ]"
+                class="ms-md-2"
             >
               Payment
             </h5>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Card</span
-                ><Field
-                  name="card"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >Card</span
+              >
+                <Field
+                    v-model="account.payment.card"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="XXXX-XXXX-XXXX-XXXX"
-                  v-model="account.payment.card"
-                  :rules="validateCard" />
+                    :rules="validateCard"
+                    class="text-end"
+                    name="card"
+                    placeholder="XXXX-XXXX-XXXX-XXXX"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="card"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >Expiry</span
-                ><Field
-                  name="expiry"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >Expiry</span
+              >
+                <Field
+                    v-model="account.payment.expiry"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="MM/YYYY"
-                  v-model="account.payment.expiry"
-                  :rules="validateExpiry" />
+                    :rules="validateExpiry"
+                    class="text-end"
+                    name="expiry"
+                    placeholder="MM/YYYY"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="expiry"
-              /></label>
+                />
+              </label>
             </div>
             <div class="mb-2 mb-md-3 w-100">
               <label
-                :class="[
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
-                ><span
+              ><span
                   :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >CVC</span
-                ><Field
-                  name="cvc"
-                  type="text"
-                  class="text-end"
-                  :class="[
+              >CVC</span
+              >
+                <Field
+                    v-model="account.payment.cvc"
+                    :class="[
                     { 'input-light': this.mode === 'Light' },
                     { 'input-dark': this.mode === 'Dark' },
                   ]"
-                  placeholder="XXX"
-                  maxlength="3"
-                  v-model="account.payment.cvc"
-                  :rules="validateCvc" />
+                    :rules="validateCvc"
+                    class="text-end"
+                    maxlength="3"
+                    name="cvc"
+                    placeholder="XXX"
+                    type="text"/>
                 <ErrorMessage class="errorMessage" name="cvc"
-                /></label>
+                />
+              </label>
             </div>
           </div>
         </div>
         <div class="col-12">
           <button
-            type="button"
-            class="btn w-100 mb-2 mb-md-3"
-            :class="[
+              :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
             ]"
-            @click.prevent="update"
+              class="btn w-100 mb-2 mb-md-3"
+              type="button"
+              @click.prevent="update"
           >
             Update
           </button>
@@ -345,8 +365,9 @@
 </template>
 
 <script>
-import { Form, Field, ErrorMessage } from "vee-validate";
+import {ErrorMessage, Field, Form} from "vee-validate";
 import schema from "@/assets/js/validateSchema.js";
+
 export default {
   name: "CAccount",
   props: {
@@ -366,7 +387,7 @@ export default {
     };
   },
   setup() {
-    const mySchema = {
+    return {
       validate: schema.validate,
       validateEmail: schema.validateEmail,
       validateContact: schema.validateContact,
@@ -375,7 +396,6 @@ export default {
       validateExpiry: schema.validateExpiry,
       validateCvc: schema.validateCvc,
     };
-    return mySchema;
   },
   methods: {
     checkAuth() {

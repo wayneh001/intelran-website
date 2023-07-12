@@ -5,81 +5,82 @@
         <div class="mb-4 mb-md-3">
           <div class="w-100 mb-2 mb-md-3">
             <label
-              :class="[
+                :class="[
                 { 'form-label-light': this.mode === 'Light' },
                 { 'form-label-dark': this.mode === 'Dark' },
               ]"
-              ><span
+            ><span
                 :class="[
                   { 'custom-text-dark': this.mode === 'Light' },
                   { 'custom-text-white': this.mode === 'Dark' },
                 ]"
-                >Username</span
-              ><input
-                type="text"
-                class="text-end"
+            >Username</span
+            ><input
+                v-model="user.username"
                 :class="[
                   { 'input-light': this.mode === 'Light' },
                   { 'input-dark': this.mode === 'Dark' },
                 ]"
+                class="text-end"
                 placeholder="Username"
-                v-model="user.username"
+                type="text"
             /></label>
           </div>
           <div class="w-100 mb-2 mb-md-3">
             <label
-              :class="[
+                :class="[
                 { 'form-label-light': this.mode === 'Light' },
                 { 'form-label-dark': this.mode === 'Dark' },
               ]"
-              ><span
+            ><span
                 :class="[
                   { 'custom-text-dark': this.mode === 'Light' },
                   { 'custom-text-white': this.mode === 'Dark' },
                 ]"
-                >Password</span
-              ><input
-                type="password"
-                class="text-end"
+            >Password</span
+            ><input
+                v-model="user.password"
                 :class="[
                   { 'input-light': this.mode === 'Light' },
                   { 'input-dark': this.mode === 'Dark' },
                 ]"
+                class="text-end"
                 placeholder="Password"
-                v-model="user.password"
+                type="password"
             /></label>
           </div>
           <button
-            type="button"
-            class="btn w-100 mb-2 mb-md-3"
-            :class="[
+              :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
             ]"
-            @click.prevent="login"
+              class="btn w-100 mb-2 mb-md-3"
+              type="button"
+              @click.prevent="login"
           >
             Login
           </button>
           <button
-            type="button"
-            class="btn w-100 mb-2 mb-md-3"
-            :class="[
+              :class="[
               { 'btn-main-light': this.mode === 'Light' },
               { 'btn-main-dark': this.mode === 'Dark' },
             ]"
-            @click.prevent="registrate"
+              class="btn w-100 mb-2 mb-md-3"
+              type="button"
+              @click.prevent="registrate"
           >
-            Registrate
+            Registration
           </button>
         </div>
       </div>
     </div>
-    <CAlert ref="alert" :msg="msg" />
+    <CAlert ref="alert" :msg="msg"/>
   </div>
 </template>
 
 <script>
 import CAlert from "@/components/CAlert";
+
 export default {
   name: "CLogin",
   components: {

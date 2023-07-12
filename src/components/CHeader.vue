@@ -2,18 +2,17 @@
   <div>
     <div class="d-flex flex-nowrap overflow-auto justify-content-start align-items-center px-1 px-md-5">
       <router-link
-        v-for="(e, i) in icons"
-        :key="i"
-        :to="/dashboard/ + e.route"
-        class="col-3 col-md-1 m-2"
+          v-for="(e, i) in icons"
+          :key="i"
+          :to="/dashboard/ + e.route"
+          class="col-3 col-md-1 m-2"
       >
         <div class="justify-content-center">
           <div class="text-center mb-2">
-            <img :src="e.src" class="icon-22 mx-auto" />
+            <img :src="e.src" alt="" class="icon-22 mx-auto"/>
           </div>
           <div
-            class="text-header text-center"
-            :class="[
+              :class="[
               {
                 'selected-light':
                   this.mode === 'Light' && e.name === headerIcon,
@@ -22,6 +21,7 @@
                 'selected-dark': this.mode === 'Dark' && e.name === headerIcon,
               },
             ]"
+              class="text-header text-center"
           >
             {{ e.name }}
           </div>
@@ -32,7 +32,8 @@
 </template>
 
 <script>
-import { headerIcons } from "@/content/icons";
+import {headerIcons} from "@/content/icons";
+
 export default {
   name: "CHeader",
   props: {
@@ -62,8 +63,8 @@ export default {
           };
           let status = "";
           headerIcons[i].name === this.headerIcon
-            ? (status = "active")
-            : (status = "inactive");
+              ? (status = "active")
+              : (status = "inactive");
           let str = `${status}${this.mode}`;
           icon.src = require(`@/assets/img/icons/header/${headerIcons[i].url[str]}`);
           this.icons.push(icon);

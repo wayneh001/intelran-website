@@ -1,37 +1,37 @@
 <template>
   <div>
     <div
-      :class="[
+        :class="[
         { 'd-flex': this.screenSize < 768 },
         { 'justify-content-center': this.screenSize < 768 },
       ]"
     >
       <div
-        class="toast-container position-absolute top-0"
-        :class="[
+          :class="[
           { 'pe-3': this.screenSize >= 768 },
           { 'end-0': this.screenSize >= 768 },
         ]"
-        style="padding-top: 0.5rem; z-index: 10"
+          class="toast-container position-absolute top-0"
+          style="padding-top: 0.5rem; z-index: 10"
       >
         <div
-          class="toast"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          ref="toast"
+            ref="toast"
+            aria-atomic="true"
+            aria-live="assertive"
+            class="toast"
+            role="alert"
         >
           <div class="toast-header">
             <span class="p-2 rounded me-md-2 d-inline-block bg-success"></span>
             <strong class="me-auto">{{ msg.title }}</strong>
             <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="toast"
-              aria-label="Close"
+                aria-label="Close"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                type="button"
             ></button>
           </div>
-          <div class="toast-body" v-if="msg.content">
+          <div v-if="msg.content" class="toast-body">
             {{ msg.content }}
           </div>
         </div>

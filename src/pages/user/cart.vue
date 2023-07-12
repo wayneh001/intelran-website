@@ -1,16 +1,16 @@
 <template>
   <div>
-    <pageView :content="content" @updateMode="updateMode" :key="componentKey" />
+    <pageView :key="componentKey" :content="content" @updateMode="updateMode"/>
   </div>
 </template>
 
 <script>
 import pageView from "@/containers/pageView";
-import { cart } from "@/content/content";
+import {cart} from "@/content/content";
 
 export default {
   name: "cart",
-  components: { pageView },
+  components: {pageView},
   data() {
     return {
       content: cart,

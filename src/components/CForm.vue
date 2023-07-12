@@ -1,33 +1,33 @@
 <template>
   <div>
     <div v-if="!auth">
-      <CLogin :mode="mode" @reload="reload" />
+      <CLogin :mode="mode" @reload="reload"/>
     </div>
     <div v-else>
       <div>
         <div v-if="headerLabel === 'Account'" :mode="mode">
-          <CAccount :mode="mode" @showToast="showToast" />
+          <CAccount :mode="mode" @showToast="showToast"/>
         </div>
       </div>
       <div>
         <div v-if="headerLabel === 'Cart'">
           <CCart
-            v-if="!orderPlaced"
-            :mode="mode"
-            @toPlaceOrder="toPlaceOrder"
-            @showToast="showToast"
+              v-if="!orderPlaced"
+              :mode="mode"
+              @showToast="showToast"
+              @toPlaceOrder="toPlaceOrder"
           />
           <CPlaceOrder
-            v-if="orderPlaced"
-            :mode="mode"
-            @cancelPlaceOrder="cancelPlaceOrder"
-            @finishedPlaceOrder="finishedPlaceOrder"
-            @showToast="showToast"
+              v-if="orderPlaced"
+              :mode="mode"
+              @cancelPlaceOrder="cancelPlaceOrder"
+              @finishedPlaceOrder="finishedPlaceOrder"
+              @showToast="showToast"
           />
         </div>
       </div>
       <div v-if="headerLabel === 'Order'">
-        <COrder :mode="mode" @showToast="showToast" />
+        <COrder :mode="mode" @showToast="showToast"/>
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@ import COrder from "@/components/Form/COrder";
 
 export default {
   name: "CForm",
-  components: { CLogin, CAccount, CCart, CPlaceOrder, COrder },
+  components: {CLogin, CAccount, CCart, CPlaceOrder, COrder},
   props: {
     headerLabel: {
       type: String,
@@ -74,7 +74,7 @@ export default {
       this.$emit("reload");
     },
     showToast(msg) {
-      this.$emit("showToast", msg)
+      this.$emit("showToast", msg);
     }
   },
   created() {

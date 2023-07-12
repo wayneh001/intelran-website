@@ -1,49 +1,49 @@
 <template>
   <div>
     <div
-      class="container"
-      :class="[
+        :class="[
         { 'custom-bg-light': this.mode === 'Light' },
         { 'custom-bg-black': this.mode === 'Dark' },
       ]"
+        class="container"
     >
       <CNav
-        :nav="content.nav"
-        class="px-1 px-md-5 pt-md-33"
-        @updateMode="updateMode"
+          :nav="content.nav"
+          class="px-1 px-md-5 pt-md-33"
+          @updateMode="updateMode"
       />
       <div class="px-1 px-md-5">
         <div
-          class="px-1 px-md-5"
-          :class="[
+            :class="[
             { 'hr-light': this.mode === 'Light' },
             { 'hr-dark': this.mode === 'Dark' },
           ]"
+            class="px-1 px-md-5"
         >
-          <hr />
+          <hr/>
         </div>
       </div>
       <CHeader
-        :nav="content.nav"
-        :headerIcon="content.headerIcon"
-        class="mb-4 mb-md-3 px-1 px-md-5"
+          :headerIcon="content.headerIcon"
+          :nav="content.nav"
+          class="mb-4 mb-md-3 px-1 px-md-5"
       />
-      <CToast ref="toast" :msg="msg" />
-      <CLogin v-if="toLogin" :mode="mode" @reload="reload" />
+      <CToast ref="toast" :msg="msg"/>
+      <CLogin v-if="toLogin" :mode="mode" @reload="reload"/>
       <div v-show="pageShow">
         <div class="mb-2 mb-md-3 px-1 px-md-5">
           <div class="mb-4 mb-md-3 px-1 px-md-5">
             <h3
-              class="fw-bolder"
-              :class="[
+                :class="[
                 { 'custom-text-dark': this.mode === 'Light' },
                 { 'custom-text-white': this.mode === 'Dark' },
               ]"
+                class="fw-bolder"
             >
               {{ content.title }}
             </h3>
             <h5
-              :class="[
+                :class="[
                 { 'custom-text-dark': this.mode === 'Light' },
                 { 'custom-text-white': this.mode === 'Dark' },
               ]"
@@ -54,21 +54,21 @@
           <div v-if="content.title === 'IntelRAN'" class="px-1 px-md-5">
             <div class="row">
               <div
-                class="col-12 col-md-6 mb-4 mb-md-5 py-md-33"
-                v-for="(e, i) in content.article"
-                :key="i"
+                  v-for="(e, i) in content.article"
+                  :key="i"
+                  class="col-12 col-md-6 mb-4 mb-md-5 py-md-33"
               >
                 <h5
-                  class="fw-bold"
-                  :class="[
+                    :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
+                    class="fw-bold"
                 >
                   {{ e.title }}
                 </h5>
                 <p
-                  :class="[
+                    :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
@@ -80,34 +80,34 @@
           </div>
           <div v-if="content.nav === 'User'" class="px-1 px-md-5">
             <CForm
-              :headerLabel="content.headerLabel"
-              @reload="reload"
-              @toConfig="toConfig(item)"
-              @showToast="showToast"
-              :key="componentKey"
+                :key="componentKey"
+                :headerLabel="content.headerLabel"
+                @reload="reload"
+                @showToast="showToast"
+                @toConfig="toConfig(item)"
             />
           </div>
           <div
-            v-if="content.nav !== 'User' && content.title !== 'IntelRAN'"
-            class="px-1 px-md-5"
+              v-if="content.nav !== 'User' && content.title !== 'IntelRAN'"
+              class="px-1 px-md-5"
           >
             <div
-              v-for="(e, i) in addIconsUrl(content.article)"
-              :key="i"
-              class="mb-4 mb-md-3"
+                v-for="(e, i) in addIconsUrl(content.article)"
+                :key="i"
+                class="mb-4 mb-md-3"
             >
               <div v-show="e.type === 'text'">
                 <h5
-                  class="fw-bold"
-                  :class="[
+                    :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
+                    class="fw-bold"
                 >
                   {{ e.title }}
                 </h5>
                 <p
-                  :class="[
+                    :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
@@ -116,83 +116,83 @@
                 </p>
               </div>
               <div
-                v-if="e.type === 'label'"
-                class="row"
-                :class="[
+                  v-if="e.type === 'label'"
+                  :class="[
                   { 'justify-content-between': this.screenSize >= 768 },
                   { 'justify-content-center': this.screenSize < 768 },
                 ]"
+                  class="row"
               >
                 <h5
-                  class="fw-bold"
-                  :class="[
+                    :class="[
                     { 'custom-text-dark': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
+                    class="fw-bold"
                 >
                   {{ e.title }}
                 </h5>
                 <div
-                  v-for="(f, j) in e.content"
-                  :key="j"
-                  class="col-5 m-3"
-                  :class="[
+                    v-for="(f, j) in e.content"
+                    :key="j"
+                    :class="[
                     { 'content-label-light': this.mode === 'Light' },
                     { 'content-label-dark': this.mode === 'Dark' },
                     { 'col-5': this.screenSize >= 768 },
                     { 'col-10': this.screenSize < 768 },
                   ]"
+                    class="col-5 m-3"
                 >
-                  <img :src="f.src" class="icon-22 me-md-2" /><span
+                  <img :src="f.src" alt="" class="icon-22 me-md-2"/><span
                     :class="[
                       { 'custom-text-dark': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                    >{{ f.title }}</span
-                  >
+                >{{ f.title }}</span
+                >
                 </div>
               </div>
               <CDisplay
-                class="mb-2 mb-md-3"
-                v-if="content.nav === 'Solutions'"
-                :headerLabel="content.headerLabel"
-                :seq="i"
+                  v-if="content.nav === 'Solutions'"
+                  :headerLabel="content.headerLabel"
+                  :seq="i"
+                  class="mb-2 mb-md-3"
               />
             </div>
-            <CTable v-if="content.table.length > 0" :table="content.table" />
+            <CTable v-if="content.table.length > 0" :table="content.table"/>
             <button
-              v-if="content.nav === 'Solutions'"
-              class="btn w-100 my-5"
-              :class="[
+                v-if="content.nav === 'Solutions'"
+                :class="[
                 { 'btn-main-light': this.mode === 'Light' },
                 { 'btn-main-dark': this.mode === 'Dark' },
               ]"
-              @click.prevent="toConfig"
+                class="btn w-100 my-5"
+                @click.prevent="toConfig"
             >
               Buy Now
             </button>
           </div>
           <div v-if="content.nav === 'Solutions'">
             <CConfig
-              ref="config"
-              :headerLabel="content.headerLabel"
-              @showToast="showToast"
+                ref="config"
+                :headerLabel="content.headerLabel"
+                @showToast="showToast"
             />
           </div>
         </div>
         <div class="px-1 px-md-5">
           <div
-            class="px-1 px-md-5"
-            :class="[
+              :class="[
               { 'hr-light': this.mode === 'Light' },
               { 'hr-dark': this.mode === 'Dark' },
             ]"
+              class="px-1 px-md-5"
           >
-            <hr />
+            <hr/>
           </div>
         </div>
       </div>
-      <CFooter />
+      <CFooter/>
     </div>
   </div>
 </template>
@@ -207,7 +207,7 @@ import CForm from "@/components/CForm";
 import CConfig from "@/components/CConfig";
 import CToast from "@/components/CToast";
 import CFooter from "@/components/CFooter";
-import { contentIcons } from "@/content/icons";
+import {contentIcons} from "@/content/icons";
 
 export default {
   name: "pageView",
@@ -255,8 +255,8 @@ export default {
               if (contentIcons[e].name === array[i].content[j].contentIcon) {
                 let str = this.mode.toLowerCase();
                 array[i].content[
-                  j
-                ].src = require(`@/assets/img/icons/content/${contentIcons[e].url[str]}`);
+                    j
+                    ].src = require(`@/assets/img/icons/content/${contentIcons[e].url[str]}`);
               }
             }
           }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="order.length === 0">
-      <CEmpty :mode="mode" />
+      <CEmpty :mode="mode"/>
     </div>
     <div v-else>
       <div class="row">
@@ -9,44 +9,44 @@
           <div class="mb-2 mb-md-3">
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="no"
-                :class="[
+                  id="no"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>No</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >{{ e.no }}</span
+                >{{ e.no }}</span
                 >
               </label>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="date"
-                :class="[
+                  id="date"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Date</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >{{ e.date }}</span
+                >{{ e.date }}</span
                 >
               </label>
             </div>
             <div class="mb-2 mb-md-3">
               <label
-                id="switchConfig"
-                :class="[
+                  id="switchConfig"
+                  :class="[
                   { 'config-setter-header-light': this.mode === 'Light' },
                   { 'config-setter-header-dark': this.mode === 'Dark' },
                 ]"
@@ -56,123 +56,123 @@
               </label>
               <div class="d-flex flex-wrap">
                 <label
-                  v-for="(c, j) in e.cart.selectedProducts"
-                  :key="j"
-                  :class="[
+                    v-for="(c, j) in e.cart.selectedProducts"
+                    :key="j"
+                    :class="[
                     { 'config-setter-body-light': this.mode === 'Light' },
                     { 'config-setter-body-dark': this.mode === 'Dark' },
                   ]"
-                  ><span
+                ><span
                     :class="[
                       { 'custom-text-dark': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                    >{{ c.name }}</span
-                  ><span
+                >{{ c.name }}</span
+                ><span
                     :class="[
                       { 'custom-text-main': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                    >X{{ c.quantity }}</span
-                  ></label
+                >X{{ c.quantity }}</span
+                ></label
                 >
               </div>
             </div>
             <div
-              v-if="e.cart.service.installation.enabled === true"
-              class="w-100 mb-2 mb-md-3"
+                v-if="e.cart.service.installation.enabled === true"
+                class="w-100 mb-2 mb-md-3"
             >
               <label
-                id="installation"
-                :class="[
+                  id="installation"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Installation</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >${{ e.cart.service.installation.fee }}</span
+                >${{ e.cart.service.installation.fee }}</span
                 >
               </label>
             </div>
             <div
-              v-if="e.cart.service.extendedWarranty.enabled === true"
-              class="w-100 mb-2 mb-md-3"
+                v-if="e.cart.service.extendedWarranty.enabled === true"
+                class="w-100 mb-2 mb-md-3"
             >
               <label
-                id="extendedWarranty"
-                :class="[
+                  id="extendedWarranty"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Extended Warranty</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >${{ e.cart.service.extendedWarranty.fee }}</span
+                >${{ e.cart.service.extendedWarranty.fee }}</span
                 >
               </label>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="total"
-                :class="[
+                  id="total"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Overall Total</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >${{ e.cart.total }}</span
+                >${{ e.cart.total }}</span
                 >
               </label>
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                id="shippment"
-                :class="[
+                  id="shippment"
+                  :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
                 <span>Shippment</span>
                 <span
-                  :class="[
+                    :class="[
                     { 'custom-text-main': this.mode === 'Light' },
                     { 'custom-text-white': this.mode === 'Dark' },
                   ]"
-                  >{{ e.shipping.status }}</span
+                >{{ e.shipping.status }}</span
                 >
               </label>
             </div>
             <button
-              type="button"
-              class="btn w-100 mb-2 mb-md-3"
-              :class="[
+                :class="[
                 { 'btn-main-light': this.mode === 'Light' },
                 { 'btn-main-dark': this.mode === 'Dark' },
               ]"
-              :disabled="e.shipping.status === 'Return'"
-              @click.prevent="refund(i)"
+                :disabled="e.shipping.status === 'Return'"
+                class="btn w-100 mb-2 mb-md-3"
+                type="button"
+                @click.prevent="refund(i)"
             >
               Return and Refund
             </button>
             <button
-              type="button"
-              class="btn btn-danger w-100 mb-2 mb-md-3"
-              :disabled="e.shipping.status !== 'Shipped'"
-              @click.prevent="toDeleteOrder(e)"
+                :disabled="e.shipping.status !== 'Shipped'"
+                class="btn btn-danger w-100 mb-2 mb-md-3"
+                type="button"
+                @click.prevent="toDeleteOrder(e)"
             >
               Delete
             </button>
@@ -180,9 +180,9 @@
         </div>
       </div>
       <CDeleteAlert
-        ref="deleteAlert"
-        :item="orderToDelete"
-        @confirm="deleteOrder"
+          ref="deleteAlert"
+          :item="orderToDelete"
+          @confirm="deleteOrder"
       />
     </div>
   </div>
@@ -191,6 +191,7 @@
 <script>
 import CEmpty from "@/components/CEmpty";
 import CDeleteAlert from "@/components/CDeleteAlert";
+
 export default {
   name: "COrder",
   components: {
@@ -285,6 +286,7 @@ input:focus:-webkit-autofill {
   .config-setter-body-light:nth-last-child(2) {
     border-radius: 0 0 0 0.5rem;
   }
+
   .config-setter-body-dark:nth-last-child(2) {
     border-radius: 0 0 0 0.5rem;
   }
