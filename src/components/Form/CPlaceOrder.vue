@@ -346,7 +346,7 @@
             <img
                 src="@/assets/img/icons/func/GooglePay.svg"
                 style="width: 1rem"
-            />
+             alt=""/>
             Pay
           </button>
           <button
@@ -394,7 +394,7 @@ export default {
     ErrorMessage,
   },
   setup() {
-    const mySchema = {
+    return {
       validate: schema.validate,
       validateContact: schema.validateContact,
       validateZipCode: schema.validateZipCode,
@@ -402,7 +402,6 @@ export default {
       validateExpiry: schema.validateExpiry,
       validateCvc: schema.validateCvc,
     };
-    return mySchema;
   },
   data() {
     return {
@@ -455,7 +454,7 @@ export default {
       this.$store.commit("placeAnOrder", order);
       this.$emit("showToast", {
         title: "Place order",
-        content: "We have successfully reveived your order.",
+        content: "We have successfully revived your order.",
       });
       this.$emit("finishedPlaceOrder");
     },

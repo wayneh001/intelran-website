@@ -15,7 +15,7 @@
                 class="d-flex justify-content-center align-items-center mb-2 mb-md-3"
             >
               <div style="height: 200px; line-height: 200px">
-                <img :src="e.src" class="mx-auto" style="width: 200px"/>
+                <img :src="e.src" class="mx-auto" style="width: 200px" alt=""/>
               </div>
             </div>
             <div class="w-100 mb-2 mb-md-3">
@@ -97,13 +97,13 @@
                       :src="minusIconSrc"
                       class="icon-18"
                       @click.prevent="minus(e)"
-                  />
+                   alt=""/>
                   <span>{{ e.quantity }}</span>
                   <img
                       :src="addIconSrc"
                       class="icon-18"
                       @click.prevent="add(e)"
-                  />
+                   alt=""/>
                 </div>
               </label>
             </div>
@@ -138,7 +138,7 @@
                       { 'custom-text-dark': this.mode === 'Light' },
                       { 'custom-text-white': this.mode === 'Dark' },
                     ]"
-                ><img :src="c.src" class="icon-18"/></span
+                ><img :src="c.src" class="icon-18" alt=""/></span
                 ><input
                     :class="[
                       { 'input-light': this.mode === 'Light' },
@@ -451,12 +451,12 @@ export default {
       if (e.quantity > 1) {
         e.quantity -= 1;
       }
-      e.sum = parseInt(e.quantity * e.price);
+      e.sum = parseInt((e.quantity * e.price).toString());
       this.reCalculatedFee();
     },
     add(e) {
       e.quantity += 1;
-      e.sum = parseInt(e.quantity * e.price);
+      e.sum = parseInt((e.quantity * e.price).toString());
       this.reCalculatedFee();
     },
     getConfig(array) {
@@ -553,8 +553,8 @@ export default {
 }
 
 .form-check-input:checked {
-  background-color: none;
-  border-color: none;
+  background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
 }
 
 .form-check-input-light:checked {

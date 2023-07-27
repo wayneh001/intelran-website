@@ -140,13 +140,13 @@
             </div>
             <div class="w-100 mb-2 mb-md-3">
               <label
-                  id="shippment"
+                  id="shipment"
                   :class="[
                   { 'form-label-light': this.mode === 'Light' },
                   { 'form-label-dark': this.mode === 'Dark' },
                 ]"
               >
-                <span>Shippment</span>
+                <span>Shipment</span>
                 <span
                     :class="[
                     { 'custom-text-main': this.mode === 'Light' },
